@@ -1,0 +1,66 @@
+%% Optional Packages. 
+%% Choose packages you want by using comments in the list below. 
+
+\usepackage[
+    en,           % English text and wording
+    acronym,      % Use acronyms and print a acronym table. Use acronym.tex to add acronyms
+    figures,      % make list of figures and include graphicx package
+    tables,       % make list of tables and include table packages, also supertabular
+    listings,     % Use listings for source code and create table of listings
+    % intro,        % include introduction file and make bookmark
+    bib,          % make list of references at the end and configure the bibliography
+    appendix,     % includes appendix. add sections in the file appendix.tex
+    % PA,           % inserts at the titlepage the company and such stuff
+    Bachelor,     % inserts at the titlepage the company and such stuff: Bachelorfmat
+    % Study,        % insert at the titlepage information without company and such stuff
+]{optional} 
+ 
+
+% Fill in the following fields:
+
+\newcommand{\student}{Phillip Schichtel} 
+\newcommand{\matrikel}{4775783}  
+\newcommand{\kurs}{TINF13AI-BC}  
+
+\newcommand{\reporttitle}{Verification of Web Service}  
+\newcommand{\reportsubtitle}{subtitle to be added}
+
+\newcommand{\reportstart}{04/07/2016}
+\newcommand{\reportend}{26/09/2016}
+\newcommand{\handoverdate}{26/09/2015}
+\newcommand{\timerange}{12 weeks}
+\newcommand{\dhbw}{BW Cooperative State University Mannheim, Germany}
+\newcommand{\studiengang}{Applied Computer Science}
+
+
+\newcommand{\tutor}{Alexander Gross}
+\newcommand{\companylogo}{logos/company} %% filname of logo for titlepage
+\opt{Study}{
+	\newcommand{\reportsemester}{5. - 6. Semester}
+    \newcommand{\prof}{Tutor an der DHBW}
+	\newcommand{\reporttype}{Study Report}
+}
+\opt{PA}{
+	\newcommand{\businessunit}{R\&D} 
+	\newcommand{\department}{RDM-FOR-SEC-CPR}
+	\newcommand{\company}{Amadeus Germany GmbH}
+	\newcommand{\manager}{Alexander Radzio}
+    \newcommand{\prof}{Prof. Dr. H. Hofmann}
+    
+	\newcommand{\educationdepartment}{Education department}
+	\newcommand{\lokation}{Mannheim}
+	\newcommand{\reporttype}{Internship Report}
+}
+\opt{Bachelor}{
+	\newcommand{\academicdegree}{Bachelor of Science}
+	\newcommand{\company}{Company}
+	\newcommand{\lokation}{Mannheim}
+    \newcommand{\prof}{Prof. Dr. TODO}
+	\newcommand{\reporttype}{Bachelor thesis}
+}
+
+\opt{listings}{
+	\newcommand{\listingssetup}{
+	    % configure the listings package here
+	}
+}

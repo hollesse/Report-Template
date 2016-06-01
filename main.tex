@@ -1,0 +1,109 @@
+\documentclass[
+	12pt,
+	a4paper,
+	headinclude=on,
+	headsepline=on,
+	bibliography=totocnumbered,
+	abstract=on,
+	toc=listof
+]{scrreprt}
+
+\input{packages}
+\input{setup}
+\input{macros}
+
+\hypersetup{
+	pdftitle={\reporttype\ - \reporttitle\ - \student},
+	pdfauthor={\student},
+	pdfsubject={\reporttitle},
+	pdfkeywords={\reporttype, \dhbw\opt{PA}{, \company}\opt{Bachelor}{, \company}}
+}
+
+
+\newcommand{\settocdepth}[1]{
+	\addtocontents{toc}{
+		\protect
+		\setcounter{tocdepth}{#1}
+	}
+}
+	
+\graphicspath{{./resources/images/}}
+
+\newlength{\iconwidth}
+\setlength{\iconwidth}{1cm}
+\definecolor{boxheadcol}{gray}{.6}
+\definecolor{boxcol}{gray}{.9}
+\input{environments}
+
+\title{\reporttitle}
+\author{\student}
+\date{\handoverdate}
+
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\automark{chapter}
+\ohead{\rightmark}
+\refoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
+
+\begin{document}
+
+\renewcommand{\headheight}{30pt}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.5em}
+\clubpenalty 10000
+\widowpenalty 10000
+
+\pagenumbering{Roman}
+
+\pdfbookmark[1]{Titlepage}{titlepage}
+\begin{titlepage} 
+	\opt{PA}{
+		\input{titlepage}
+	}
+	\opt{Study}{
+		\input{titlepage}
+	}
+	\opt{Bachelor}{
+		\input{titlepageBachelor}
+	}
+\end{titlepage} 
+ 
+\clearpage
+
+\input{sections/declaration}
+\clearpage
+
+\begin{abstract}
+	\paragraph{English}
+	\input{sections/abstractEN}
+	\paragraph{German}
+	\input{sections/abstractDE}
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\input{sections/indexes}
+
+\setcounter{table}{0}
+\setcounter{figure}{0}
+\pagenumbering{arabic}
+\onehalfspacing
+\include{sections/content}
+\pagenumbering{roman}
+\clearpage
+
+%\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
+
+\appendix
+%\head{\nouppercase{\leftmark}}
+\pdfbookmark[0]{Appendix}{appendix}
+\include{sections/appendix}
+
+\pagestyle{empty}
+\include{sections/abstractSeperatePages}
+
+\end{document}
