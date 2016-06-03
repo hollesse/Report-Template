@@ -1,7 +1,9 @@
 % Add global packages here
-
-\usepackage[american]{babel}
-\usepackage{csquotes}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage[variant=usmax]{english}
+\setotherlanguage[variant=german, latesthyphen=true]{german}
+\usepackage[autostyle]{csquotes}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepackage{textcomp}
@@ -18,8 +20,9 @@
 \usepackage[onehalfspacing]{setspace}
 \usepackage{pdfpages}
 \usepackage{enumerate}
-\usepackage{scrhack}
 \usepackage{graphicx}
+\graphicspath{{./resources/images/}}
+
 \usepackage[footnote]{acronym}
 % Kreiert Links von der Table of Content zu Kapiteln (ohne optische Hervorhebung)
 \usepackage[pdfborder={0 0 0}, bookmarksopenlevel=1, bookmarksdepth=3]{hyperref}
@@ -40,3 +43,11 @@
 \usepackage{booktabs} %% better horizontal lines in tables with \toprule[<breite>], \midrule[<breite>], \cmidrule[<breite>](trim){a-b}, \bottomrule 
 \usepackage{supertabular}
 \usepackage{longtable}
+
+% Keep last
+\usepackage{scrhack}
+
+% Configuration
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
