@@ -45,37 +45,37 @@
  
 \clearpage
 
-\input{sections/declaration}
+\input{content/declaration}
 
 \begin{abstract}
 	\paragraph{English}
-	\input{sections/abstractEN}
+	\input{content/abstractEN}
 	\paragraph{German}
 	\begin{german}
-	\input{sections/abstractDE}
+	\input{content/abstractDE}
 	\end{german}
 \end{abstract}
 
 \tableofcontents
 \clearpage
 
-\input{sections/indexes}
+\input{content/indexes}
 
 \setcounter{table}{0}
 \setcounter{figure}{0}
 \pagenumbering{arabic}
 \onehalfspacing
-\include{sections/content}
+\include{content/content}
 \pagenumbering{roman}
 
 \printbibliography
 
 \appendix
-\include{sections/appendix}
+\include{content/appendix}
 
 \opt{PA}{
 	\pagestyle{empty}
-	\include{sections/abstractSeperatePages}
+	\include{content/abstractSeperatePages}
 }
 
 \end{document}
