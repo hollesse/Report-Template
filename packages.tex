@@ -1,35 +1,41 @@
 % Add global packages here
+% Typography
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \setmainlanguage[variant=usmax]{english}
 \setotherlanguage[variant=german, latesthyphen=true]{german}
 \usepackage[autostyle]{csquotes}
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-\usepackage{textcomp}
-\usepackage{gensymb}
+\usepackage{scrlayer-scrpage}
+\usepackage[babel=true]{microtype}
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{resources/references.bib}
+\usepackage[footnote]{acronym}
+
+% pdf
+\usepackage[pdfborder={0 0 0}, bookmarksopenlevel=1, bookmarksdepth=3]{hyperref}
+\usepackage{pdfpages}
+
+\usepackage{textcomp}
+\usepackage{gensymb}
 \usepackage{float}
-\usepackage{wrapfig}
 \usepackage{lipsum}
-\usepackage{scrlayer-scrpage}
 \usepackage{caption}
 \usepackage{calc}
-\usepackage{xcolor}
 \usepackage[onehalfspacing]{setspace}
-\usepackage{pdfpages}
 \usepackage{enumerate}
-\usepackage{graphicx}
-\graphicspath{{./resources/images/}}
-
-\usepackage[footnote]{acronym}
-% Kreiert Links von der Table of Content zu Kapiteln (ohne optische Hervorhebung)
-\usepackage[pdfborder={0 0 0}, bookmarksopenlevel=1, bookmarksdepth=3]{hyperref}
 \usepackage{amsmath,amssymb,amsfonts}
 
-% Listings
+% Graphics
 \usepackage{color}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\graphicspath{{./resources/images/}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+
+% Listings
 \usepackage{listings} 
 \input{lib/listing/html5_language}
 \input{lib/listing/java_language}
