@@ -1,4 +1,8 @@
-Verification of Web Services
-============================
+TeX Template
+============
 
-Paper and stuff
+Requirements
+------------
+
+- XeLaTeX
+- Biber
