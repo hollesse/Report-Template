@@ -1,45 +1,46 @@
 %% Optional Packages. 
-%% Choose packages you want by using comments in the list below. 
+%% Choose packages you want by using comments in the list below.
 
 \usepackage[
-    % PA,           % inserts at the titlepage the company and such stuff
-    % Study,        % insert at the titlepage information without company and such stuff
-    Bachelor,     % inserts at the titlepage the company and such stuff: Bachelorfmat
+	PA,				% inserts at the titlepage the company and such stuff
+	% Study,		% insert at the titlepage information without company and such stuff
+	% Bachelor,		% inserts at the titlepage the company and such stuff: Bachelorfmat
 ]{optional} 
  
 
 % Fill in the following fields:
 
-\newcommand{\student}{Phillip Schichtel} 
-\newcommand{\matrikel}{4775783}  
-\newcommand{\kurs}{TINF13AI-BC}  
+\newcommand{\student}{}
+\newcommand{\matrikel}{}
+\newcommand{\kurs}{}
 
-\newcommand{\reporttitle}{Verification of Web Service}  
-\newcommand{\reportsubtitle}{subtitle to be added}
+\newcommand{\reporttitle}{}
+\newcommand{\reportsubtitle}{}
 
-\newcommand{\reportstart}{04/07/2016}
-\newcommand{\reportend}{26/09/2016}
-\newcommand{\handoverdate}{26/09/2015}
-\newcommand{\timerange}{12 weeks}
+\newcommand{\reportstart}{}
+\newcommand{\reportend}{}
+\newcommand{\handoverdate}{}
+\newcommand{\timerange}{}
+
 \newcommand{\dhbw}{BW Cooperative State University Mannheim, Germany}
 \newcommand{\studiengang}{Applied Computer Science}
 
-\newcommand{\tutor}{Alexander Gross}
+\newcommand{\tutor}{}
 \newcommand{\companylogo}{logos/company} %% filname of logo for titlepage
 
 \opt{Study}{
-	\newcommand{\reportsemester}{5. - 6. Semester}
-    \newcommand{\prof}{Tutor an der DHBW}
+	\newcommand{\reportsemester}{}
+	\newcommand{\prof}{}
 	\newcommand{\reporttype}{Study Report}
 	\newcommand{\keywords}{\reporttype, \dhbw}
 }
 \opt{PA}{
-	\newcommand{\businessunit}{R\&D} 
-	\newcommand{\department}{RDM-FOR-SEC-CPR}
+	\newcommand{\businessunit}{} 
+	\newcommand{\department}{}
 	\newcommand{\company}{Amadeus Germany GmbH}
-	\newcommand{\manager}{Alexander Radzio}
-    \newcommand{\prof}{Prof. Dr. H. Hofmann}
-    
+	\newcommand{\manager}{}
+	\newcommand{\prof}{Prof. Dr. H. Hofmann}
+	
 	\newcommand{\educationdepartment}{Education department}
 	\newcommand{\lokation}{Mannheim}
 	\newcommand{\reporttype}{Internship Report}
@@ -47,10 +48,10 @@
 }
 \opt{Bachelor}{
 	\newcommand{\academicdegree}{Bachelor of Science}
-	\newcommand{\company}{Company}
+	\newcommand{\company}{Amadeus Germany GmbH}
 	\newcommand{\lokation}{Mannheim}
-    \newcommand{\prof}{Prof. Dr. TODO}
-	\newcommand{\reporttype}{Bachelor thesis}
+	\newcommand{\prof}{}
+	\newcommand{\reporttype}{Bachelor Thesis}
 	\newcommand{\keywords}{\reporttype, \dhbw, \company}
 }
 
