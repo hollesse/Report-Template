@@ -17,6 +17,26 @@
 \author{\student}
 \date{\handoverdate}
 
+\opt{Study}{
+	\newcommand{\reporttype}{Study Report}
+	\newcommand{\keywords}{\reporttype, \dhbw}
+}
+\opt{PA}{
+	\newcommand{\reporttype}{Internship Report}
+	\newcommand{\keywords}{\reporttype, \dhbw, \company}
+}
+\opt{Bachelor}{
+	\newcommand{\reporttype}{Bachelor Thesis}
+	\newcommand{\keywords}{\reporttype, \dhbw, \company}
+}
+
+\hypersetup{
+	pdftitle={\reporttype\ - \reporttitle\ - \student},
+	pdfauthor={\student},
+	pdfsubject={\reporttitle},
+	pdfkeywords={\keywords}
+}
+
 \overfullrule=1mm
 
 \pagestyle{scrheadings}
@@ -72,10 +92,5 @@
 
 \appendix
 \include{content/appendix}
-
-\opt{PA}{
-	\pagestyle{empty}
-	\include{content/abstractSeperatePages}
-}
 
 \end{document}

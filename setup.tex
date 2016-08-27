@@ -1,63 +1,39 @@
-%% Optional Packages. 
-%% Choose packages you want by using comments in the list below.
-
+% choose which type of report you want to write
 \usepackage[
-	PA,				% inserts at the titlepage the company and such stuff
-	% Study,		% insert at the titlepage information without company and such stuff
-	% Bachelor,		% inserts at the titlepage the company and such stuff: Bachelorfmat
+	PA,
+	% Study,
+	% Bachelor,
 ]{optional} 
  
 
-% Fill in the following fields:
-
-\newcommand{\student}{}
-\newcommand{\matrikel}{}
+% place your information into the following fields:
+\newcommand{\studentname}{}
+\newcommand{\matrikelno}{}
 \newcommand{\kurs}{}
+
+\newcommand{\studiengang}{Applied Computer Science}
+\newcommand{\dhbwDE}{Duale Hochschule Baden-Württemberg Mannheim}
+\newcommand{\dhbwEN}{Baden-Wuerttemberg Cooperative State University Mannheim}
 
 \newcommand{\reporttitle}{}
 \newcommand{\reportsubtitle}{}
 
-\newcommand{\reportstart}{}
-\newcommand{\reportend}{}
 \newcommand{\handoverdate}{}
-\newcommand{\timerange}{}
-
-\newcommand{\dhbw}{BW Cooperative State University Mannheim, Germany}
-\newcommand{\studiengang}{Applied Computer Science}
-
-\newcommand{\tutor}{}
-\newcommand{\companylogo}{logos/company} %% filname of logo for titlepage
 
 \opt{Study}{
 	\newcommand{\reportsemester}{}
 	\newcommand{\prof}{}
-	\newcommand{\reporttype}{Study Report}
-	\newcommand{\keywords}{\reporttype, \dhbw}
 }
 \opt{PA}{
-	\newcommand{\businessunit}{} 
-	\newcommand{\department}{}
+	\newcommand{\reportstart}{}
+	\newcommand{\reportend}{}
+	\newcommand{\timerange}{}
 	\newcommand{\company}{Amadeus Germany GmbH}
+	\newcommand{\department}{}
 	\newcommand{\manager}{}
-	\newcommand{\prof}{Prof. Dr. H. Hofmann}
-	
-	\newcommand{\educationdepartment}{Education department}
-	\newcommand{\lokation}{Mannheim}
-	\newcommand{\reporttype}{Internship Report}
-	\newcommand{\keywords}{\reporttype, \dhbw, \company}
 }
 \opt{Bachelor}{
 	\newcommand{\academicdegree}{Bachelor of Science}
-	\newcommand{\company}{Amadeus Germany GmbH}
-	\newcommand{\lokation}{Mannheim}
+	\newcommand{\company}{Amadeus Germany GmbH, Bad Homburg v.d.H.}
 	\newcommand{\prof}{}
-	\newcommand{\reporttype}{Bachelor Thesis}
-	\newcommand{\keywords}{\reporttype, \dhbw, \company}
-}
-
-\hypersetup{
-	pdftitle={\reporttype\ - \reporttitle\ - \student},
-	pdfauthor={\student},
-	pdfsubject={\reporttitle},
-	pdfkeywords={\keywords}
 }
