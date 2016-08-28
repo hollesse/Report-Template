@@ -14,25 +14,25 @@
 \input{environments}
 
 \title{\reporttitle}
-\author{\student}
+\author{\studentname}
 \date{\handoverdate}
 
 \opt{Study}{
 	\newcommand{\reporttype}{Study Report}
-	\newcommand{\keywords}{\reporttype, \dhbw}
+	\newcommand{\keywords}{\reporttype, \dhbwDE}
 }
 \opt{PA}{
 	\newcommand{\reporttype}{Internship Report}
-	\newcommand{\keywords}{\reporttype, \dhbw, \company}
+	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Bachelor}{
 	\newcommand{\reporttype}{Bachelor Thesis}
-	\newcommand{\keywords}{\reporttype, \dhbw, \company}
+	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 
 \hypersetup{
-	pdftitle={\reporttype\ - \reporttitle\ - \student},
-	pdfauthor={\student},
+	pdftitle={\reporttype\ - \reporttitle\ - \studentname},
+	pdfauthor={\studentname},
 	pdfsubject={\reporttitle},
 	pdfkeywords={\keywords}
 }
@@ -52,15 +52,7 @@
 
 \pdfbookmark[1]{Titlepage}{titlepage}
 \begin{titlepage} 
-	\opt{PA}{
-		\input{titlepage}
-	}
-	\opt{Study}{
-		\input{titlepage}
-	}
-	\opt{Bachelor}{
-		\input{titlepageBachelor}
-	}
+	\input{titlepage}
 \end{titlepage} 
  
 \clearpage
@@ -68,11 +60,9 @@
 \input{content/declaration}
 
 \begin{abstract}
-	\paragraph{English}
 	\input{content/abstractEN}
-	\paragraph{German}
 	\begin{german}
-	\input{content/abstractDE}
+		\input{content/abstractDE}
 	\end{german}
 \end{abstract}
 
@@ -80,12 +70,13 @@
 \clearpage
 
 \input{content/indexes}
-
 \setcounter{table}{0}
 \setcounter{figure}{0}
+
 \pagenumbering{arabic}
 \onehalfspacing
 \include{content/content}
+
 \pagenumbering{roman}
 
 \printbibliography
