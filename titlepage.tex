@@ -1,51 +1,71 @@
-\begin{center}
+{\setlength{\parindent}{0cm}
+	\hfill
+	\includegraphics[height=1.4cm]{logos/dhbwlogo}
+	\quad\rule{0.5pt}{1.4cm}\quad
+	\includegraphics[height=1.4cm]{logos/company} \\
 
-	\vspace{2.2cm}
-	\opt{PA}{{\large \textbf{\educationdepartment}}\\}
-	\vspace{0.1cm}
-	{\large \textbf{\dhbw}}\\
-	\vspace{2cm}
-	
-	\includegraphics*[width=0.3\textwidth]{\companylogo} \quad\quad\quad\quad\quad \includegraphics*[width=0.3\textwidth]{dhbwlogo}\\
-	
-	\vspace{2.8cm}
-	{\Large \textbf{\reporttype}}\\
-	\vspace{1cm}
-	\doublespacing
-	{\Huge \textbf{\reporttitle}}\\ 
-	\singlespacing 
-	\vspace{1cm}
-	{\large \reportsubtitle}\\
-	\vspace{2.2cm}
-	\onehalfspacing
-	  
-	\opt{PA}{
-		\begin{tabbing}
-			xxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxx\=xxxxxxxxxxxxx\=xxxxxxx\kill
-			Name: \> {\textbf{\student}} \> Company: \> \company,\\
-			{Matriculation}: \> \matrikel \> \> \educationdepartment\ \lokation\\
-			Course: \> \kurs \> {Manager}: \> \manager\\
-			Study course: \> \studiengang \> Department: \> \businessunit \\
-			Study manager: \> \prof \> \> \department \\
-			{Date:} \> \date{31/13/1331} \handoverdate \> {Tutor}: \> \tutor\\
-		\end{tabbing}
-	}
-	\opt{Study}{
-		\begin{tabbing}
-			xxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxx\kill
-			Name: \> {\textbf{\student}}  \\
-			{Matriculation}: \> \matrikel  \\
-			Course: \> \kurs \\
-			Study course: \> \studiengang  \\
-			Study manager: \> \prof  \\
-			{Tutor}: \> \tutor  \\
-			{Semester}: \> \reportsemester  \\
-			{Date:} \> \date{31/13/1331} \handoverdate \\
-			
-		\end{tabbing}
-	}
-	\enlargethispage{\baselineskip}
-	\enlargethispage{\baselineskip}
-	\singlespacing
+	\vspace{3.5cm}
+	{\huge\textbf{\reporttitle}} \\
 
-\end{center}  
+	\opt{PA,Study}{
+		\reporttype \\
+
+		\vspace{2.1cm}
+
+		Course of Studies: \textbf{\studiengang}
+		\begin{tabbing}
+			at \=\textbf{\dhbwDE} \\
+			\>{\footnotesize\dhbwEN} \\
+		\end{tabbing}
+
+		written by \textbf{\studentname} \\
+
+		\handoverdate \\
+	}
+
+	\opt{Bachelor}{
+		\textbf{\reporttype} \\
+		for the \\
+		{\large\textbf{\academicdegree}} \\
+		in \textbf{\studiengang} \\
+
+		\vspace{0.35cm}
+		\begin{tabbing}
+			at \=\textbf{\dhbwDE} \\
+			\>{\footnotesize\dhbwEN} \\
+		\end{tabbing}
+
+		\vspace{0.35cm}
+		written by {\large\textbf \studentname} \\
+
+		\vspace{0.35cm}
+		\handoverdate \\
+	}
+
+	\vfill
+
+	\begin{tabbing}
+		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
+		\opt{Study}{
+			Semester:							\> \reportsemester \\
+		}
+		Duration:								\> \timerange \\
+		\opt{PA}{								
+												\> \reportstart - \reportend \\
+		}
+		Matriculation number, Course:			\> \matrikelno, \kurs \\
+		Partner company: 						\> \company \\
+		\opt{PA}{
+			Department:							\> \department \\
+		}
+		\opt{PA,Bachelor}{
+			Supervisor at the partner company:	\> \companymanager \\
+		}
+		\opt{Study}{
+			Supervising tutor:					\> \prof
+		}
+		\opt{Bachelor}{
+			Reviewer:							\> \prof
+		}
+	\end{tabbing}
+}
