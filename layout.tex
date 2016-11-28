@@ -1,0 +1,71 @@
+%% DEFINES A NEAT DOCUMENT DESIGN
+%% in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
+%% losely orianted to https://brandcentre.amadeus.com/Styleguide/guidelines/#page/785EE333-09BD-4469-A2102F5A25BBC894
+
+
+% page setup:
+\usepackage[a4paper]{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3.0cm}
+
+
+% fonts:
+\setmainfont{Karma-Regular.otf}[
+BoldFont = Karma-SemiBold.otf ,
+ItalicFont = Andada-Italic.otf ]
+
+\setmonofont{Inconsolata-g.otf}
+
+
+% paragraph layout:
+\setlength{\parindent}{0pt}%removes initial indent
+
+
+% hyphenation:
+\hyphenpenalty=1000
+\exhyphenpenalty=1000%penalty for breaking the line at an explictly hyphenated word
+
+
+% avoid clubs and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+
+% headings:
+\usepackage{titlesec}
+
+\titleformat{\chapter}[hang]
+    {\normalfont\LARGE\color{PrimaryAccentColor}}%format
+    {\thechapter.\ }%label
+    {1em}%separation
+    {}%before-code
+    []%after-code  ;  will be placed in a new line
+\titlespacing{\chapter}{0pt}{0pt}{17pt}
+
+\titleformat{\section}[hang]
+    {\normalfont\Large\color{SecondaryAccentColor}}%format
+    {\thesection}%label
+    {1em}%separation
+    {}%before-code
+    []%after-code  ;  will be placed in a new line
+\titlespacing{\section}{0pt}{25pt}{5pt}
+
+\titleformat{\subsection}[hang]
+    {\normalfont\normalsize\color{SecondaryAccentColor}}%format
+    {\thesubsection}%label
+    {1em}%separation
+    {}%before-code
+    []%after-code  ;  will be placed in a new line
+\titlespacing{\subsection}{0pt}{20pt}{0pt}
+
+% Table of Contents:
+\usepackage{tocloft}
+%fonts inside the ToC:
+\renewcommand{\cftchapfont}{\scshape}
+\renewcommand{\cftsecfont}{\scshape}
+\renewcommand{\cftfigfont}{Figure }
+\renewcommand{\cfttabfont}{Table }
+%dotting between name and page number at every level in the ToC
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}

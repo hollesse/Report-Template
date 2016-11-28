@@ -9,9 +9,16 @@
 ]{scrreprt}
 
 \input{packages}
+\definecolor{PrimaryAccentColor}  {rgb}{1.00,0.52,0.09}%Mandarin Orange
+                                                       %   e.g. for Chapter-/Title Page-Headings
+\definecolor{SecondaryAccentColor}{rgb}{1.00,0.37,0.29}%Pale Red
+                                                       %   e.g. for Section-/Subsection-Headings
+\definecolor{TertiaryAccentColor} {rgb}{1.00,0.74,0.19}%Sunshine Yellow
+                                                       %   e.g. ...
+
 \input{setup}
-\input{macros}
-\input{environments}
+\input{layout}
+\input{content/macros}
 
 \title{\reporttitle}
 \author{\studentname}
@@ -47,41 +54,52 @@
 \rofoot[\pagemark]{\pagemark}
 
 \begin{document}
+	\pagenumbering{Roman}
 
-\pagenumbering{Roman}
+	% Title Page:
+	\pdfbookmark[1]{Titlepage}{titlepage}
+	\begin{titlepage} 
+		\input{titlepage}
+	\end{titlepage} 
+	 
+	\clearpage
 
-\pdfbookmark[1]{Titlepage}{titlepage}
-\begin{titlepage} 
-	\input{titlepage}
-\end{titlepage} 
- 
-\clearpage
+	% Declaration of Honesty:
+	\input{content/declaration}
 
-\input{content/declaration}
-
-\begin{abstract}
-	\input{content/abstractEN}
+	% Abstracts:
 	\begin{german}
 		\input{content/abstractDE}
 	\end{german}
-\end{abstract}
+	\input{content/abstractEN}
 
-\tableofcontents
-\clearpage
+	% Table of ...:
+	\renewcommand{\contentsname}{~}
+	\chapter*{Table of Contents}
+	\vspace{-3.75cm}
+	\setcounter{tocdepth}{2}%define sthe deoth below chapters
+	\tableofcontents
+	\clearpage
 
-\input{content/indexes}
-\setcounter{table}{0}
-\setcounter{figure}{0}
+	\input{content/indexes}
+	\setcounter{table}{0}
+	\setcounter{figure}{0}
 
-\pagenumbering{arabic}
-\onehalfspacing
-\include{content/content}
+	% Main Content:
+	\pagenumbering{arabic}
 
-\pagenumbering{roman}
+	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the text
+	           % inside the page-margins
 
-\printbibliography
+	\include{content/content}
 
-\appendix
-\include{content/appendix}
+
+	% Bibliography and Appendix:
+	\pagenumbering{roman}
+
+	\printbibliography
+
+	\appendix
+	\include{content/appendix}
 
 \end{document}
