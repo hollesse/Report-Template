@@ -1,3 +1,20 @@
 \newcommand{\winat}{WIN@\-proach}
 \newcommand{\amadeus}{Amadeus Germany GmbH}
 \newcommand{\source}[1]{\caption*{\hfill Source: {#1}} }
+
+\makeatletter 
+\newcommand{\nobreakchap}{% 
+\renewcommand\chapter{% 
+\par\global\@topnum\z@ 
+\@afterindentfalse 
+\secdef\@chapter\@schapter} 
+} 
+\newcommand{\normalchap}{% 
+\renewcommand\chapter{% 
+\if@openright\cleardoublepage\else\clearpage\fi 
+\thispagestyle{\chapterpagestyle}% 
+\global\@topnum\z@ 
+\@afterindentfalse 
+\secdef\@chapter\@schapter} 
+} 
+\makeatother 
