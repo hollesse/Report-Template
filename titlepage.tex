@@ -2,23 +2,20 @@
 	\hfill
 	\includegraphics[height=1.4cm]{logos/dhbwlogo}
 	\quad\rule{0.5pt}{1.4cm}\quad
-	\includegraphics[height=1.4cm]{logos/company} \\
+	\includegraphics[height=1.4cm]{logos/DbLogo} \\
 
 	\vspace{3.5cm}
 	{\huge\textbf{\reporttitle}} \\
 
 	\opt{PA,Study}{
-		\reporttype \\
+		\reporttype ~ \reportmodule \\
 
 		\vspace{2.1cm}
 
-		Course of Studies: \textbf{\studiengang}
-		\begin{tabbing}
-			at \=\textbf{\dhbwDE} \\
-			\>{\footnotesize\dhbwEN} \\
-		\end{tabbing}
+		Studiengang: \textbf{\studiengang} \\
+		\textbf{\dhbwDE} \\
 
-		written by \textbf{\studentname} \\
+		geschrieben von \textbf{\studentname} \\
 
 		\handoverdate \\
 	}
@@ -49,17 +46,17 @@
 		\opt{Study}{
 			Semester:							\> \reportsemester \\
 		}
-		Duration:								\> \timerange \\
+		Zeitraum:								\> \timerange \\
 		\opt{PA}{								
 												\> \reportstart - \reportend \\
 		}
-		Matriculation number, Course:			\> \matrikelno, \kurs \\
-		Partner company: 						\> \company \\
+		Matrikelnummer, Kurs:			\> \matrikelno, \kurs \\
+		Partnerunternehmen: 						\> \company \\
 		\opt{PA}{
-			Department:							\> \department \\
+			Abteilung:							\> \department \\
 		}
 		\opt{PA,Bachelor}{
-			Supervisor at the partner company:	\> \companymanager \\
+			Praxisbetreuer:	\> \companymanager \\
 		}
 		\opt{Study}{
 			Supervising tutor:					\> \prof

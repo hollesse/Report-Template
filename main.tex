@@ -18,11 +18,11 @@
 \date{\handoverdate}
 
 \opt{Study}{
-	\newcommand{\reporttype}{Study Report}
+	\newcommand{\reporttype}{Studienarbeit}
 	\newcommand{\keywords}{\reporttype, \dhbwDE}
 }
 \opt{PA}{
-	\newcommand{\reporttype}{Internship Report}
+	\newcommand{\reporttype}{Praxisbericht}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Bachelor}{
@@ -46,11 +46,16 @@
 \refoot[\pagemark]{\pagemark}
 \rofoot[\pagemark]{\pagemark}
 
+
+
+
+
+
 \begin{document}
 
 \pagenumbering{Roman}
 
-\pdfbookmark[1]{Titlepage}{titlepage}
+\pdfbookmark[1]{Titelseite}{titlepage}
 \begin{titlepage} 
 	\input{titlepage}
 \end{titlepage} 
@@ -59,19 +64,18 @@
 
 \input{content/declaration}
 
-\begin{abstract}
-	\input{content/abstractEN}
-	\begin{german}
-		\input{content/abstractDE}
-	\end{german}
-\end{abstract}
+\input{abstract}
 
-\tableofcontents
-\clearpage
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+    \setcounter{tocdepth}{3}
+    \tableofcontents
+    \clearpage
 
 \input{content/indexes}
 \setcounter{table}{0}
 \setcounter{figure}{0}
+
+
 
 \pagenumbering{arabic}
 \onehalfspacing
