@@ -1,0 +1,18 @@
+%% CUSTOM ELEMENTS
+\newcommand{\chapteronsamepage}[1]{{\let\clearpage\relax \vspace{123pt} \chapter{#1}}}
+
+\newenvironment{absolutelynopagebreak}
+  {\pagebreak\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+\newcommand{\incompletemarker}[1]{
+    \begin{quote}
+        \colorbox{SupportingDeepOrange}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize #1}} }
+    \end{quote} 
+}
+
+\providecommand{\tightlist}{
+    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}

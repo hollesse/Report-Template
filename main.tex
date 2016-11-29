@@ -11,6 +11,7 @@
 \input{packages}
 \input{setup}
 \input{layout}
+\input{elements}
 \input{content/macros}
 
 \title{\reporttitle}
@@ -61,10 +62,13 @@
 	\input{content/declaration}
 
 	% Abstracts:
-	\begin{german}
-		\input{content/abstractDE}
-	\end{german}
-	\input{content/abstractEN}
+	\begin{absolutelynopagebreak}
+		\begin{german}
+			\input{content/abstractDE}
+		\end{german}
+		\input{content/abstractEN}
+		\incompletemarker{asdf}
+	\end{absolutelynopagebreak}
 
 	% Table of ...:
 	\renewcommand{\contentsname}{~}
