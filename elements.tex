@@ -22,12 +22,13 @@
 \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
   #1\ignorespaces
 }
-\newenvironment{stripedtable}[2]
+\newenvironment{stripedtable}[3]
 	{
-		\rowcolors{2}{gray!7}{white}
+		\rowcolors{2}{#2!7}{white}
 		\begin{tabular}{$#1}
+			\arrayrulecolor{#2}
 			\toprule
-			\rowstyle{\bfseries}#2\\\midrule
+			\rowstyle{\bfseries}#3\\\midrule
     }
 	{
 			\bottomrule
