@@ -16,3 +16,20 @@
 \providecommand{\tightlist}{
     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
+
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+\newenvironment{stripedtable}[2]
+	{
+		\rowcolors{2}{gray!7}{white}
+		\begin{tabular}{$#1}
+			\toprule
+			\rowstyle{\bfseries}#2\\\midrule
+    }
+	{
+			\bottomrule
+		\end{tabular}
+	}
