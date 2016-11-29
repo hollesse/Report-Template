@@ -91,3 +91,13 @@
 \renewcommand{\labelitemi}  {\color{black!70}{\adfrightarrowhead}}
 \renewcommand{\labelitemii} {\color{black!70}{\adfrightarrowhead}}
 \renewcommand{\labelitemiii}{\color{black!70}{\adfrightarrowhead}}
+
+
+% figures and captions
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}%makes the numbers of figures "absolute", without the chapter-number
+\captionsetup{justification=centering}%sets captions centered
+\usepackage[font=small,skip=7pt]{caption}
+
+\renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
+                                             %  chapter when they are listed in the List of Figures
