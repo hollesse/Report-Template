@@ -44,34 +44,40 @@
 
 
 % headings:
-\usepackage{titlesec}
+\KOMAoption{chapterprefix}{true}
+\addtokomafont{disposition}{\normalfont}%removes the bold face
+\renewcommand{\chapterheadstartvskip}{\vspace{0em}}
+\addtokomafont{chapterprefix}{\normalfont\normalsize\color{PrimaryAccentColor}}
+\renewcommand{\chapterheadmidvskip}{\par\nobreak\vspace{0em}}
+\setkomafont{chapter}{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand{\chapterheadendvskip}{\vspace{1.2em}}
 
-\titleformat{\chapter}[hang]
-    {\normalfont\huge\color{PrimaryAccentColor}}%format
-    {\thechapter.\ }%label
-    {1em}%separation
-    {}%before-code
-    []%after-code  ;  will be placed in a new line
-\titlespacing{\chapter}{0pt}{0pt}{17pt}
+\addtokomafont{section}{\normalfont\Large\color{SecondaryAccentColor}}
+\RedeclareSectionCommand[beforeskip=2em]{section}
+\RedeclareSectionCommand[afterskip=0.7em]{section}
 
-\titleformat{\section}[hang]
-    {\normalfont\Large\color{SecondaryAccentColor}}%format
-    {\thesection}%label
-    {1em}%separation
-    {}%before-code
-    []%after-code  ;  will be placed in a new line
-\titlespacing{\section}{0pt}{25pt}{5pt}
+\addtokomafont{subsection}{\normalfont\large\color{SecondaryAccentColor}}
+\RedeclareSectionCommand[beforeskip=1em]{subsection}
+\RedeclareSectionCommand[afterskip=0.1em]{subsection}
 
-\titleformat{\subsection}[hang]
-    {\normalfont\large\color{SecondaryAccentColor}}%format
-    {\thesubsection}%label
-    {1em}%separation
-    {}%before-code
-    []%after-code  ;  will be placed in a new line
-\titlespacing{\subsection}{0pt}{20pt}{0pt}
 
 % Table of Contents:
 \usepackage{tocloft}
+%titles:
+%...of ToC:
+\renewcommand\cfttoctitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforetoctitleskip{1em}
+\renewcommand\cftaftertoctitleskip{0.2em}
+%...of LoF:
+\renewcommand\cftloftitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforeloftitleskip{1em}
+\renewcommand\cftafterloftitleskip{0.2em}
+%...of LoT:
+\renewcommand\cftlottitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforelottitleskip{1em}
+\renewcommand\cftafterlottitleskip{0.2em}
+
+
 %fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
