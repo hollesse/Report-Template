@@ -61,6 +61,24 @@
 \RedeclareSectionCommand[afterskip=0.1em]{subsection}
 
 
+% Headers and Footers:
+\pagestyle{scrheadings}
+\clearscrheadfoot
+
+\automark{chapter}
+\ihead{\footnotesize{\leftmark}}
+
+%remove line under header
+\ModifyLayer[
+  addvoffset=0pt,
+  contents={%
+    \normalfont\usekomafont{pageheadfoot}\usekomafont{pagehead}
+  }
+]{scrheadings.head.below.line}
+
+\refoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
+
 % Table of Contents:
 \usepackage{tocloft}
 %titles:

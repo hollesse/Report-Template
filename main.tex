@@ -8,11 +8,13 @@
 	toc=listof
 ]{scrreprt}
 
+
 \input{packages}
 \input{setup}
 \input{layout}
 \input{elements}
 \input{content/macros}
+
 
 \title{\reporttitle}
 \author{\studentname}
@@ -38,14 +40,9 @@
 	pdfkeywords={\keywords}
 }
 
+
 \overfullrule=1mm
 
-\pagestyle{scrheadings}
-\clearscrheadfoot
-\automark{chapter}
-\ohead{\rightmark}
-\refoot[\pagemark]{\pagemark}
-\rofoot[\pagemark]{\pagemark}
 
 \begin{document}
 	\pagenumbering{Roman}
@@ -58,8 +55,8 @@
 	 
 	\clearpage
 
-	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the text
-           % inside the page-margins
+	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
+           % text inside the page-margins
 
 	\begin{absolutelynopagebreak}
 		% Declaration of Honesty:
