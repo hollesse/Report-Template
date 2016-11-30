@@ -21,15 +21,15 @@
 \date{\handoverdate}
 
 \opt{Study}{
-	\newcommand{\reporttype}{Study Report}
+	\newcommand{\reporttype}{\iflanguage{english}{Study Report}{Studienarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE}
 }
 \opt{PA}{
-	\newcommand{\reporttype}{Internship Report}
+	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Projektarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Bachelor}{
-	\newcommand{\reporttype}{Bachelor Thesis}
+	\newcommand{\reporttype}{\iflanguage{english}{Bachelor Thesis}{Bachelorarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 

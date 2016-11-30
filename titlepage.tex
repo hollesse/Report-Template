@@ -14,31 +14,31 @@
 
 		\vspace{2.1cm}
 
-		Course of Studies: \textbf{\studiengang}
+		\iflanguage{english}{in the Course of Studies}{des Studienganges} \textbf{\studiengang}
 		\begin{tabbing}
-			at \=\textbf{\dhbwDE} \\
-			\>{\footnotesize\dhbwEN} \\
+			\iflanguage{english}{at}{an der} \=\textbf{\dhbwDE} \\
+			\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
 		\end{tabbing}
 
-		written by \textbf{\studentname} \\
+		\iflanguage{english}{written by}{von} \textbf{\studentname} \\
 
 		\handoverdate \\
 	}
 
 	\opt{Bachelor}{
 		\textbf{\reporttype} \\
-		for the \\
+		\iflanguage{english}{for the exam as}{für die Prüfung zum} \\
 		{\large\textbf{\academicdegree}} \\
-		in \textbf{\studiengang} \\
+		\iflanguage{english}{in}{des Studienganges} \textbf{\studiengang} \\
 
 		\vspace{0.35cm}
 		\begin{tabbing}
-			at \=\textbf{\dhbwDE} \\
-			\>{\footnotesize\dhbwEN} \\
+			\iflanguage{english}{at}{an der} \=\textbf{\dhbwDE} \\
+			\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
 		\end{tabbing}
 
 		\vspace{0.35cm}
-		written by {\large\textbf \studentname} \\
+		\iflanguage{english}{written by}{von} {\large\textbf \studentname} \\
 
 		\vspace{0.35cm}
 		\handoverdate \\
@@ -49,25 +49,25 @@
 	\begin{tabbing}
 		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
 		\opt{Study}{
-			Semester:							\> \reportsemester \\
+			Semester: \> \reportsemester \\
 		}
-		Duration:								\> \timerange \\
-		\opt{PA}{								
-												\> \reportstart - \reportend \\
-		}
-		Matriculation number, Course:			\> \matrikelno, \kurs \\
-		Partner company: 						\> \company \\
+		\iflanguage{english}{Duration}{Bearbeitungszeitraum}: \> \timerange \\
 		\opt{PA}{
-			Department:							\> \department \\
+			\> \reportstart - \reportend \\
+		}
+		\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}: \> \matrikelno, \kurs \\
+		\iflanguage{english}{Partner company}{Ausbildungsfirma}: \> \company \\
+		\opt{PA}{
+			\iflanguage{english}{Department}{Abteilung}: \> \department \\
 		}
 		\opt{PA,Bachelor}{
-			Supervisor at the partner company:	\> \companymanager \\
+			\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:	\> \companymanager \\
 		}
 		\opt{Study}{
-			Supervising tutor:					\> \prof
+			\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}: \> \prof
 		}
 		\opt{Bachelor}{
-			Reviewer:							\> \prof
+			\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}: \> \prof
 		}
 	\end{tabbing}
 }
