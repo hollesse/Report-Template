@@ -58,8 +58,19 @@
 	 
 	\clearpage
 
-	% Declaration of Honesty:
-	\input{content/declaration}
+	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the text
+           % inside the page-margins
+
+	\begin{absolutelynopagebreak}
+		% Declaration of Honesty:
+		\input{content/declaration}
+
+		% opt.: Lock Flag (in german)
+		\ifcsname activateSperrvermerk\endcsname
+			\vspace{7cm}
+			\input{Sperrvermerk}
+		\fi
+	\end{absolutelynopagebreak}
 
 	% Abstracts:
 	\begin{absolutelynopagebreak}
@@ -84,9 +95,6 @@
 
 	% Main Content:
 	\pagenumbering{arabic}
-
-	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the text
-	           % inside the page-margins
 
 	\include{content/content}
 

@@ -5,7 +5,11 @@
 	PA,
 	% Study,
 	% Bachelor,
-]{optional} 
+]{optional}
+
+
+% uncomment if you need a lock flag (only availabe in german)
+ \newcommand{\activateSperrvermerk}{def}
  
 
 % place your information into the following fields:
@@ -13,7 +17,9 @@
 \newcommand{\matrikelno}{...}
 \newcommand{\kurs}{MA-TINF...}
 
-\newcommand{\company}{Amadeus Germany GmbH, Bad Homburg v.d.H.}
+\newcommand{\companyname}{Amadeus Germany GmbH}
+\newcommand{\companylocation}{Bad Homburg v.d.H.}
+\newcommand{\company}{\companyname{}, \companylocation}
 
 \newcommand{\studiengang}{Applied Computer Science}
 \newcommand{\dhbwDE}{Duale Hochschule Baden-Württemberg Mannheim}
