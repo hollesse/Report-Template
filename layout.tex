@@ -101,3 +101,36 @@
 
 \renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
                                              %  chapter when they are listed in the List of Figures
+
+
+% code listings
+\lstdefinestyle{Xcode} {
+    basicstyle       = \ttfamily\scriptsize,
+    identifierstyle  = \color{black},
+    commentstyle     = \color{Gray},
+    keywordstyle     = \color{SupportingCherry},
+    stringstyle      = \color{SupportingDeepOrange},
+    extendedchars    = true,
+    tabsize          = 4,
+    showspaces       = false,
+    showstringspaces = false,
+    breakautoindent  = true,
+    flexiblecolumns  = true,
+    keepspaces       = true,
+    xleftmargin      = 0pt
+}
+\lstset{
+    style = Xcode,
+    backgroundcolor  = \color{TertiaryAccentColor!40!Gray!7!White},
+    caption = \lstname,
+    breaklines = false,
+    numbers = left,
+    numberstyle = \normalfont\tiny\color{Black},
+    stepnumber = 1,
+    frame = l,
+    framesep = 3.5mm,
+    framexleftmargin = 1em,
+    xleftmargin = 2.7em,
+    fillcolor = \color{TertiaryAccentColor!40!Gray!20!White},
+    rulecolor = \color{TertiaryAccentColor}
+}
