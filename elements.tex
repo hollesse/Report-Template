@@ -1,8 +1,11 @@
 %!TEX root = main.tex
 
 %% CUSTOM ELEMENTS
+
+
 % preventing pagebreaks at the beginning of a new chapter
 \newcommand{\chapteronsamepage}[1]{{\let\clearpage\relax \vspace{123pt} \chapter{#1}}}
+
 
 % totally preventing pagebreaks inside the environement
 \newenvironment{absolutelynopagebreak}
@@ -11,6 +14,7 @@
   {\par\xdef\tpd{\the\prevdepth}\egroup
    \prevdepth=\tpd}
 
+
 % for marking sections which are incomplete with a ToDo-Message
 \newcommand{\incompletemarker}[1]{
     \begin{quote}
@@ -18,10 +22,12 @@
     \end{quote} 
 }
 
+
 % pack list more tightly
 \providecommand{\tightlist}{
     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
+
 
 % create fancy tables
 \newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
@@ -31,16 +37,26 @@
 }
 \newenvironment{stripedtable}[3]
 	{
-		\rowcolors{2}{#2!7}{white}
-		\begin{tabular}{$#1}
-			\arrayrulecolor{#2}
+		\rowcolors{2}{#1!7}{white}
+		\begin{tabular}{$#2}
+			\arrayrulecolor{#1}
 			\toprule
-			\rowstyle{\bfseries}#3\\\midrule
+			\rowstyle{\bfseries}#3\\
+			\midrule
     }
 	{
 			\bottomrule
 		\end{tabular}
 	}
+
+\newenvironment{stripedacenttable}[2]
+	{
+		\begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
+	}
+	{
+		\end{stripedtable}
+	}
+
 
 % save some typing for footnote'd sources
 \newcommand{\footnotecite}[1]{\footnote{\emph{\cite{#1}}}}
