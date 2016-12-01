@@ -1,13 +1,17 @@
 # DHBW - LaTeX - Template
 Please use XeLaTeX or LuaLaTex for building.
-<img src="images/readme_syntax.PNG" alt="[Illustration of the Syntax Definitions]" width="420" align="right">
+
+
 ## Features
 - all formal layout-properties of the document are in accordance to the requirements given by the Technical Faculty of DHBW Mannheim.
 - Titlepages for Internship Reports, Study Reports and Bachelor Thesis in accordance to these requirements included
 
 <img alt="various Titlepages" src="http://i.imgur.com/ddOe000.png" width="70%">
+
 - Fully customizable coloring
+
 <img alt="Coloring" src="http://i.imgur.com/TGjZShi.png" width="70%">
+
 - Easy switching between the (default) *english* and *german* version of the document
 
 
