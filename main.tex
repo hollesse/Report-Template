@@ -16,17 +16,20 @@
 \input{content/macros}
 
 
+% set document properties
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
 
+\newcommand{\company}{\companyname{}, \companylocation}
+
+\opt{Internship}{
+	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Projektarbeit}}
+	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
+}
 \opt{Study}{
 	\newcommand{\reporttype}{\iflanguage{english}{Study Report}{Studienarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE}
-}
-\opt{PA}{
-	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Projektarbeit}}
-	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Bachelor}{
 	\newcommand{\reporttype}{\iflanguage{english}{Bachelor Thesis}{Bachelorarbeit}}
