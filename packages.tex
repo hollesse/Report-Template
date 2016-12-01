@@ -1,72 +1,108 @@
-% Typography
-\usepackage{fontspec}
-\setmainfont{Andada-Regular.otf}[
-BoldFont = Andada-Bold.otf ,
-ItalicFont = Andada-Italic.otf ,
-BoldItalicFont = Andada-BoldItalic.otf ]
-\setsansfont{Andada-Regular.otf}[
-BoldFont = Andada-Bold.otf ,
-ItalicFont = Andada-Italic.otf ,
-BoldItalicFont = Andada-BoldItalic.otf ]
-\setmonofont{Inconsolata-g.otf}
+%!TEX root = main.tex
+
+%% GENERAL PACKAGES
+%%   specific Packages only needed for the Layout are defined inside layout.tex
+
+
+% general typesetting:
 \usepackage{polyglossia}
-\setdefaultlanguage[spelling=new]{german}
-\usepackage[autostyle]{csquotes}
+
+
+% some fine helpers:
+\usepackage{amsmath,amssymb,amsfonts}
+
+\usepackage{lipsum}
+
+\usepackage{gensymb}%ensures the display of some unit-symbols
+                    %   provides \degree, \celsius, \perthousand, \micro and \ohm
+
+\usepackage{calc}%provides arithmetics on \set­counter, \ad­dto­counter, \setlength, and \ad­dtolength
+
+\usepackage{enumerate}
+
+
+% generally used layout:
 \usepackage{scrlayer-scrpage}
+
+\usepackage{setspace}%set spacing after paragraphs
+                     %   providees \doublespacing, \onehalfspacing, \singlespacing and
+                     %   \setstretch{baselinestretch}
+
+\usepackage{tabto}%add tabs to a specific length
+
+\usepackage{changepage}
+
+\usepackage{float}%eases work with floating objects (e.g. figures and tables)
+\usepackage{caption}%customize captions for floating environments
+
+
+% generally used eye-candy styling:
+\usepackage{marvosym}
+\usepackage{adforn}
+
+\usepackage{color}
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+\usepackage{xhfill}
+
+\usepackage{lipsum}
+
+
+% tables:
+\usepackage{longtable,tabu}
+\usepackage{booktabs}
+
+\usepackage[newcommand]{ragged2e}
+
+
+% citations and references:
+\usepackage[autostyle]{csquotes}
+
 \usepackage[babel=true]{microtype}
-\usepackage[backend=biber, style=numeric]{biblatex}
+
+\usepackage[backend=biber, style=authoryear]{biblatex}
 \addbibresource{resources/references.bib}
 \usepackage[footnote]{acronym}
 
-% pdf
-\usepackage[pdfborder={0 0 0}, bookmarksopenlevel=1, bookmarksdepth=3]{hyperref}
-\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
 
-% layout
-\usepackage[margin=2.5cm]{geometry}
-\usepackage{setspace}	% \doublespacing, \onehalfspacing, \singlespacing and \setstretch{baselinestretch}
 
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{float}
-\usepackage{lipsum}
-\usepackage{caption}
-\usepackage{calc}
-\usepackage{enumerate}
-\usepackage{amsmath,amssymb,amsfonts}
-
-% Graphics
-\usepackage{color}
-\usepackage{xcolor}
+% graphics:
 \usepackage{graphicx}
 \usepackage{wrapfig}
+
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
 \graphicspath{{./resources/images/}}
-\usepackage{pgfplots}
+
+\usepackage{pdfpages}%include external PDF pages
+
+\usepackage{pgfplots}%utilities to draw 2D and 3D plots
 \pgfplotsset{compat=newest}
 
 
-% Listings
+% listings
 \usepackage{listings} 
+
 \input{lib/listing/html5_language}
 \input{lib/listing/java_language}
 \input{lib/listing/javascript_language}
 \input{lib/listing/json_language}
 
-% Tables
-\usepackage{hhline} %% extended line features for tables with \hhline{}
-\usepackage{multirow} %% merges several cells over rows: \multirow{Zeilen}{Breite}{Inhalt}; over columns: \multicolumn{Spalten}{Ausrichtung}{Inhalt}
-\usepackage{colortbl} %% use defined colors in tables
-\usepackage{booktabs} %% better horizontal lines in tables with \toprule[<breite>], \midrule[<breite>], \cmidrule[<breite>](trim){a-b}, \bottomrule 
-\usepackage{supertabular}
-\usepackage{longtable}
 
-% Keep last
-\usepackage{scrhack}
-
-% Configuration
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
+% tables:
+\usepackage{colortbl}%use colors in tables
+\usepackage{hhline}%extended line features for tables with \hhline{}
+\usepackage{booktabs}%better horizontal lines in tables 
+                     %   provides \toprule[<breite>], \midrule[<breite>], 
+                     %   \cmidrule[<breite>](trim){a-b} and \bottomrule 
+\usepackage{multirow}%merge several cells over rows or columns
+                     %   provides \multirow{Zeilen}{Breite}{Inhalt} and  
+                     %   \multicolumn{Spalten}{Ausrichtung}{Inhalt}
+\usepackage{supertabular,longtable}%enable tables stretching over multiple pages
 
 
-\usepackage{lipsum}
+
+% Keep this as the very last item!
+\usepackage{scrhack}%smooths edges at playing along with KOMA-Script

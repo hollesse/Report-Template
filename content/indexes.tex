@@ -1,14 +1,19 @@
-\chapter*{Abk{\"u}rzungsverzeichnis}
-\addcontentsline{toc}{chapter}{Abk{\"u}rzungsverzeichnis}
+%!TEX root = ../main.tex
+\chapter*{\vspace{0.5cm}
+	\iflanguage{english}{List of Abbreviations}{Abk{\"u}rzungsverzeichnis}
+}
 \begin{acronym}[Internship]
-\input{acronym}
+\input{content/acronyms}
 \end{acronym} 
 \clearpage
 
 \listoffigures
-
+\pagebreak
 \listoftables
+\pagebreak
+\renewcommand\lstlistlistingname{\vspace{0.5cm}
+	\iflanguage{english}{List of Code Listings}{Quellcodeverzeichnis}
+}
+\lstlistoflistings
 
-%\lstlistoflistings
-
-\clearpage   % to ensure a clean cut of the Roman Numbering
+\clearpage

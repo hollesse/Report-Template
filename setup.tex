@@ -1,11 +1,24 @@
+%!TEX root = main.tex
+
 % choose which type of report you want to write
 \usepackage[
-	PA,
+	Internship,
 	% Study,
-	% Bachelor,
-	Sperrvermerk
-]{optional} 
+	% Bachelor
+]{optional}
  
+
+% uncomment if you need a lock flag (only availabe in german)
+\newcommand{\activateSperrvermerk}{def}
+
+
+% choose your language by uncommenting the variant you like:
+	% english with german parts
+	%\setdefaultlanguage{english}
+	%\setotherlanguage[variant=german, latesthyphen=true]{german}
+%  or
+	% fully german
+	\setdefaultlanguage[variant=german, latesthyphen=true]{german}
 
 
 % place your information into the following fields:
@@ -13,7 +26,7 @@
 \newcommand{\matrikelno}{...}
 \newcommand{\kurs}{MA-TINF...}
 
-\newcommand{\company}{DB Systel GmbH}
+\newcommand{\companyname}{DB Systel GmbH}
 \newcommand{\companylocation}{Frankfurt am Main}
 
 \newcommand{\studiengang}{Angewandte Informatik}
@@ -26,7 +39,9 @@
 \newcommand{\handoverdate}{01.01.1970}
 \newcommand{\city}{...}
 
-\opt{PA}{
+
+% place the information into the block you have choosen above
+\opt{Internship}{
 	\newcommand{\reportmodule}{T...000}
 	\newcommand{\reportstart}{01.01.1970}
 	\newcommand{\reportend}{01.01.1970}
@@ -42,3 +57,36 @@
 	\newcommand{\companymanager}{...}
 	\newcommand{\prof}{Prof. Dr. Holger Hofmann}
 }
+
+
+% choose a color theme:
+% "Travel into the blue"
+	%\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.37, 0.72}
+	%\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.66, 0.88}
+	%\definecolor{TertiaryAccentColor} {rgb}{0.61, 0.79, 0.92}
+% "feel the heat"
+	%\definecolor{PrimaryAccentColor}  {rgb}{1.00, 0.52, 0.09}
+	%\definecolor{SecondaryAccentColor}{rgb}{1.00, 0.37, 0.29}
+	%\definecolor{TertiaryAccentColor} {rgb}{1.00, 0.74, 0.19}
+% "fancy forest"
+	\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.48, 0.14}
+	\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.72, 0.20}
+	\definecolor{TertiaryAccentColor} {rgb}{0.37, 0.74, 0.20}
+% "This is serious business!"
+	%\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.00, 0.00}
+	%\definecolor{SecondaryAccentColor}{rgb}{0.20, 0.20, 0.20}
+	%\definecolor{TertiaryAccentColor} {rgb}{0.40, 0.40, 0.40}
+                                                       
+% ... or define your own:
+	%\definecolor{PrimaryAccentColor}  {rgb}{, , }
+	%\definecolor{SecondaryAccentColor}{rgb}{, , }
+	%\definecolor{TertiaryAccentColor} {rgb}{, , }
+
+
+% if you want to, you can also change the supporting colors:
+\definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}
+\definecolor{SupportingOrange}    {rgb}{0.97, 0.66, 0.15}
+\definecolor{SupportingDeepOrange}{rgb}{0.93, 0.30, 0.18}
+\definecolor{SupportingYellow}    {rgb}{0.99, 0.98, 0.12}
+\definecolor{SupportingCherry}    {rgb}{0.80, 0.00, 0.34}
+\definecolor{SupportingPurple}    {rgb}{0.43, 0.17, 0.55}

@@ -1,3 +1,5 @@
+%!TEX root = main.tex
+
 {\setlength{\parindent}{0cm}
 	\hfill
 	\includegraphics[height=1.4cm]{logos/dhbwlogo}
@@ -5,64 +7,59 @@
 	\includegraphics[height=1.4cm]{logos/DbLogo} \\
 
 	\vspace{3.5cm}
-	{\huge\textbf{\reporttitle}} \\
+	{\color{PrimaryAccentColor}\huge\reporttitle} \\
 
-	\opt{PA,Study}{
-		\reporttype ~ \reportmodule \\
+	{\color{SecondaryAccentColor}\reporttype} \\
 
-		\vspace{2.1cm}
-
-		Studiengang: \textbf{\studiengang} \\
-		\textbf{\dhbwDE} \\
-
-		geschrieben von \textbf{\studentname} \\
-
-		\handoverdate \\
-	}
+	\vspace{1.5cm}
 
 	\opt{Bachelor}{
-		\textbf{\reporttype} \\
-		for the \\
-		{\large\textbf{\academicdegree}} \\
-		in \textbf{\studiengang} \\
+		{\small\iflanguage{english}{for the exam as}{für die Prüfung zum}} \\
 
-		\vspace{0.35cm}
-		\begin{tabbing}
-			at \=\textbf{\dhbwDE} \\
-			\>{\footnotesize\dhbwEN} \\
-		\end{tabbing}
+		\vspace{-0.3cm}
 
-		\vspace{0.35cm}
-		written by {\large\textbf \studentname} \\
+		{\color{TertiaryAccentColor}{\Large\academicdegree}} \\
 
-		\vspace{0.35cm}
-		\handoverdate \\
+		\vspace{-0.3cm}
 	}
+
+	{\small\iflanguage{english}{in}{des Studienganges}} \studiengang
+
+	\vspace{0.07cm}
+	\begin{tabbing}
+		{\small\iflanguage{english}{at}{an der}} \=\dhbwDE \\
+		\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
+	\end{tabbing}
+
+	\vspace{0.35cm}
+
+	{\small\iflanguage{english}{written by}{von}} {\large\studentname} \\
+	\handoverdate \\
 
 	\vfill
 
 	\begin{tabbing}
 		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
 		\opt{Study}{
-			Semester:							\> \reportsemester \\
+			{\small Semester:} \> \reportsemester \\
 		}
-		Zeitraum:								\> \timerange \\
-		\opt{PA}{								
-												\> \reportstart - \reportend \\
+		{\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> \timerange \\
+		\opt{Internship}{
+			\> \reportstart - \reportend \\
 		}
-		Matrikelnummer, Kurs:			\> \matrikelno, \kurs \\
-		Partnerunternehmen: 						\> \company, \companylocation \\
-		\opt{PA}{
-			Abteilung:							\> \department \\
+		{\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
+		{\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
+		\opt{Internship}{
+			{\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
 		}
 		\opt{PA,Bachelor}{
-			Praxisbetreuer:	\> \companymanager \\
+			{\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
 		}
 		\opt{Study}{
-			Supervising tutor:					\> \prof
+			{\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
 		}
 		\opt{Bachelor}{
-			Reviewer:							\> \prof
+			{\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
 		}
 	\end{tabbing}
 }

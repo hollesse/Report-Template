@@ -1,0 +1,13 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"file_exclude_patterns":["*.aux", "*.bbl", "*.bcf", "*.lof", "*.lol", "*.lot", "*.blg", "*.log", "*.out", "*.toc", "*.xml", "*.gz", "*.zip", "*.sublime-workspace", "*.sublime-project"]
+			}
+	],
+	"settings":
+  	{
+		"TEXroot": "main.tex"
+  	}
+}

@@ -1,0 +1,161 @@
+%!TEX root = main.tex
+
+%% DEFINES A NEAT DOCUMENT DESIGN
+%% in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
+%% losely orianted to https://brandcentre.amadeus.com/Styleguide/guidelines/#page/785EE333-09BD-4469-A2102F5A25BBC894
+
+
+% page setup:
+\usepackage[a4paper]{geometry}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3.0cm}
+
+
+% fonts:
+\usepackage{fontspec}
+\setmainfont{Karma-Regular}[
+    Path = lib/fonts/,
+    Extension = .otf,
+    BoldFont = Karma-Bold
+]
+
+\setmonofont{Inconsolata-g}[
+    Path = lib/fonts/,
+    Extension = .otf
+]
+
+
+% set emph to be bold text
+\let\emph\relax
+\DeclareTextFontCommand{\emph}{\bfseries}
+
+
+% paragraph layout:
+\setlength{\parindent}{0pt}%removes initial indent
+
+
+% hyphenation:
+\hyphenpenalty=1000
+\exhyphenpenalty=1000%penalty for breaking the line at an explictly hyphenated word
+
+
+% avoid clubs and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+
+% headings:
+\KOMAoption{chapterprefix}{true}
+\addtokomafont{disposition}{\normalfont}%removes the bold face
+\renewcommand{\chapterheadstartvskip}{\vspace{0em}}
+\addtokomafont{chapterprefix}{\normalfont\normalsize\color{PrimaryAccentColor}}
+\renewcommand{\chapterheadmidvskip}{\par\nobreak\vspace{0em}}
+\setkomafont{chapter}{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand{\chapterheadendvskip}{\vspace{1.2em}}
+
+\addtokomafont{section}{\normalfont\Large\color{SecondaryAccentColor}}
+\RedeclareSectionCommand[beforeskip=2em]{section}
+\RedeclareSectionCommand[afterskip=0.7em]{section}
+
+\addtokomafont{subsection}{\normalfont\large\color{SecondaryAccentColor}}
+\RedeclareSectionCommand[beforeskip=1em]{subsection}
+\RedeclareSectionCommand[afterskip=0.1em]{subsection}
+
+
+% Headers and Footers:
+\pagestyle{scrheadings}
+\clearscrheadfoot
+
+\automark{chapter}
+\ihead{\footnotesize{\leftmark}}
+
+%remove line under header
+\ModifyLayer[
+  addvoffset=0pt,
+  contents={%
+    \normalfont\usekomafont{pageheadfoot}\usekomafont{pagehead}
+  }
+]{scrheadings.head.below.line}
+
+\refoot[\pagemark]{\pagemark}
+\rofoot[\pagemark]{\pagemark}
+
+% Table of Contents:
+\usepackage{tocloft}
+%titles:
+%...of ToC:
+\renewcommand\cfttoctitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforetoctitleskip{1em}
+\renewcommand\cftaftertoctitleskip{0.2em}
+%...of LoF:
+\renewcommand\cftloftitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforeloftitleskip{1em}
+\renewcommand\cftafterloftitleskip{0.2em}
+%...of LoT:
+\renewcommand\cftlottitlefont{\normalfont\huge\color{PrimaryAccentColor}}
+\renewcommand\cftbeforelottitleskip{1em}
+\renewcommand\cftafterlottitleskip{0.2em}
+
+
+%fonts inside the ToC:
+\renewcommand{\cftchapfont}{\scshape}
+\renewcommand{\cftsecfont}{\scshape}
+\renewcommand{\cftfigfont}{Figure }
+\renewcommand{\cfttabfont}{Table }
+%dotting between name and page number at every level in the ToC
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+
+% footnotes:
+\setlength{\footnotesep}{0.42cm}
+
+
+% item-lists:
+\renewcommand{\labelitemi}  {\color{black!70}{\adfrightarrowhead}}
+\renewcommand{\labelitemii} {\color{black!70}{\adfrightarrowhead}}
+\renewcommand{\labelitemiii}{\color{black!70}{\adfrightarrowhead}}
+
+
+% figures and captions
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}%makes the numbers of figures "absolute", without the chapter-number
+\captionsetup{justification=centering}%sets captions centered
+\usepackage[font=small,skip=7pt]{caption}
+
+\renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
+                                             %  chapter when they are listed in the List of Figures
+
+
+% code listings
+\lstdefinestyle{Xcode} {
+    basicstyle       = \ttfamily\scriptsize,
+    identifierstyle  = \color{black},
+    commentstyle     = \color{Gray},
+    keywordstyle     = \color{SupportingCherry},
+    stringstyle      = \color{SupportingDeepOrange},
+    extendedchars    = true,
+    tabsize          = 4,
+    showspaces       = false,
+    showstringspaces = false,
+    breakautoindent  = true,
+    flexiblecolumns  = true,
+    keepspaces       = true,
+    xleftmargin      = 0pt
+}
+\lstset{
+    style = Xcode,
+    backgroundcolor  = \color{TertiaryAccentColor!10!Gray!7!White},
+    caption = \lstname,
+    breaklines = false,
+    numbers = left,
+    numberstyle = \normalfont\tiny\color{Black},
+    stepnumber = 1,
+    frame = l,
+    framesep = 3.5mm,
+    framexleftmargin = 1em,
+    xleftmargin = 2.7em,
+    fillcolor = \color{TertiaryAccentColor!10!Gray!20!White},
+    rulecolor = \color{TertiaryAccentColor}
+}

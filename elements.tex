@@ -1,0 +1,57 @@
+%!TEX root = main.tex
+
+%% CUSTOM ELEMENTS
+
+% totally preventing pagebreaks inside the environement
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
+
+
+% for marking sections which are incomplete with a ToDo-Message
+\newcommand{\incompletemarker}[1]{
+    \begin{quote}
+        \colorbox{SupportingDeepOrange}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize ToDo: #1}} }
+    \end{quote} 
+}
+
+
+% pack list more tightly
+\providecommand{\tightlist}{
+    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
+}
+
+
+% create fancy tables
+\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+  #1\ignorespaces
+}
+\newenvironment{stripedtable}[3]
+	{
+		\rowcolors{2}{#1!7}{white}
+		\begin{tabular}{$#2}
+			\arrayrulecolor{#1}
+			\toprule
+			\rowstyle{\bfseries}#3\\
+			\midrule
+    }
+	{
+			\bottomrule
+		\end{tabular}
+	}
+
+\newenvironment{stripedacenttable}[2]
+	{
+		\begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
+	}
+	{
+		\end{stripedtable}
+	}
+
+
+% save some typing for footnote'd sources
+\newcommand{\footnotecite}[1]{\footnote{\emph{\cite{#1}}}}

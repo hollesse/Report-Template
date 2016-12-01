@@ -8,25 +8,31 @@
 	toc=listof
 ]{scrreprt}
 
+
 \input{packages}
 \input{setup}
-\input{macros}
-\input{environments}
+\input{layout}
+\input{elements}
+\input{content/macros}
 
+
+% set document properties
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
 
-\opt{Study}{
-	\newcommand{\reporttype}{Studienarbeit}
-	\newcommand{\keywords}{\reporttype, \dhbwDE}
-}
-\opt{PA}{
-	\newcommand{\reporttype}{Praxisbericht}
+\newcommand{\company}{\companyname{}, \companylocation}
+
+\opt{Internship}{
+	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Projektarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
+\opt{Study}{
+	\newcommand{\reporttype}{\iflanguage{english}{Study Report}{Studienarbeit}}
+	\newcommand{\keywords}{\reporttype, \dhbwDE}
+}
 \opt{Bachelor}{
-	\newcommand{\reporttype}{Bachelor Thesis}
+	\newcommand{\reporttype}{\iflanguage{english}{Bachelor Thesis}{Bachelorarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 
@@ -37,55 +43,66 @@
 	pdfkeywords={\keywords}
 }
 
+
 \overfullrule=1mm
-
-\pagestyle{scrheadings}
-\clearscrheadfoot
-\automark{chapter}
-\ohead{\rightmark}
-\refoot[\pagemark]{\pagemark}
-\rofoot[\pagemark]{\pagemark}
-
-
-
-
 
 
 \begin{document}
+	\pagenumbering{Roman}
 
-\pagenumbering{Roman}
+	% Title Page:
+	\pdfbookmark[1]{Titlepage}{titlepage}
+	\begin{titlepage} 
+		\input{titlepage}
+	\end{titlepage} 
+	 
+	\clearpage
 
-\pdfbookmark[1]{Titelseite}{titlepage}
-\begin{titlepage} 
-	\input{titlepage}
-\end{titlepage} 
- 
-\clearpage
+	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
+           % text inside the page-margins
 
-\input{content/declaration}
+	\begin{absolutelynopagebreak}
+		% Declaration of Honesty:
+		\input{content/declaration}
 
-\input{abstract}
+		% opt.: Lock Flag (in german)
+		\ifcsname activateSperrvermerk\endcsname
+			\vspace{7cm}
+			\input{Sperrvermerk}
+		\fi
+	\end{absolutelynopagebreak}
+	\pagebreak
 
-\renewcommand{\contentsname}{Inhaltsverzeichnis}
-    \setcounter{tocdepth}{3}
-    \tableofcontents
-    \clearpage
+	% Abstracts:
+	\begin{absolutelynopagebreak}
+		\begin{german}
+			\input{content/abstractDE}
+		\end{german}
+		\vspace{0.7cm}
+		\input{content/abstractEN}
+	\end{absolutelynopagebreak}
+	\pagebreak
 
-\input{content/indexes}
-\setcounter{table}{0}
-\setcounter{figure}{0}
+	% Table of ...:
+	\setcounter{tocdepth}{2}%define sthe deoth below chapters
+	\tableofcontents
+	\clearpage
 
+	\input{content/indexes}
+	\setcounter{table}{0}
+	\setcounter{figure}{0}
 
+	% Main Content:
+	\pagenumbering{arabic}
 
-\pagenumbering{arabic}
-\onehalfspacing
-\include{content/content}
+	\include{content/content}
 
-\pagenumbering{roman}
+	% Bibliography and Appendix:
+	\pagenumbering{roman}
 
-\printbibliography
+	\printbibliography
 
-\appendix
-\include{content/appendix}
+	\appendix
+	\include{content/appendix}
 
 \end{document}
