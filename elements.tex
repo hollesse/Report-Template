@@ -4,7 +4,7 @@
 
 % totally preventing pagebreaks inside the environement
 \newenvironment{absolutelynopagebreak}
-  {\pagebreak\par\nobreak\vfil\penalty0\vfilneg
+  {\par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup}
   {\par\xdef\tpd{\the\prevdepth}\egroup
    \prevdepth=\tpd}
