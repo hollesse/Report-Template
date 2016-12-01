@@ -7,67 +7,59 @@
 	\includegraphics[height=1.4cm]{logos/company} \\
 
 	\vspace{3.5cm}
-	{\huge\textbf{\reporttitle}} \\
+	{\color{PrimaryAccentColor}\huge\reporttitle} \\
 
-	\opt{PA,Study}{
-		\reporttype \\
+	{\color{SecondaryAccentColor}\reporttype} \\
 
-		\vspace{2.1cm}
-
-		\iflanguage{english}{in the Course of Studies}{des Studienganges} \textbf{\studiengang}
-		\begin{tabbing}
-			\iflanguage{english}{at}{an der} \=\textbf{\dhbwDE} \\
-			\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
-		\end{tabbing}
-
-		\iflanguage{english}{written by}{von} \textbf{\studentname} \\
-
-		\handoverdate \\
-	}
+	\vspace{1.5cm}
 
 	\opt{Bachelor}{
-		\textbf{\reporttype} \\
-		\iflanguage{english}{for the exam as}{für die Prüfung zum} \\
-		{\large\textbf{\academicdegree}} \\
-		\iflanguage{english}{in}{des Studienganges} \textbf{\studiengang} \\
+		{\small\iflanguage{english}{for the exam as}{für die Prüfung zum}} \\
 
-		\vspace{0.35cm}
-		\begin{tabbing}
-			\iflanguage{english}{at}{an der} \=\textbf{\dhbwDE} \\
-			\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
-		\end{tabbing}
+		\vspace{-0.3cm}
 
-		\vspace{0.35cm}
-		\iflanguage{english}{written by}{von} {\large\textbf \studentname} \\
+		{\color{TertiaryAccentColor}{\Large\academicdegree}} \\
 
-		\vspace{0.35cm}
-		\handoverdate \\
+		\vspace{-0.3cm}
 	}
+
+	{\small\iflanguage{english}{in}{des Studienganges}} \studiengang
+
+	\vspace{0.07cm}
+	\begin{tabbing}
+		{\small\iflanguage{english}{at}{an der}} \=\dhbwDE \\
+		\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
+	\end{tabbing}
+
+	\vspace{0.35cm}
+
+	{\small\iflanguage{english}{written by}{von}} {\large\studentname} \\
+	\handoverdate \\
 
 	\vfill
 
 	\begin{tabbing}
 		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
 		\opt{Study}{
-			Semester: \> \reportsemester \\
+			{\small Semester:} \> \reportsemester \\
 		}
-		\iflanguage{english}{Duration}{Bearbeitungszeitraum}: \> \timerange \\
+		{\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> \timerange \\
 		\opt{PA}{
 			\> \reportstart - \reportend \\
 		}
-		\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}: \> \matrikelno, \kurs \\
-		\iflanguage{english}{Partner company}{Ausbildungsfirma}: \> \company \\
+		{\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
+		{\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
 		\opt{PA}{
-			\iflanguage{english}{Department}{Abteilung}: \> \department \\
+			{\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
 		}
 		\opt{PA,Bachelor}{
-			\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:	\> \companymanager \\
+			{\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
 		}
 		\opt{Study}{
-			\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}: \> \prof
+			{\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
 		}
 		\opt{Bachelor}{
-			\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}: \> \prof
+			{\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
 		}
 	\end{tabbing}
 }
