@@ -2,11 +2,6 @@
 
 %% CUSTOM ELEMENTS
 
-
-% preventing pagebreaks at the beginning of a new chapter
-\newcommand{\chapteronsamepage}[1]{{\let\clearpage\relax \vspace{123pt} \chapter{#1}}}
-
-
 % totally preventing pagebreaks inside the environement
 \newenvironment{absolutelynopagebreak}
   {\pagebreak\par\nobreak\vfil\penalty0\vfilneg
