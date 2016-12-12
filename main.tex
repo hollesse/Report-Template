@@ -25,7 +25,7 @@
 \newcommand{\company}{\companyname{}, \companylocation}
 
 \opt{Internship}{
-	\newcommand{\reporttype}{\iflanguage{english}{Internship Report \reportmodule}{Praxisarbeit \reportmodule}}
+	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Praxisarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Study}{
@@ -66,10 +66,10 @@
 		% Declaration of Honesty:
 		\input{content/declaration}
 
-		% opt.: Lock Flag (in german)
-		\ifcsname activateSperrvermerk\endcsname
+		% opt.: Confidentiality Clause
+		\ifcsname activateConfidentialityClause\endcsname
 			\vspace{7cm}
-			\input{Sperrvermerk}
+			\input{confidentiality}
 		\fi
 	\end{absolutelynopagebreak}
 	\pagebreak
