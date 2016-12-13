@@ -17,7 +17,7 @@
 \input{content/macros}
 
 
-% set document properties
+% set document properties:
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
@@ -51,7 +51,7 @@
 \begin{document}
     \pagenumbering{Roman}
 
-    % Title Page:
+    % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
     \begin{titlepage} 
         \input{titlepage}
@@ -66,7 +66,7 @@
         % Declaration of Honesty:
         \input{declaration}
 
-        % opt.: Confidentiality Clause
+        % opt.: confidentiality clause
         \ifcsname activateConfidentialityClause\endcsname
             \vspace{7cm}
             \input{confidentiality}
@@ -74,7 +74,7 @@
     \end{absolutelynopagebreak}
     \pagebreak
 
-    % Abstracts:
+    % abstracts:
     \begin{absolutelynopagebreak}
         \input{abstracts}
     \end{absolutelynopagebreak}
@@ -89,7 +89,7 @@
     \setcounter{table}{0}
     \setcounter{figure}{0}
 
-    % Main Content:
+    % main content:
     \pagenumbering{arabic}
 
     \include{content/content}

@@ -1,5 +1,6 @@
 %!TEX root = main.tex
 %% DEFINES A NEAT DOCUMENT DESIGN
+
 %% in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
 %% losely orianted to https://brandcentre.amadeus.com/Styleguide/guidelines/#page/785EE333-09BD-4469-A2102F5A25BBC894
 
@@ -23,7 +24,7 @@
 ]
 
 
-% set emph to be bold text
+% set \emph to be bold text:
 \let\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries}
 
@@ -37,7 +38,7 @@
 \exhyphenpenalty=1000%penalty for breaking the line at an explictly hyphenated word
 
 
-% avoid clubs and widows
+% avoid clubs and widows:
 \clubpenalty = 10000
 \widowpenalty = 10000
 \displaywidowpenalty = 10000
@@ -61,14 +62,14 @@
 \RedeclareSectionCommand[afterskip=0.1em]{subsection}
 
 
-% Headers and Footers:
+% headers and footers:
 \pagestyle{scrheadings}
 \clearscrheadfoot
 
 \automark{chapter}
 \ihead{\footnotesize{\leftmark}}
 
-%remove line under header
+%remove line under header:
 \ModifyLayer[
   addvoffset=0pt,
   contents={%
@@ -84,9 +85,9 @@
 \usepackage{tocloft}
 
 \usepackage[nottoc]{tocbibind}% adds entries for the LoF, LoT and Bibliography to the ToC
-                              % but not the ToC itself
+                              % (but not for the ToC itself)
 
-%formating the tiltes of the...
+%formating the titles of the...
 %...ToC:
 \renewcommand\cfttoctitlefont{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand\cftbeforetoctitleskip{1em}
@@ -106,7 +107,7 @@
 \renewcommand{\cftfigfont}{Figure }
 \renewcommand{\cfttabfont}{Table }
 
-%dotting between name and page number at every level in the ToC
+%dotting between name and page number at every level in the ToC:
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}

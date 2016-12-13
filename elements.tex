@@ -1,7 +1,7 @@
 %!TEX root = main.tex
 %% CUSTOM ELEMENTS
 
-% totally preventing pagebreaks inside the environement
+% totally preventing pagebreaks inside this environement
 \newenvironment{absolutelynopagebreak}
   {\par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup}
@@ -17,7 +17,7 @@
 }
 
 
-% pack list more tightly
+% pack entries in a list more tightly together
 \providecommand{\tightlist}{
     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
@@ -52,5 +52,5 @@
     }
 
 
-% save some typing for footnote'd sources
+% put sources more easily into your footnotes
 \newcommand{\footnotecite}[1]{\footnote{\emph{\cite{#1}}}}
