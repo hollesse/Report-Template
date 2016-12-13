@@ -30,26 +30,26 @@
   #1\ignorespaces
 }
 \newenvironment{stripedtable}[3]
-	{
-		\rowcolors{2}{#1!7}{white}
-		\begin{tabular}{$#2}
-			\arrayrulecolor{#1}
-			\toprule
-			\rowstyle{\bfseries}#3\\
-			\midrule
+    {
+        \rowcolors{2}{#1!7}{white}
+        \begin{tabular}{$#2}
+            \arrayrulecolor{#1}
+            \toprule
+            \rowstyle{\bfseries}#3\\
+            \midrule
     }
-	{
-			\bottomrule
-		\end{tabular}
-	}
+    {
+            \bottomrule
+        \end{tabular}
+    }
 
 \newenvironment{stripedacenttable}[2]
-	{
-		\begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
-	}
-	{
-		\end{stripedtable}
-	}
+    {
+        \begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
+    }
+    {
+        \end{stripedtable}
+    }
 
 
 % save some typing for footnote'd sources
