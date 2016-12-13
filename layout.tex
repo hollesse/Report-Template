@@ -79,28 +79,33 @@
 \refoot[\pagemark]{\pagemark}
 \rofoot[\pagemark]{\pagemark}
 
+
 % Table of Contents:
 \usepackage{tocloft}
-%titles:
-%...of ToC:
+
+\usepackage[nottoc]{tocbibind}% adds entries for the LoF, LoT and Bibliography to the ToC
+                              % but not the ToC itself
+
+%formating the tiltes of the...
+%...ToC:
 \renewcommand\cfttoctitlefont{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand\cftbeforetoctitleskip{1em}
 \renewcommand\cftaftertoctitleskip{0.2em}
-%...of LoF:
+%...LoF:
 \renewcommand\cftloftitlefont{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand\cftbeforeloftitleskip{1em}
 \renewcommand\cftafterloftitleskip{0.2em}
-%...of LoT:
+%...LoT:
 \renewcommand\cftlottitlefont{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand\cftbeforelottitleskip{1em}
 \renewcommand\cftafterlottitleskip{0.2em}
-
 
 %fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
 \renewcommand{\cftfigfont}{Figure }
 \renewcommand{\cfttabfont}{Table }
+
 %dotting between name and page number at every level in the ToC
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
