@@ -9,6 +9,7 @@
 ]{scrreprt}
 
 
+
 \input{packages}
 \input{setup}
 \input{layout}
@@ -24,7 +25,7 @@
 \newcommand{\company}{\companyname{}, \companylocation}
 
 \opt{Internship}{
-	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Projektarbeit}}
+	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Praxisarbeit}}
 	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Study}{
@@ -65,21 +66,17 @@
 		% Declaration of Honesty:
 		\input{content/declaration}
 
-		% opt.: Lock Flag (in german)
-		\ifcsname activateSperrvermerk\endcsname
+		% opt.: Confidentiality Clause
+		\ifcsname activateConfidentialityClause\endcsname
 			\vspace{7cm}
-			\input{Sperrvermerk}
+			\input{confidentiality}
 		\fi
 	\end{absolutelynopagebreak}
 	\pagebreak
 
 	% Abstracts:
 	\begin{absolutelynopagebreak}
-		\begin{german}
-			\input{content/abstractDE}
-		\end{german}
-		\vspace{0.7cm}
-		\input{content/abstractEN}
+		\input{abstract}
 	\end{absolutelynopagebreak}
 	\pagebreak
 
