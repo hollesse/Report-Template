@@ -47,8 +47,10 @@
 
 \overfullrule=1mm
 
-
 \begin{document}
+    \sloppy%encourages LaTeX to be more flexible about word spacing
+           % helps to keep text better inside the page margins
+    
     \pagenumbering{Roman}
 
     % title page:
@@ -57,12 +59,9 @@
         \input{titlepage}
     \end{titlepage} 
      
-    \clearpage
+    \clearpage
 
-    \sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
-           % text inside the page-margins
-
-    \begin{absolutelynopagebreak}
+    \begin{absolutelynopagebreak}
         % Declaration of Honesty:
         \input{declaration}
 
