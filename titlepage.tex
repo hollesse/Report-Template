@@ -8,7 +8,7 @@
     \includegraphics[height=1.4cm]{logos/company} \\
 
     \vspace{3.5cm}
-    {\color{PrimaryAccentColor}\huge\reporttitle} \\
+    {\color{PrimaryAccentColor}\huge{\sloppy\reporttitle}} \\
 
     \opt{Bachelor, Study}{
         {\color{SecondaryAccentColor}\reporttype} \\
@@ -40,7 +40,7 @@
 
     \vspace{0.35cm}
 
-    {\small\iflanguage{english}{written by}{von}} {\large\studentname} \\
+    {\small\iflanguage{english}{written by}{von}} {\large{\sloppy\studentname}} \\
     \handoverdate \\
 
     \vfill
@@ -55,18 +55,18 @@
             \> \reportstart - \reportend \\
         }
         {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
-        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
+        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> {\sloppy\company} \\
         \opt{Internship}{
-            {\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
+            {\small\iflanguage{english}{Department}{Abteilung}:} \> {\sloppy\department} \\
         }
         \opt{Internship,Bachelor}{
-            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
+            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> {\sloppy\companymanager} \\
         }
         \opt{Study}{
-            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
+            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> {\sloppy\prof}
         }
         \opt{Bachelor}{
-            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
+            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> {\sloppy\prof}
         }
     \end{tabbing}
 }
