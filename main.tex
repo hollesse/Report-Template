@@ -56,7 +56,8 @@
     % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
     \begin{titlepage} 
-        \input{titlepage}
+    \opt{CenterTitlepage}{\input{titlepagecenter}}
+    \opt{LeftTitlepage}{\input{titlepage}}
     \end{titlepage} 
 
     \begin{absolutelynopagebreak}
