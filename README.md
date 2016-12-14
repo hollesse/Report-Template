@@ -2,6 +2,7 @@
 Please use XeLaTeX or LuaLaTex for building.
 
 
+
 ## Features
 - all formal layout-properties of the document are in accordance to the requirements given by the Technical Faculty of DHBW Mannheim.
 - Titlepages for Internship Reports, Study Reports and Bachelor Thesis in accordance to these requirements included
@@ -13,6 +14,7 @@ Please use XeLaTeX or LuaLaTex for building.
 <img alt="Coloring" src="http://i.imgur.com/TGjZShi.png" width="70%">
 
 - Easy switching between the (default) *english* and *german* version of the document
+
 
 
 ## How to Setup and Use
@@ -28,71 +30,77 @@ Please use XeLaTeX or LuaLaTex for building.
     - you can then use them easily by just referencing `\includegraphics{asdf}` if you saved your file at `./resources/asdf.png`
 
 
+
 ## Included Custom Elements for Ease of Use
+**Note:** `<asdf>` inside the general code denotes a placeholder
+
+
 #### striped Tables
 ```Latex
 \begin{stripedacenttable}
-    {formating}
-    {Headings-Content}
-    row definitions
+    {<caption>}
+    {\label{tab:<label>}}
+    {<formating>}
+    {<Headings-Content>}
+    <row definitions>
 \end{stripedacenttable}
 
 \begin{stripedtable}
-    {coloring}
-    {formating}
-    {Headings-Content}
-    row definitions
+    {<caption>}
+    {\label{tab:<label>}}
+    {<coloring>}
+    {<formating>}
+    {<Headings-Content>}
+    <row definitions>
 \end{stripedtable}
 ```
 
+- *<label>* needs to be enclosed inside `\label` to keep the auto-completion functionality of your editor working correctly
 - formating should have the form `x^x^x^...` where `x` specifies the alignment for the column
     + possible aligments: `l`: left-aligned , `c`: centered , `r`: right-aligned
 
 > *Example (with captions):*
 > ```Latex
-\begin{table}[htbp]
-    \begin{stripedacenttable}
-        {c^l^l}
-        {Quarter & asdf & foobar}
-        prev. Year & 42 & 17 \\
-        Q1 & -3 & -7 \\
-        Q2 & +7 & -1 \\
-        Q3 & -4 & +12 \\
-        Q4 & +2 & +2 \\
-    \end{stripedacenttable}
-    \caption{A plain but nice looking table}
-    \label{tab:ex1}
-\end{table}
+\begin{stripedacenttable}
+    {A plain but nice looking table}
+    {\label{tab:ex1}}
+    {c^l^l}
+    {Quarter & asdf & foobar}
+    prev. Year & 42 & 17 \\
+    Q1 & -3 & -7 \\
+    Q2 & +7 & -1 \\
+    Q3 & -4 & +12 \\
+    Q4 & +2 & +2 \\
+\end{stripedacenttable}
 
-> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
+>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
 
-> \begin{table}[htbp]
-    \begin{stripedtable}
-        {Green}
-        {c^l^l}
-        {Quarter & asdf & foobar}
-        prev. Year & 42 & 17 \\
-        Q1 & -3 & -7 \\
-        Q2 & +7 & -1 \\
-        Q3 & -4 & +12 \\
-        Q4 & +2 & +2 \\
-    \end{stripedtable}
-    \caption{A colorful, nice looking table}
-    \label{tab:ex2}
-\end{table}
+>\begin{stripedtable}
+    {A colorful, nice looking table}
+    {\label{tab:ex1}}
+    {Green}
+    {c^l^l}
+    {Quarter & asdf & foobar}
+    prev. Year & 42 & 17 \\
+    Q1 & -3 & -7 \\
+    Q2 & +7 & -1 \\
+    Q3 & -4 & +12 \\
+    Q4 & +2 & +2 \\
+\end{stripedtable}
 ```
 
-> <img alt="Tables" src="http://i.imgur.com/A1EaX51.png" width="45%">
+> <img alt="Tables" src="http://i.imgur.com/8FzhRYr.png" width="65%">
+
 
 #### Code Listings
 ```Latex
 \begin{lstlisting}[
-    caption={description of your program}
-    \label{lst:name},
+    caption={<description of your program>}
+    \label{lst:<label>},
     captionpos=b,
-    language=language-name
+    language=<language-name>
 ]
-your code
+<your code>
 \end{lstlisting}
 ```
 
@@ -114,20 +122,32 @@ print(hi)
 
 > <img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
 
+
 #### Citations in the Footnotes
 ````Latex
-\footnotecite{source}
+\footnotecite{<source-reference>}
 ```
+
+
+#### Mark Incomplete Things You Need To Do
+````Latex
+\incompletemarker{<note>}
+```
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="40%">
+
 
 #### Prevent Pagebreaks absolutely, definitively
 ```Latex
 \begin{absolutelynopagebreak}
-    content
+    <content>
 \end{absolutelynopagebreak}
 ```
 
 
+
 ---
+
 
 
 ## Contributing

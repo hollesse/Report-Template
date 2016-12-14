@@ -26,29 +26,40 @@
 % create fancy tables
 \newcolumntype{$}{>{\global\let\currentrowstyle\relax}}
 \newcolumntype{^}{>{\currentrowstyle}}
+
 \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
   #1\ignorespaces
 }
-\newenvironment{stripedtable}[3]
+
+\newcommand\stripedtablecaptionsave{} % makes sure \stripedtablecaptionsave is not in use
+\newcommand\stripedtablelabelsave{} % makes sure \stripedtablecaptionsave is not in use
+\newenvironment{stripedtable}[5]
     {
-        \begin{center}
-            \rowcolors{2}{#1!7}{white}
-            \begin{tabular}{$#2}
-                \arrayrulecolor{#1}
-                \toprule
-                \rowstyle{\bfseries}#3\\
-                \midrule
+        \def\stripedtablecaptionsave{#1}%copies the value of the arguments for save use later
+        \def\stripedtablelabelsave{#2}%copies the value of the arguments for save use later
+
+        \begin{table}[htbp]
+            \begin{center}
+                \rowcolors{2}{#3!7}{white}
+                \begin{tabular}{$#4}
+                    \arrayrulecolor{#3}
+                    \toprule
+                    \rowstyle{\bfseries}#5\\
+                    \midrule
     }
     {
-                \bottomrule
-            \end{tabular}
-        \end{center}
-        \vspace{-0.5cm}
+                    \bottomrule
+                \end{tabular}
+            \end{center}
+            \vspace{-0.5cm}
+            \caption{\stripedtablecaptionsave}
+            \stripedtablelabelsave
+        \end{table}
     }
 
-\newenvironment{stripedacenttable}[2]
+\newenvironment{stripedacenttable}[4]
     {
-        \begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
+        \begin{stripedtable}{#1}{#2}{TertiaryAccentColor!15!Gray!70!White}{#3}{#4}
     }
     {
         \end{stripedtable}
