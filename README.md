@@ -2,6 +2,7 @@
 Please use XeLaTeX or LuaLaTex for building.
 
 
+
 ## Features
 - all formal layout-properties of the document are in accordance to the requirements given by the Technical Faculty of DHBW Mannheim.
 - Titlepages for Internship Reports, Study Reports and Bachelor Thesis in accordance to these requirements included
@@ -13,6 +14,7 @@ Please use XeLaTeX or LuaLaTex for building.
 <img alt="Coloring" src="http://i.imgur.com/TGjZShi.png" width="70%">
 
 - Easy switching between the (default) *english* and *german* version of the document
+
 
 
 ## How to Setup and Use
@@ -28,8 +30,10 @@ Please use XeLaTeX or LuaLaTex for building.
     - you can then use them easily by just referencing `\includegraphics{asdf}` if you saved your file at `./resources/asdf.png`
 
 
+
 ## Included Custom Elements for Ease of Use
 **Note:** `<asdf>` inside the general code denotes a placeholder
+
 
 #### striped Tables
 ```Latex
@@ -87,6 +91,7 @@ Please use XeLaTeX or LuaLaTex for building.
 
 > <img alt="Tables" src="http://i.imgur.com/8FzhRYr.png" width="65%">
 
+
 #### Code Listings
 ```Latex
 \begin{lstlisting}[
@@ -117,10 +122,20 @@ print(hi)
 
 > <img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
 
+
 #### Citations in the Footnotes
 ````Latex
 \footnotecite{<source-reference>}
 ```
+
+
+#### Mark Incomplete Things You Need To Do
+````Latex
+\incompletemarker{<note>}
+```
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="50%">
+
 
 #### Prevent Pagebreaks absolutely, definitively
 ```Latex
@@ -130,7 +145,9 @@ print(hi)
 ```
 
 
+
 ---
+
 
 
 ## Contributing
