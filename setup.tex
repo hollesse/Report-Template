@@ -10,7 +10,9 @@
     % Study,
     % Bachelor,
     CenterTitlepage,
-    %LeftTitlepage
+    %LeftTitlepage,
+    DbSystelTheme,
+    %DefaultTheme
 ]{optional}
 
 
@@ -69,9 +71,11 @@
     \newcommand{\prof}{Prof. Dr. ...}
 }
 
+% PrimaryAccentColor DB Systel Gelbgruen or Deutsche Bahn Rot
+\opt{DbSystelTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{120, 190, 20}}
+\opt{DefaultTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{240, 20, 20}}
 
-% Deutsche Bahn Rot, Dunkelgrau, Grau
-\definecolor{PrimaryAccentColor}  	{RGB}{240, 20, 20}
+% Deutsche Bahn Dunkelgrau & Grau
 \definecolor{SecondaryAccentColor}	{RGB}{100, 105, 115}
 \definecolor{TertiaryAccentColor} 	{RGB}{135, 140, 150}
 
