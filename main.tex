@@ -1,8 +1,8 @@
 \documentclass[
-    fontsize=12pt,
     a4paper,
+    fontsize=12pt,
     headinclude=on,
-    headsepline=on,
+    parskip=half,
     bibliography=totocnumbered,
     abstract=on,
     toc=listof
@@ -79,18 +79,23 @@
     \pagebreak
 
     % Table of ...:
-    \setcounter{tocdepth}{2}%define sthe deoth below chapters
-    \tableofcontents
-    \clearpage
+    \begin{spacing}{1.1}
+	    \setcounter{tocdepth}{2}%define sthe deoth below chapters
+	    \tableofcontents
+	    \clearpage
 
-    \input{indexes}
-    \setcounter{table}{0}
-    \setcounter{figure}{0}
+	    \input{indexes}
+    \end{spacing}
 
     % main content:
     \pagenumbering{arabic}
 
-    \include{content/content}
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
+
+    \begin{spacing}{1.5}
+    	\include{content/content}
+    \end{spacing}
 
     % Bibliography and Appendix:
     \pagenumbering{roman}
