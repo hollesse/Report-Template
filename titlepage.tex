@@ -20,7 +20,10 @@
 }
 
     \vspace{3.5cm}
+    \opt{TitlepageCenter}{\begin{center}}
+    \begin{doublespace} 
     {\color{PrimaryAccentColor}\huge\reporttitle} \\
+    \end{doublespace}
 
     \opt{Bachelor, Study}{
         {\color{SecondaryAccentColor}\reporttype} \\
@@ -45,21 +48,18 @@
     {\small\iflanguage{english}{in}{des Studienganges}} \studiengang
 
     \vspace{0.07cm}
-    \begin{tabbing}
-        {\small\iflanguage{english}{at}{an der}} \=\dhbwDE \\
-        \>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
-    \end{tabbing}
-
+        {\small\iflanguage{english}{at \dhbwEN}{an der \dhbwDE}}  \\
+ 
     \vspace{0.35cm}
 
-    {\small\iflanguage{english}{written by}{von}} {\large\studentname} \\
-    \vspace{0.07cm}
-    \handoverdate \\
+    {\small\iflanguage{english}{written by}{von}} {\large\studentname}\\
+    \vspace{0.07cm}\handoverdate \\
 
     \vfill
+    \opt{TitlepageCenter}{\end{center}}
 
     \begin{tabbing}
-       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
         \opt{Study}{
             {\small Semester:} \> \reportsemester \\
         }
