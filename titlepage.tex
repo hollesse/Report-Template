@@ -7,15 +7,19 @@
     \quad\rule{0.5pt}{1.4cm}\quad
     \includegraphics[height=1.4cm]{logos/company} \\
 
+    \doublespacing
     \vspace{3.5cm}
-    {\color{PrimaryAccentColor}\huge{\sloppy\reporttitle}} \\
+    {\color{PrimaryAccentColor}\huge{\emergencystretch=.3em \reporttitle}} \\
+
+    \singlespacing
 
     \opt{Bachelor, Study}{
         {\color{SecondaryAccentColor}\reporttype} \\
     }
-
     \opt{Internship}{
-        {\color{SecondaryAccentColor}\reporttype~\reportmodule} \\
+        {\color{SecondaryAccentColor}\reporttype~{
+            \small\iflanguage{english}{for the module}{f{\"u}r das Modul}~\reportmodule
+        }}\\
     }
 
     \vspace{1.5cm}
@@ -40,7 +44,7 @@
 
     \vspace{0.35cm}
 
-    {\small\iflanguage{english}{written by}{von}} {\large{\sloppy\studentname}} \\
+    {\small\iflanguage{english}{written by}{von}} {\large{\emergencystretch=.3em \studentname}} \\
     \handoverdate \\
 
     \vfill
@@ -55,18 +59,18 @@
             \> \reportstart - \reportend \\
         }
         {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
-        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> {\sloppy\company} \\
+        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> {\emergencystretch=.3em \company} \\
         \opt{Internship}{
-            {\small\iflanguage{english}{Department}{Abteilung}:} \> {\sloppy\department} \\
+            {\small\iflanguage{english}{Department}{Abteilung}:} \> {\emergencystretch=.3em \department} \\
         }
         \opt{Internship,Bachelor}{
-            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> {\sloppy\companymanager} \\
+            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> {\emergencystretch=.3em \companymanager} \\
         }
         \opt{Study}{
-            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> {\sloppy\prof}
+            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> {\emergencystretch=.3em \prof}
         }
         \opt{Bachelor}{
-            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> {\sloppy\prof}
+            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> {\emergencystretch=.3em \prof}
         }
     \end{tabbing}
 }
