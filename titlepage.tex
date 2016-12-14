@@ -57,7 +57,11 @@
         {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
         {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
         \opt{Internship}{
-            {\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
+	 {\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
+	 % opt.: long departmentname
+           \ifcsname activatelongdepartment\endcsname
+           \>\longdepartment\\
+           \fi 
         }
         \opt{Internship,Bachelor}{
             {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
