@@ -51,7 +51,7 @@ Please use XeLaTeX or LuaLaTex for building.
     {<coloring>}
     {<formating>}
     {<Headings-Content>}
-    <<row definitions>>
+    <row definitions>
 \end{stripedtable}
 ```
 
@@ -134,7 +134,7 @@ print(hi)
 \incompletemarker{<note>}
 ```
 
-> <img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="50%">
+> <img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="40%">
 
 
 #### Prevent Pagebreaks absolutely, definitively
