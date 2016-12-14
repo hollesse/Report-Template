@@ -29,70 +29,73 @@ Please use XeLaTeX or LuaLaTex for building.
 
 
 ## Included Custom Elements for Ease of Use
+**Note:** `<asdf>` inside the general code denotes a placeholder
+
 #### striped Tables
 ```Latex
 \begin{stripedacenttable}
-    {formating}
-    {Headings-Content}
-    row definitions
+    {<caption>}
+    {\label{tab:<label>}}
+    {<formating>}
+    {<Headings-Content>}
+    <row definitions>
 \end{stripedacenttable}
 
 \begin{stripedtable}
-    {coloring}
-    {formating}
-    {Headings-Content}
-    row definitions
+    {<caption>}
+    {\label{tab:<label>}}
+    {<coloring>}
+    {<formating>}
+    {<Headings-Content>}
+    <<row definitions>>
 \end{stripedtable}
 ```
 
+- *<label>* needs to be enclosed inside `\label` to keep the auto-completion functionality of your editor working correctly
 - formating should have the form `x^x^x^...` where `x` specifies the alignment for the column
     + possible aligments: `l`: left-aligned , `c`: centered , `r`: right-aligned
 
 > *Example (with captions):*
 > ```Latex
-\begin{table}[htbp]
-    \begin{stripedacenttable}
-        {c^l^l}
-        {Quarter & asdf & foobar}
-        prev. Year & 42 & 17 \\
-        Q1 & -3 & -7 \\
-        Q2 & +7 & -1 \\
-        Q3 & -4 & +12 \\
-        Q4 & +2 & +2 \\
-    \end{stripedacenttable}
-    \caption{A plain but nice looking table}
-    \label{tab:ex1}
-\end{table}
+\begin{stripedacenttable}
+    {A plain but nice looking table}
+    {\label{tab:ex1}}
+    {c^l^l}
+    {Quarter & asdf & foobar}
+    prev. Year & 42 & 17 \\
+    Q1 & -3 & -7 \\
+    Q2 & +7 & -1 \\
+    Q3 & -4 & +12 \\
+    Q4 & +2 & +2 \\
+\end{stripedacenttable}
 
-> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
+>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
 
-> \begin{table}[htbp]
-    \begin{stripedtable}
-        {Green}
-        {c^l^l}
-        {Quarter & asdf & foobar}
-        prev. Year & 42 & 17 \\
-        Q1 & -3 & -7 \\
-        Q2 & +7 & -1 \\
-        Q3 & -4 & +12 \\
-        Q4 & +2 & +2 \\
-    \end{stripedtable}
-    \caption{A colorful, nice looking table}
-    \label{tab:ex2}
-\end{table}
+>\begin{stripedtable}
+    {A colorful, nice looking table}
+    {\label{tab:ex1}}
+    {Green}
+    {c^l^l}
+    {Quarter & asdf & foobar}
+    prev. Year & 42 & 17 \\
+    Q1 & -3 & -7 \\
+    Q2 & +7 & -1 \\
+    Q3 & -4 & +12 \\
+    Q4 & +2 & +2 \\
+\end{stripedtable}
 ```
 
-> <img alt="Tables" src="http://i.imgur.com/A1EaX51.png" width="45%">
+> <img alt="Tables" src="http://i.imgur.com/8FzhRYr.png" width="65%">
 
 #### Code Listings
 ```Latex
 \begin{lstlisting}[
-    caption={description of your program}
-    \label{lst:name},
+    caption={<description of your program>}
+    \label{lst:<label>},
     captionpos=b,
-    language=language-name
+    language=<language-name>
 ]
-your code
+<your code>
 \end{lstlisting}
 ```
 
@@ -116,13 +119,13 @@ print(hi)
 
 #### Citations in the Footnotes
 ````Latex
-\footnotecite{source}
+\footnotecite{<source-reference>}
 ```
 
 #### Prevent Pagebreaks absolutely, definitively
 ```Latex
 \begin{absolutelynopagebreak}
-    content
+    <content>
 \end{absolutelynopagebreak}
 ```
 
