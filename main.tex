@@ -1,11 +1,11 @@
 \documentclass[
-	fontsize=12pt,
-	a4paper,
-	headinclude=on,
-	headsepline=on,
-	bibliography=totocnumbered,
-	abstract=on,
-	toc=listof
+    fontsize=12pt,
+    a4paper,
+    headinclude=on,
+    headsepline=on,
+    bibliography=totocnumbered,
+    abstract=on,
+    toc=listof
 ]{scrreprt}
 
 
@@ -17,7 +17,7 @@
 \input{content/macros}
 
 
-% set document properties
+% set document properties:
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
@@ -25,23 +25,23 @@
 \newcommand{\company}{\companyname{}, \companylocation}
 
 \opt{Internship}{
-	\newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Praxisarbeit}}
-	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
+    \newcommand{\reporttype}{\iflanguage{english}{Internship Report}{Praxisarbeit}}
+    \newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 \opt{Study}{
-	\newcommand{\reporttype}{\iflanguage{english}{Study Report}{Studienarbeit}}
-	\newcommand{\keywords}{\reporttype, \dhbwDE}
+    \newcommand{\reporttype}{\iflanguage{english}{Study Report}{Studienarbeit}}
+    \newcommand{\keywords}{\reporttype, \dhbwDE}
 }
 \opt{Bachelor}{
-	\newcommand{\reporttype}{\iflanguage{english}{Bachelor Thesis}{Bachelorarbeit}}
-	\newcommand{\keywords}{\reporttype, \dhbwDE, \company}
+    \newcommand{\reporttype}{\iflanguage{english}{Bachelor Thesis}{Bachelorarbeit}}
+    \newcommand{\keywords}{\reporttype, \dhbwDE, \company}
 }
 
 \hypersetup{
-	pdftitle={\reporttype\ - \reporttitle\ - \studentname},
-	pdfauthor={\studentname},
-	pdfsubject={\reporttitle},
-	pdfkeywords={\keywords}
+    pdftitle={\reporttype\ - \reporttitle\ - \studentname},
+    pdfauthor={\studentname},
+    pdfsubject={\reporttitle},
+    pdfkeywords={\keywords}
 }
 
 
@@ -49,57 +49,57 @@
 
 
 \begin{document}
-	\pagenumbering{Roman}
+    \pagenumbering{Roman}
 
-	% Title Page:
-	\pdfbookmark[1]{Titlepage}{titlepage}
-	\begin{titlepage} 
-		\input{titlepage}
-	\end{titlepage} 
-	 
-	\clearpage
+    % title page:
+    \pdfbookmark[1]{Titlepage}{titlepage}
+    \begin{titlepage} 
+        \input{titlepage}
+    \end{titlepage} 
+     
+    \clearpage
 
-	\sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
+    \sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
            % text inside the page-margins
 
-	\begin{absolutelynopagebreak}
-		% Declaration of Honesty:
-		\input{content/declaration}
+    \begin{absolutelynopagebreak}
+        % Declaration of Honesty:
+        \input{declaration}
 
-		% opt.: Confidentiality Clause
-		\ifcsname activateConfidentialityClause\endcsname
-			\vspace{7cm}
-			\input{confidentiality}
-		\fi
-	\end{absolutelynopagebreak}
-	\pagebreak
+        % opt.: confidentiality clause
+        \ifcsname activateconfidentialityclause\endcsname
+            \vspace{7cm}
+            \input{confidentiality}
+        \fi
+    \end{absolutelynopagebreak}
+    \pagebreak
 
-	% Abstracts:
-	\begin{absolutelynopagebreak}
-		\input{abstract}
-	\end{absolutelynopagebreak}
-	\pagebreak
+    % abstracts:
+    \begin{absolutelynopagebreak}
+        \input{abstracts}
+    \end{absolutelynopagebreak}
+    \pagebreak
 
-	% Table of ...:
-	\setcounter{tocdepth}{2}%define sthe deoth below chapters
-	\tableofcontents
-	\clearpage
+    % Table of ...:
+    \setcounter{tocdepth}{2}%define sthe deoth below chapters
+    \tableofcontents
+    \clearpage
 
-	\input{content/indexes}
-	\setcounter{table}{0}
-	\setcounter{figure}{0}
+    \input{indexes}
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
 
-	% Main Content:
-	\pagenumbering{arabic}
+    % main content:
+    \pagenumbering{arabic}
 
-	\include{content/content}
+    \include{content/content}
 
-	% Bibliography and Appendix:
-	\pagenumbering{roman}
+    % Bibliography and Appendix:
+    \pagenumbering{roman}
 
-	\printbibliography
+    \printbibliography
 
-	\appendix
-	\include{content/appendix}
+    \appendix
+    \include{content/appendix}
 
 \end{document}

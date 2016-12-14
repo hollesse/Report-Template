@@ -1,8 +1,7 @@
 %!TEX root = main.tex
-
 %% CUSTOM ELEMENTS
 
-% totally preventing pagebreaks inside the environement
+% totally preventing pagebreaks inside this environement
 \newenvironment{absolutelynopagebreak}
   {\par\nobreak\vfil\penalty0\vfilneg
    \vtop\bgroup}
@@ -13,12 +12,12 @@
 % for marking sections which are incomplete with a ToDo-Message
 \newcommand{\incompletemarker}[1]{
     \begin{quote}
-        \colorbox{DbRot}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize ToDo: #1}} }
+        \colorbox{SupportingDeepOrange}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize ToDo: #1}} }
     \end{quote} 
 }
 
 
-% pack list more tightly
+% pack entries in a list more tightly together
 \providecommand{\tightlist}{
     \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
@@ -31,27 +30,30 @@
   #1\ignorespaces
 }
 \newenvironment{stripedtable}[3]
-	{
-		\rowcolors{2}{#1!7}{white}
-		\begin{tabular}{$#2}
-			\arrayrulecolor{#1}
-			\toprule
-			\rowstyle{\bfseries}#3\\
-			\midrule
+    {
+        \begin{center}
+            \rowcolors{2}{#1!7}{white}
+            \begin{tabular}{$#2}
+                \arrayrulecolor{#1}
+                \toprule
+                \rowstyle{\bfseries}#3\\
+                \midrule
     }
-	{
-			\bottomrule
-		\end{tabular}
-	}
+    {
+                \bottomrule
+            \end{tabular}
+        \end{center}
+        \vspace{-0.5cm}
+    }
 
 \newenvironment{stripedacenttable}[2]
-	{
-		\begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
-	}
-	{
-		\end{stripedtable}
-	}
+    {
+        \begin{stripedtable}{TertiaryAccentColor!15!Gray!70!White}{#1}{#2}
+    }
+    {
+        \end{stripedtable}
+    }
 
 
-% save some typing for footnote'd sources
+% put sources more easily into your footnotes
 \newcommand{\footnotecite}[1]{\footnote{\emph{\cite{#1}}}}
