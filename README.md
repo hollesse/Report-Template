@@ -1,7 +1,7 @@
-# DHBW - LaTeX - Template
+# Deutsche Bahn Internship Report Template for DHBW Mannheim Faculty Technology
+This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for Deutsche Bahn Coorperate Design especially for DB Systel GmbH.  
+
 Please use XeLaTeX or LuaLaTex for building.
-
-
 
 ## Features
 - all formal layout-properties of the document are in accordance to the requirements given by the Technical Faculty of DHBW Mannheim.
