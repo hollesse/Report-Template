@@ -1,5 +1,5 @@
 # Internship Report Template for DHBW Mannheim Faculty Technology
-This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for DB (not correspond with DB Cooperate Design).  
+This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for use at DB Systel (it does not correspond to the DB Cooperate Design).  
 
 Please use XeLaTeX or LuaLaTex for building.
 
