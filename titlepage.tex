@@ -31,6 +31,7 @@
     }
 
     \opt{Internship}{
+        {\color{SecondaryAccentColor}\reporttype~\reportmodule} \\
     }
 
     \vspace{1.5cm}
@@ -48,13 +49,18 @@
     {\small\iflanguage{english}{in}{des Studienganges}} \studiengang
 
     \vspace{0.07cm}
+        {\small\iflanguage{english}{at \dhbwEN}{an der \dhbwDE}}  \\
+ 
     \vspace{0.35cm}
 
+    {\small\iflanguage{english}{written by}{von}} {\large\studentname}\\
+    \vspace{0.07cm}\handoverdate \\
 
     \vfill
     \opt{TitlepageCenter}{\end{center}}
 
     \begin{tabbing}
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
         \opt{Study}{
             {\small Semester:} \> \reportsemester \\
         }
@@ -63,6 +69,7 @@
             \> \reportstart - \reportend \\
         }
         {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
+        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
         \opt{Internship}{
 	 {\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
 	 % opt.: long departmentname
@@ -71,10 +78,14 @@
            \fi 
         }
         \opt{Internship,Bachelor}{
+            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
         }
         \opt{Study}{
+            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
         }
         \opt{Bachelor}{
+            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
         }
     \end{tabbing}
+
 }

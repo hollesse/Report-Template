@@ -49,10 +49,17 @@
 
 \overfullrule=1mm
 
+\begin{document}
+    \sloppy%encourages LaTeX to be more flexible about word spacing
+           % helps to keep text better inside the page margins
+    
+    \pagenumbering{Roman}
 
     % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
     \begin{titlepage} 
+    \input{titlepage}
+    \end{titlepage} 
 
     \begin{absolutelynopagebreak}
         % Declaration of Honesty:
@@ -78,9 +85,6 @@
         \tableofcontents
         \clearpage
         \input{indexes}
-    \end{spacing}
-
-	    \input{indexes}
     \end{spacing}
 
     % main content:
