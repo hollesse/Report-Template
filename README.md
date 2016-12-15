@@ -1,5 +1,5 @@
-# Deutsche Bahn Internship Report Template for DHBW Mannheim Faculty Technology
-This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for Deutsche Bahn Coorperate Design especially for DB Systel GmbH.  
+# Internship Report Template for DHBW Mannheim Faculty Technology
+This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for DB (not compatible with Deutsche Bahn Cooperate Design.  
 
 Please use XeLaTeX or LuaLaTex for building.
 
