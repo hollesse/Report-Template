@@ -23,7 +23,7 @@
     \vspace{3.5cm}
     \opt{TitlepageCenter}{\begin{center}}
     \begin{spacing}{2} 
-    {\color{PrimaryAccentColor}\huge\reporttitle} \\
+    {\opt{DbFont}{\dbheadblack}\color{PrimaryAccentColor}\huge\reporttitle} \\
     \end{spacing}
 
     \opt{Bachelor, Study}{
@@ -62,29 +62,29 @@
     \begin{tabbing}
         xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
         \opt{Study}{
-            {\small Semester:} \> \reportsemester \\
+            {\small Semester:} \> {\small\reportsemester} \\
         }
-        {\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> \timerange \\
+        {\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> {\small\timerange} \\
         \opt{Internship}{
-            \> \reportstart - \reportend \\
+            \> {\small\reportstart - \reportend} \\
         }
-        {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
-        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
+        {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> {\small\matrikelno, \kurs} \\
+        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> {\small\company} \\
         \opt{Internship}{
-	 {\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
+	 {\small\iflanguage{english}{Department}{Abteilung}:} \> {\small\department} \\
 	 % opt.: long departmentname
            \ifcsname activatelongdepartment\endcsname
-           \>\longdepartment\\
+           \>{\small\longdepartment}\\
            \fi 
         }
         \opt{Internship,Bachelor}{
-            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
+            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> {\small\companymanager} \\
         }
         \opt{Study}{
-            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
+            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> {\small\prof}
         }
         \opt{Bachelor}{
-            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
+            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> {\small\prof}
         }
     \end{tabbing}
 

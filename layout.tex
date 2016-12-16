@@ -167,3 +167,47 @@
     fillcolor = \color{TertiaryAccentColor!10!Gray!20!White},
     rulecolor = \color{TertiaryAccentColor}
 }
+
+
+
+% DB Font Style
+\opt{DbFont}{
+    \newfontfamily\dbhead{DB_Head}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+        BoldFont = DB_Head_Black,
+        ItalicFont = DB_Head_Italic,
+        BoldItalicFont = DB_Head_Black_Italic
+    ]
+
+    \newfontfamily\dbheadblack{DB_Head_Black}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+\newfontfamily\dbheadblackitalic{DB_Head_Black_Italic}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+    \setmainfont{DB_Sans}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+        BoldFont = DB_Sans_Bold,
+        ItalicFont = DB_Sans_Italic,
+        BoldItalicFont = DB_Sans_Bold_Italic
+    ]
+
+\newfontfamily\dbsansbold{DB_Sans_Bold}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+    \addtokomafont{chapterprefix}{\dbheadblack\normalsize\color{PrimaryAccentColor}}
+    \setkomafont{chapter}{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \addtokomafont{section}{\dbheadblack\Large\color{SecondaryAccentColor}}
+    \addtokomafont{subsection}{\dbheadbalck\large\color{SecondaryAccentColor}}
+    \renewcommand\cfttoctitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \renewcommand\cftloftitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \renewcommand\cftlottitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
+}
