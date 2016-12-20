@@ -20,7 +20,6 @@ Please use XeLaTeX or LuaLaTex for building.
 ## How to Setup and Use
 1. inside `./setup.tex`:
     - choose the type of your Report
-	- choose the type of Titlepage (centered or not)
 	- choose your prefered Theme (DB Systel or DB default)
     - choose if you want to use the DB Font (have to be added by yourself - you can find instructions for that below)	
     - choose if you want to write your report in english or german
