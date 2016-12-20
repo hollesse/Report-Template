@@ -42,9 +42,9 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 	- bold italic: `DB_Sans_Bold_Italic.tff`
 2. Add the font DB Head as Truetypefont in the Styles:
     - regular: `DB_Head.ttf`
-    - black: `DB_Sans_Black.tff`
-    - italic: `DB_Sans_Italic.tff`
-	- black italic: `DB_Sans_Black_Italic.tff`
+    - black: `DB_Head_Black.tff`
+    - italic: `DB_Head_Italic.tff`
+	- black italic: `DB_Head_Black_Italic.tff`
 4. Activate DbFont in `./setup.tex` by removing the `%` Symbol in front of `DbFont` in the `usepackage` section
 
 
