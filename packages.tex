@@ -1,7 +1,7 @@
 %!TEX root = main.tex
-
 %% GENERAL PACKAGES
-%%   specific Packages only needed for the Layout are defined inside layout.tex
+
+%%   specific Packages only needed for the Layout are loaded inside layout.tex
 
 
 % general typesetting:
@@ -45,8 +45,6 @@
 
 \usepackage{xhfill}
 
-\usepackage{lipsum}
-
 
 % tables:
 \usepackage{longtable,tabu}
@@ -86,21 +84,18 @@
 \usepackage{listings} 
 
 \input{lib/listing/html5_language}
-\input{lib/listing/java_language}
 \input{lib/listing/javascript_language}
-\input{lib/listing/json_language}
 
 
 % tables:
 \usepackage{colortbl}%use colors in tables
-\usepackage{hhline}%extended line features for tables with \hhline{}
 \usepackage{booktabs}%better horizontal lines in tables 
                      %   provides \toprule[<breite>], \midrule[<breite>], 
                      %   \cmidrule[<breite>](trim){a-b} and \bottomrule 
 \usepackage{multirow}%merge several cells over rows or columns
                      %   provides \multirow{Zeilen}{Breite}{Inhalt} and  
                      %   \multicolumn{Spalten}{Ausrichtung}{Inhalt}
-\usepackage{supertabular,longtable}%enable tables stretching over multiple pages
+\usepackage{supertabular,longtable}%makes tables stretching over multiple pages possible
 
 
 

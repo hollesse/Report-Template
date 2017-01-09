@@ -1,65 +1,75 @@
 %!TEX root = main.tex
+%% TITLE PAGE OF THE DOCUMENT
 
 {\setlength{\parindent}{0cm}
-	\hfill
-	\includegraphics[height=1.4cm]{logos/dhbwlogo}
-	\quad\rule{0.5pt}{1.4cm}\quad
-	\includegraphics[height=1.4cm]{logos/company} \\
+    \hfill
+    \includegraphics[height=1.4cm]{logos/dhbwlogo}
+    \quad\rule{0.5pt}{1.4cm}\quad
+    \includegraphics[height=1.4cm]{logos/company} \\
 
-	\vspace{3.5cm}
-	{\color{PrimaryAccentColor}\huge\reporttitle} \\
+    \begin{spacing}{1.5}
+        \vspace{3.5cm}
+        {\color{PrimaryAccentColor}\huge{\emergencystretch=.3em \reporttitle}} \\
+    \end{spacing}
 
-	{\color{SecondaryAccentColor}\reporttype} \\
+    \opt{Bachelor, Study}{
+        {\color{SecondaryAccentColor}\reporttype} \\
+    }
+    \opt{Internship}{
+        {\color{SecondaryAccentColor}\reporttype~{
+            \small\iflanguage{english}{for the module}{f{\"u}r das Modul}~\reportmodule
+        }}\\
+    }
 
-	\vspace{1.5cm}
+    \vspace{1.5cm}
 
-	\opt{Bachelor}{
-		{\small\iflanguage{english}{for the exam as}{für die Prüfung zum}} \\
+    \opt{Bachelor}{
+        {\small\iflanguage{english}{for the exam as}{f{\"u}r die Pr{\"u}fung zum}} \\
 
-		\vspace{-0.3cm}
+        \vspace{-0.3cm}
 
-		{\color{TertiaryAccentColor}{\Large\academicdegree}} \\
+        {\color{TertiaryAccentColor}{\Large\academicdegree}} \\
 
-		\vspace{-0.3cm}
-	}
+        \vspace{-0.3cm}
+    }
 
-	{\small\iflanguage{english}{in}{des Studienganges}} \studiengang
+    {\small\iflanguage{english}{in}{des Studienganges}} \studiengang
 
-	\vspace{0.07cm}
-	\begin{tabbing}
-		{\small\iflanguage{english}{at}{an der}} \=\dhbwDE \\
-		\>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
-	\end{tabbing}
+    \vspace{0.07cm}
+    \begin{tabbing}
+        {\small\iflanguage{english}{at}{an der}} \=\dhbwDE \\
+        \>\iflanguage{english}{\footnotesize\dhbwEN}{~} \\
+    \end{tabbing}
 
-	\vspace{0.35cm}
+    \vspace{0.35cm}
 
-	{\small\iflanguage{english}{written by}{von}} {\large\studentname} \\
-	\handoverdate \\
+    {\small\iflanguage{english}{written by}{von}} {\large{\emergencystretch=.3em \studentname}} \\
+    \handoverdate \\
 
-	\vfill
+    \vfill
 
-	\begin{tabbing}
-		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
-		\opt{Study}{
-			{\small Semester:} \> \reportsemester \\
-		}
-		{\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> \timerange \\
-		\opt{Internship}{
-			\> \reportstart - \reportend \\
-		}
-		{\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
-		{\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> \company \\
-		\opt{Internship}{
-			{\small\iflanguage{english}{Department}{Abteilung}:} \> \department \\
-		}
-		\opt{PA,Bachelor}{
-			{\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> \companymanager \\
-		}
-		\opt{Study}{
-			{\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> \prof
-		}
-		\opt{Bachelor}{
-			{\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> \prof
-		}
-	\end{tabbing}
+    \begin{tabbing}
+        xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=\kill
+        \opt{Study}{
+            {\small Semester:} \> \reportsemester \\
+        }
+        {\small\iflanguage{english}{Duration}{Bearbeitungszeitraum}:} \> \timerange \\
+        \opt{Internship}{
+            \> \reportstart - \reportend \\
+        }
+        {\small\iflanguage{english}{Matriculation number, Course}{Matrikelnummer, Kurs}:} \> \matrikelno, \kurs \\
+        {\small\iflanguage{english}{Partner company}{Ausbildungsfirma}:} \> {\emergencystretch=.3em \company} \\
+        \opt{Internship}{
+            {\small\iflanguage{english}{Department}{Abteilung}:} \> {\emergencystretch=.3em \department} \\
+        }
+        \opt{Internship,Bachelor}{
+            {\small\iflanguage{english}{Supervisor at the partner company}{Betreuer der Ausbildungsfirma}:} \> {\emergencystretch=.3em \companymanager} \\
+        }
+        \opt{Study}{
+            {\small\iflanguage{english}{Supervising tutor}{Betreuer der Dualen Hochschule}:} \> {\emergencystretch=.3em \prof}
+        }
+        \opt{Bachelor}{
+            {\small\iflanguage{english}{Reviewer of the University}{Gutachter der Dualen Hochschule}:} \> {\emergencystretch=.3em \prof}
+        }
+    \end{tabbing}
 }

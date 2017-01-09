@@ -1,30 +1,34 @@
 %!TEX root = main.tex
+%% SETUP OF CUSTOM DOCUMENT-PROPERTIES
+
+%% refer to the readme for further information about the content of this file
+
 
 % choose which type of report you want to write
 \usepackage[
-	Internship,
-	% Study,
-	% Bachelor,
+    Internship,
+    % Study,
+    % Bachelor
 ]{optional}
+ 
 
-
-% uncomment if you need a lock flag (only availabe in german)
-%\newcommand{\activateSperrvermerk}{def}
+% uncomment if you need a Confidentiality Clause
+%\newcommand{\activateconfidentialityclause}{def}
 
 
 % choose your language by uncommenting the variant you like:
-	% english with german parts
-	\setdefaultlanguage{english}
-	\setotherlanguage[variant=german, latesthyphen=true]{german}
+    % english with german parts
+    \setdefaultlanguage{english}
+    \setotherlanguage[variant=german, latesthyphen=true]{german}
 %  or
-	% fully german
-	% \setdefaultlanguage[variant=german, latesthyphen=true]{german}
+    % fully german
+    %\setdefaultlanguage[variant=german, latesthyphen=true]{german}
 
 
 % place your information into the following fields:
-\newcommand{\studentname}{...}
-\newcommand{\matrikelno}{...}
-\newcommand{\kurs}{MA-TINF...}
+\newcommand{\studentname}{Luca}
+\newcommand{\matrikelno}{1337}
+\newcommand{\kurs}{MA-TINFxyz}
 
 \newcommand{\companyname}{Amadeus Germany GmbH}
 \newcommand{\companylocation}{Bad Homburg v.d.H.}
@@ -33,56 +37,56 @@
 \newcommand{\dhbwDE}{Duale Hochschule Baden-Württemberg Mannheim}
 \newcommand{\dhbwEN}{Baden-Wuerttemberg Cooperative State University Mannheim}
 
-\newcommand{\reporttitle}{...}
+\newcommand{\reporttitle}{Foobar}
 
-\newcommand{\timerange}{... weeks}
+\newcommand{\timerange}{n weeks}
 \newcommand{\handoverdate}{01.01.1970}
-\newcommand{\city}{...}
+\newcommand{\city}{Foobar}
 
 
-% place the information into the block you have choosen above
+% place your information into the block which corresponds to the type you have choosen at the beginning
 \opt{Internship}{
-	\newcommand{\reportstart}{01.01.1970}
-	\newcommand{\reportend}{01.01.1970}
-	\newcommand{\department}{R\&D-...}
-	\newcommand{\companymanager}{M. Sc. ...}
+    \newcommand{\reportmodule}{Tnn000}
+    \newcommand{\reportstart}{01.01.1970}
+    \newcommand{\reportend}{01.01.1970}
+    \newcommand{\department}{R\&D-}
+    \newcommand{\companymanager}{Foobar}
 }
 \opt{Study}{
-	\newcommand{\reportsemester}{...th}
-	\newcommand{\prof}{Prof. Dr. ...}
+    \newcommand{\reportsemester}{n th}
+    \newcommand{\prof}{Foobar}
 }
 \opt{Bachelor}{
-	\newcommand{\academicdegree}{Bachelor of Science}
-	\newcommand{\companymanager}{M. Sc. ...}
-	\newcommand{\prof}{Prof. Dr. ...}
+    \newcommand{\academicdegree}{Bachelor of Science}
+    \newcommand{\companymanager}{Foobar}
+    \newcommand{\prof}{Foobar}
 }
 
 
 % choose a color theme:
-% "Travel into the blue"
-	%\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.37, 0.72}
-	%\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.66, 0.88}
-	%\definecolor{TertiaryAccentColor} {rgb}{0.61, 0.79, 0.92}
-% "feel the heat"
-	%\definecolor{PrimaryAccentColor}  {rgb}{1.00, 0.52, 0.09}
-	%\definecolor{SecondaryAccentColor}{rgb}{1.00, 0.37, 0.29}
-	%\definecolor{TertiaryAccentColor} {rgb}{1.00, 0.74, 0.19}
-% "fancy forest"
-	\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.48, 0.14}
-	\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.72, 0.20}
-	\definecolor{TertiaryAccentColor} {rgb}{0.37, 0.74, 0.20}
-% "This is serious business!"
-	%\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.00, 0.00}
-	%\definecolor{SecondaryAccentColor}{rgb}{0.20, 0.20, 0.20}
-	%\definecolor{TertiaryAccentColor} {rgb}{0.40, 0.40, 0.40}
-                                                       
+    % "Travel Into the Blue"
+        %\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.37, 0.72}
+        %\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.66, 0.88}
+        %\definecolor{TertiaryAccentColor} {rgb}{0.61, 0.79, 0.92}
+    % "Feel the Heat"
+        %\definecolor{PrimaryAccentColor}  {rgb}{1.00, 0.52, 0.09}
+        %\definecolor{SecondaryAccentColor}{rgb}{1.00, 0.37, 0.29}
+        %\definecolor{TertiaryAccentColor} {rgb}{1.00, 0.74, 0.19}
+    % "Fancy Forest"
+        \definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.48, 0.14}
+        \definecolor{SecondaryAccentColor}{rgb}{0.00, 0.72, 0.20}
+        \definecolor{TertiaryAccentColor} {rgb}{0.37, 0.74, 0.20}
+    % "This is Serious Business!"
+        %\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.00, 0.00}
+        %\definecolor{SecondaryAccentColor}{rgb}{0.20, 0.20, 0.20}
+        %\definecolor{TertiaryAccentColor} {rgb}{0.40, 0.40, 0.40}                     
 % ... or define your own:
-	%\definecolor{PrimaryAccentColor}  {rgb}{, , }
-	%\definecolor{SecondaryAccentColor}{rgb}{, , }
-	%\definecolor{TertiaryAccentColor} {rgb}{, , }
+    %\definecolor{PrimaryAccentColor}  {rgb}{, , }
+    %\definecolor{SecondaryAccentColor}{rgb}{, , }
+    %\definecolor{TertiaryAccentColor} {rgb}{, , }
 
 
-% if you want to, you can also change the supporting colors:
+% if you want to, you can also change the value of the supporting colors:
 \definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}
 \definecolor{SupportingOrange}    {rgb}{0.97, 0.66, 0.15}
 \definecolor{SupportingDeepOrange}{rgb}{0.93, 0.30, 0.18}
