@@ -104,13 +104,17 @@
 \renewcommand\cftbeforelottitleskip{1em}
 \renewcommand\cftafterlottitleskip{0.2em}
 
+% Lables inside LoF and LoT
+\renewcommand{\cfttabpresnum}{\iflanguage{english}{Table}{Tabelle} }
+\renewcommand{\cftfigpresnum}{\iflanguage{english}{Figure}{Abb.} }
+\settowidth{\cfttabnumwidth}{\iflanguage{english}{Table}{Tabelle} 10\quad} 
+\settowidth{\cftfignumwidth}{\iflanguage{english}{Figure}{Abb.} 10\quad} 
+
+
 %fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
-\renewcommand{\cftfigfont}{Figure }
-\renewcommand{\cfttabfont}{Table }
-
-%dotting between name and page number at every level in the ToC:
+%dotting between name and page number at every level in the ToC
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
