@@ -96,12 +96,16 @@
 \renewcommand\cftbeforelottitleskip{1em}
 \renewcommand\cftafterlottitleskip{0.2em}
 
+% Lables inside LoF and LoT
+\renewcommand{\cfttabpresnum}{\iflanguage{english}{Table}{Tabelle} }
+\renewcommand{\cftfigpresnum}{\iflanguage{english}{Figure}{Abb.} }
+\settowidth{\cfttabnumwidth}{\iflanguage{english}{Table}{Tabelle} 10\quad} 
+\settowidth{\cftfignumwidth}{\iflanguage{english}{Figure}{Abb.} 10\quad} 
+
 
 %fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
-\renewcommand{\cftfigfont}{Figure }
-\renewcommand{\cfttabfont}{Table }
 %dotting between name and page number at every level in the ToC
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
@@ -123,9 +127,6 @@
 \counterwithout{figure}{chapter}%makes the numbers of figures "absolute", without the chapter-number
 \captionsetup{justification=centering}%sets captions centered
 \usepackage[font=small,skip=7pt]{caption}
-
-\renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
-                                             %  chapter when they are listed in the List of Figures
 
 
 % code listings
