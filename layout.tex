@@ -90,7 +90,7 @@
 \usepackage[nottoc]{tocbibind}% adds entries for the LoF, LoT and Bibliography to the ToC
                               % (but not for the ToC itself)
 
-%formating the titles of the...
+% formating the titles of the...
 %...ToC:
 \renewcommand\cfttoctitlefont{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand\cftbeforetoctitleskip{1em}
@@ -104,14 +104,15 @@
 \renewcommand\cftbeforelottitleskip{1em}
 \renewcommand\cftafterlottitleskip{0.2em}
 
-% Lables inside LoF and LoT
-\renewcommand{\cfttabpresnum}{\iflanguage{english}{Table}{Tabelle} }
-\renewcommand{\cftfigpresnum}{\iflanguage{english}{Figure}{Abb.} }
-\settowidth{\cfttabnumwidth}{\iflanguage{english}{Table}{Tabelle} 10\quad} 
-\settowidth{\cftfignumwidth}{\iflanguage{english}{Figure}{Abb.} 10\quad} 
+% remove lables inside LoF, LoT and LoL
+\renewcommand{\cfttabpresnum}{}
+\renewcommand{\cftfigpresnum}{}
+
+% localize label inside captions of Listings
+\renewcommand*{\lstlistingname}{\iflanguage{english}{Listing}{Quellcode}}
 
 
-%fonts inside the ToC:
+% fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
 %dotting between name and page number at every level in the ToC
@@ -132,7 +133,6 @@
 
 % figures and captions
 \usepackage{chngcntr}
-\counterwithout{figure}{chapter}%makes the numbers of figures "absolute", without the chapter-number
 \captionsetup{justification=centering}%sets captions centered
 \usepackage[font=small,skip=7pt]{caption}
 
