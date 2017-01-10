@@ -1,4 +1,5 @@
 %!TEX root = main.tex
+% !TeX program = xelatex
 %% SETUP OF CUSTOM DOCUMENT-PROPERTIES
 
 %% refer to the readme for further information about the content of this file
@@ -6,15 +7,22 @@
 
 % choose which type of report you want to write
 \usepackage[
-    Internship,
-    % Study,
-    % Bachelor
+    Internship,			% Internship template
+    % Study,				% Study template
+    % Bachelor,			% Bachelor template
+    DbSystelTheme,			% DB Systel Theme (with DB Systel Claim and special colors)
+    %DefaultTheme,			% DB Theme
+    DbFont
 ]{optional}
+
+
  
 
 % uncomment if you need a Confidentiality Clause
-%\newcommand{\activateconfidentialityclause}{def}
+\newcommand{\activateconfidentialityclause}{def}
 
+% uncomment if you need a second line for the departmentname
+%\newcommand{\activatelongdepartment}{def}
 
 % choose your language by uncommenting the variant you like:
     % english with german parts
@@ -26,70 +34,74 @@
 
 
 % place your information into the following fields:
-\newcommand{\studentname}{Luca}
-\newcommand{\matrikelno}{1337}
-\newcommand{\kurs}{MA-TINFxyz}
+\newcommand{\studentname}{Max Mustermann}
+\newcommand{\matrikelno}{123456}
+\newcommand{\kurs}{MA-TINF...}
 
-\newcommand{\companyname}{Amadeus Germany GmbH}
-\newcommand{\companylocation}{Bad Homburg v.d.H.}
+\newcommand{\companyname}{DB Systel GmbH}
+\newcommand{\companylocation}{Frankfurt am Main}
 
-\newcommand{\studiengang}{Applied Computer Science}
-\newcommand{\dhbwDE}{Duale Hochschule Baden-Württemberg Mannheim}
+\newcommand{\studiengang}{Angewandte Informatik}
+\newcommand{\dhbwDE}{Dualen Hochschule Baden-Württemberg Mannheim}
 \newcommand{\dhbwEN}{Baden-Wuerttemberg Cooperative State University Mannheim}
 
-\newcommand{\reporttitle}{Foobar}
+\newcommand{\reporttitle}{Wie erstelle ich einen sch{\"o}nen Praxisbericht}
 
-\newcommand{\timerange}{n weeks}
+\newcommand{\timerange}{... Wochen}
 \newcommand{\handoverdate}{01.01.1970}
-\newcommand{\city}{Foobar}
+\newcommand{\city}{...}
 
 
 % place your information into the block which corresponds to the type you have choosen at the beginning
 \opt{Internship}{
-    \newcommand{\reportmodule}{Tnn000}
+    \newcommand{\reportmodule}{T...000}
     \newcommand{\reportstart}{01.01.1970}
     \newcommand{\reportend}{01.01.1970}
-    \newcommand{\department}{R\&D-}
-    \newcommand{\companymanager}{Foobar}
+	\newcommand{\department}{F.I ...}
+	\newcommand{\longdepartment}{...}
+	\newcommand{\companymanager}{...}
 }
 \opt{Study}{
-    \newcommand{\reportsemester}{n th}
-    \newcommand{\prof}{Foobar}
+    \newcommand{\reportsemester}{...th}
+    \newcommand{\prof}{Prof. Dr. ...}
 }
 \opt{Bachelor}{
     \newcommand{\academicdegree}{Bachelor of Science}
-    \newcommand{\companymanager}{Foobar}
-    \newcommand{\prof}{Foobar}
+    \newcommand{\companymanager}{M. Sc. ...}
+    \newcommand{\prof}{Prof. Dr. ...}
 }
 
+% PrimaryAccentColor DB Systel Gelbgruen or Deutsche Bahn Rot
+\opt{DbSystelTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{120, 190, 20}}
+\opt{DefaultTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{240, 20, 20}}
 
-% uncomment if you want to have labels like "Table 1.1"/"Tabelle 1.1" in front of your Entries inside
-%  the LoF / LoT / LoL
-%\newcommand{\nolabelsinsideIndicies}{def}
+% Deutsche Bahn Dunkelgrau & Grau
+\definecolor{SecondaryAccentColor}	{RGB}{100, 105, 115}
+\definecolor{TertiaryAccentColor} 	{RGB}{135, 140, 150}
 
+% Deutsche Bahn primary colors
+\definecolor{DbRot}     		{RGB}{240, 20, 20}
+\definecolor{DbBlau}     		{RGB}{10, 30, 110}
+\definecolor{DbDunkelgrau}	{RGB}{100, 105, 115}
+\definecolor{DbGrau}     		{RGB}{135, 140, 150}
+\definecolor{DbHellgrau}     	{RGB}{200, 205, 210}
+\definecolor{DbWeissgrau}     	{RGB}{225, 230, 235}
 
-% choose a color theme:
-    % "Travel Into the Blue"
-        %\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.37, 0.72}
-        %\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.66, 0.88}
-        %\definecolor{TertiaryAccentColor} {rgb}{0.61, 0.79, 0.92}
-    % "Feel the Heat"
-        %\definecolor{PrimaryAccentColor}  {rgb}{1.00, 0.52, 0.09}
-        %\definecolor{SecondaryAccentColor}{rgb}{1.00, 0.37, 0.29}
-        %\definecolor{TertiaryAccentColor} {rgb}{1.00, 0.74, 0.19}
-    % "Fancy Forest"
-        \definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.48, 0.14}
-        \definecolor{SecondaryAccentColor}{rgb}{0.00, 0.72, 0.20}
-        \definecolor{TertiaryAccentColor} {rgb}{0.37, 0.74, 0.20}
-    % "This is Serious Business!"
-        %\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.00, 0.00}
-        %\definecolor{SecondaryAccentColor}{rgb}{0.20, 0.20, 0.20}
-        %\definecolor{TertiaryAccentColor} {rgb}{0.40, 0.40, 0.40}                     
-% ... or define your own:
-    %\definecolor{PrimaryAccentColor}  {rgb}{, , }
-    %\definecolor{SecondaryAccentColor}{rgb}{, , }
-    %\definecolor{TertiaryAccentColor} {rgb}{, , }
-
+% Deutsche Bahn secondary colors
+\definecolor{DbGelb}     		{RGB}{255, 205, 0}
+\definecolor{DbSonnengelb}     	{RGB}{255, 175, 0}
+\definecolor{DbVerkehrsorange}	{RGB}{255, 140, 0}
+\definecolor{DbGelbgruen}     	{RGB}{120, 190, 20}
+\definecolor{DbGrasgruen}     	{RGB}{0, 170, 0}
+\definecolor{DbSignalblau}     	{RGB}{0, 100, 200}
+\definecolor{DbCurrygelb}     	{RGB}{160, 130, 0}
+\definecolor{DbOrangebraun}   	{RGB}{175, 90, 0}
+\definecolor{DbRubinrot}     	{RGB}{165, 5, 45}
+\definecolor{DbPurpurviolett}  	{RGB}{95, 20, 120}
+\definecolor{DbVerkehrsblau}  	{RGB}{0, 100, 140}
+\definecolor{DbOpalgruen}     	{RGB}{0, 110, 115}
+\definecolor{DbTuerkisgruen}  	{RGB}{0, 120, 65}
+\definecolor{DbFarngruen}     	{RGB}{90, 110, 0}
 
 % if you want to, you can also change the value of the supporting colors:
 \definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}

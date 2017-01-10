@@ -1,4 +1,5 @@
 %!TEX root = main.tex
+% !TeX program = xelatex
 %% DEFINES A NEAT DOCUMENT DESIGN
 
 %% in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
@@ -11,7 +12,6 @@
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3.0cm}
 
 \setlength{\footskip}{1.0cm}
-
 
 % fonts:
 \usepackage{fontspec}
@@ -104,7 +104,7 @@
 \renewcommand\cftbeforelottitleskip{1em}
 \renewcommand\cftafterlottitleskip{0.2em}
 
-% remove ables inside LoF, LoT and LoL
+% remove lables inside LoF, LoT and LoL
 \renewcommand{\cfttabpresnum}{}
 \renewcommand{\cftfigpresnum}{}
 
@@ -170,4 +170,48 @@
     xleftmargin = 2.7em,
     fillcolor = \color{TertiaryAccentColor!10!Gray!20!White},
     rulecolor = \color{TertiaryAccentColor}
+}
+
+
+
+% DB Font Style
+\opt{DbFont}{
+    \newfontfamily\dbhead{DB_Head}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+        BoldFont = DB_Head_Black,
+        ItalicFont = DB_Head_Italic,
+        BoldItalicFont = DB_Head_Black_Italic
+    ]
+
+    \newfontfamily\dbheadblack{DB_Head_Black}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+\newfontfamily\dbheadblackitalic{DB_Head_Black_Italic}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+    \setmainfont{DB_Sans}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+        BoldFont = DB_Sans_Bold,
+        ItalicFont = DB_Sans_Italic,
+        BoldItalicFont = DB_Sans_Bold_Italic
+    ]
+
+\newfontfamily\dbsansbold{DB_Sans_Bold}[
+        Path = lib/fonts/db/,
+        Extension = .ttf,
+    ]
+
+    \addtokomafont{chapterprefix}{\dbheadblack\normalsize\color{PrimaryAccentColor}}
+    \setkomafont{chapter}{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \addtokomafont{section}{\dbheadblack\Large\color{SecondaryAccentColor}}
+    \addtokomafont{subsection}{\dbheadblack\large\color{SecondaryAccentColor}}
+    \renewcommand\cfttoctitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \renewcommand\cftloftitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
+    \renewcommand\cftlottitlefont{\dbheadblack\huge\color{PrimaryAccentColor}}
 }
