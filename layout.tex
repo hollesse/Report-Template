@@ -29,6 +29,9 @@
     Extension = .otf
 ]
 
+\RequirePackage{fontawesome}
+\newfontfamily\FA[Path=lib/fonts/]{FontAwesome}
+
 
 % set \emph to be bold text:
 \let\emph\relax
@@ -129,9 +132,12 @@
 
 
 % item-lists:
-\renewcommand{\labelitemi}  {\color{black!70}{\adfrightarrowhead}}
-\renewcommand{\labelitemii} {\color{black!70}{\adfrightarrowhead}}
-\renewcommand{\labelitemiii}{\color{black!70}{\adfrightarrowhead}}
+\usepackage{enumitem}
+\setlist{nosep}
+
+\renewcommand{\labelitemi}  {\color{black!70}{\faAngleRight}}
+\renewcommand{\labelitemii} {\color{black!70}{\faAngleRight}}
+\renewcommand{\labelitemiii}{\color{black!70}{\faAngleRight}}
 
 
 % figures and captions

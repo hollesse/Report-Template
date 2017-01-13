@@ -123,6 +123,10 @@ print(hi)
 > <img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
 
 
+#### Fancy Symbols
+http://mirrors.ctan.org/fonts/fontawesome/doc/fontawesome.pdf
+
+
 #### Citations in the Footnotes
 ````Latex
 \footnotecite{<source-reference>}
