@@ -95,8 +95,8 @@ Please use XeLaTeX or LuaLaTex for building.
 #### Code Listings
 ```Latex
 \begin{lstlisting}[
-    caption={<description of your program>}
-    \label{lst:<label>},
+    caption={<description of your program>},
+    label={lst:<label>},
     captionpos=b,
     language=<language-name>
 ]
@@ -108,8 +108,8 @@ Please use XeLaTeX or LuaLaTex for building.
 
 > ```Latex
 \begin{lstlisting}[
-    caption={The Classic, realized in Python}
-    \label{lst:python1},
+    caption={The Classic, realized in Python},
+    label={lst:python1},
     captionpos=b,
     language=Python
 ]
