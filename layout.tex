@@ -142,6 +142,13 @@
 \renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
                                              %  chapter when they are listed in the List of Figures
 
+\ifcsname absolutecaptionnumbers \endcsname
+    \usepackage{chngcntr}
+    \counterwithout{figure}{chapter}
+    \counterwithout{table}{chapter}
+    \lstset{numberbychapter=false}
+\fi
+
 
 % code listings
 \lstdefinestyle{Xcode} {
