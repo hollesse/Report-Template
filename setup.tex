@@ -2,12 +2,12 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% SETUP OF CUSTOM DOCUMENT-PROPERTIES
+%% -------------------------------------------------------------------------------------------------
+%%   SETUP OF CUSTOM DOCUMENT-PROPERTIES
+%%     refer to the readme for further information about how to use this file
+%% -------------------------------------------------------------------------------------------------
 
-%% refer to the readme for further information about the content of this file
-
-
-% choose which type of report you want to write
+% Choose which type of report you want to write:
 \usepackage[
     Internship,
     % Study,
@@ -15,11 +15,11 @@
 ]{optional}
  
 
-% uncomment if you need a Confidentiality Clause
+% Uncomment if you need a Confidentiality Clause:
 %\newcommand{\activateconfidentialityclause}{def}
 
 
-% choose your language by uncommenting the variant you like:
+% Choose your language by uncommenting the variant you like:
     % english with german parts
     %\setdefaultlanguage{english}
     %\setotherlanguage[variant=german, latesthyphen=true]{german}
@@ -28,7 +28,7 @@
     \setdefaultlanguage[variant=german, latesthyphen=true]{german}
 
 
-% place your information into the following fields:
+% Place your information into the following fields:
 \newcommand{\studentname}{Luca}
 \newcommand{\matrikelno}{1337}
 \newcommand{\kurs}{MA-TINFxyz}
@@ -47,7 +47,7 @@
 \newcommand{\city}{Foobar}
 
 
-% place your information into the block which corresponds to the type you have choosen at the beginning
+% Place your information into the block which corresponds to the type you choose at the beginning:
 \opt{Internship}{
     \newcommand{\reportmodule}{Tnn000}
     \newcommand{\reportstart}{01.01.1970}
@@ -66,20 +66,21 @@
 }
 
 
-% uncomment if you want to have labels like "Table 1.1"/"Tabelle 1.1" in front of your Entries inside
-%  the LoF / LoT / LoL
+% Uncomment if you want to have labels like "Table 1.1"/"Tabelle 1.1" in front of your Entries inside
+%  the LoF / LoT / LoL (instead of just the numbers):
 %\newcommand{\nolabelsinsideIndicies}{def}
 
-% uncomment if you want to have your figures, tables and code listings numbered with "absolute"
-%  numbers, i.e. without the chapter number
+
+% Uncomment if you want to have your figures, tables and code listings numbered with "absolute"
+%  numbers, i.e. without the chapter number:
 %\newcommand{\absolutecaptionnumbers}{def}
 
-% uncomment if you want to have the numbering of your footnotes continue through your whole document,
-%  i.e. they should not be resetted at the start of a new chapter
+% Uncomment if you want to have the numbering of your footnotes continue through your whole document,
+%  i.e. they should not be resetted at the start of a new chapter:
 %\newcommand{\absolutecaptionnumbers}{def}
 
 
-% choose a color theme:
+% Choose a color theme:
     % "Travel Into the Blue"
         %\definecolor{PrimaryAccentColor}  {rgb}{0.00, 0.37, 0.72}
         %\definecolor{SecondaryAccentColor}{rgb}{0.00, 0.66, 0.88}
@@ -102,7 +103,7 @@
     %\definecolor{TertiaryAccentColor} {rgb}{, , }
 
 
-% if you want to, you can also change the value of the supporting colors:
+% If you want to, you can also change the value of the supporting colors:
 \definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}
 \definecolor{SupportingOrange}    {rgb}{0.97, 0.66, 0.15}
 \definecolor{SupportingDeepOrange}{rgb}{0.93, 0.30, 0.18}

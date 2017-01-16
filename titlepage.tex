@@ -2,14 +2,18 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% TITLE PAGE OF THE DOCUMENT
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   TITLE PAGE OF THE DOCUMENT
+%% -------------------------------------------------------------------------------------------------
 
 {\setlength{\parindent}{0cm}
+    %% LOGOS:
     \hfill
     \includegraphics[height=1.4cm]{logos/dhbwlogo}
     \quad\rule{0.5pt}{1.4cm}\quad
     \includegraphics[height=1.4cm]{logos/company} \\
 
+    %% UPPER TITLE BLOCK:
     \begin{spacing}{1.5}
         \vspace{3.5cm}
         {\color{PrimaryAccentColor}\huge{\emergencystretch=.3em \reporttitle}} \\
@@ -26,6 +30,7 @@
 
     \vspace{1.5cm}
 
+    %% MIDDLE INFORMATIONS BLOCK:
     \opt{Bachelor}{
         {\small\iflanguage{english}{for the exam as}{f{\"u}r die Pr{\"u}fung zum}} \\
 
@@ -49,6 +54,7 @@
     {\small\iflanguage{english}{written by}{von}} {\large{\emergencystretch=.3em \studentname}} \\
     \handoverdate \\
 
+    %% LOWER METAINFO BLOCK:
     \vfill
 
     \begin{tabbing}

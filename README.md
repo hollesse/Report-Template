@@ -132,6 +132,16 @@ The FontAwesome Package is bundeled into this repository, so you can use [all th
 
 > <img alt="Code Lisitng" src="http://i.imgur.com/wZAVaom.png" width="14%">
 
+The MarVoSym-Package is also loaded to provide [additional symbols](http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf).
+
+> *Example:*
+> ````Latex
+> \Estatically{} \Forward{} \Printer{} \ \ \MVRightArrow{} \ \ \EyesDollar\EyesDollar\EyesDollar
+> ````
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/lZ64aQA.png" width="14%">
+
+
 #### Citations in the Footnotes
 ````Latex
 \footnotecite{<source-reference>}

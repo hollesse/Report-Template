@@ -1,6 +1,10 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   MAIN FILE, GLUES EVERYTHING TOGETHER
+%% -------------------------------------------------------------------------------------------------
+
 \documentclass[
     a4paper,
     fontsize=12pt,
@@ -10,11 +14,10 @@
     parskip=half,
     bibliography=totocnumbered,
     abstract=on,
-    toc=listof
+    toc=listof,
 ]{scrreprt}
 
-
-
+%% LOAD THE PARTS:
 \input{packages}
 \input{setup}
 \input{layout}
@@ -22,7 +25,7 @@
 \input{content/macros}
 
 
-% set document properties:
+%% SET DOCUMENT PROPERTIES:
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
@@ -52,7 +55,7 @@
 
 \overfullrule=1mm
 
-
+%% GLUE THE PARTS TOGETHER:
 \begin{document}
     % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
@@ -62,8 +65,8 @@
 
     \pagenumbering{Roman}
 
-    \sloppy%encourages LaTeX to condone lager gaps between words for the sake of keeping the 
-           % text inside the page-margins
+    \sloppy  % encourages LaTeX to condone lager gaps between words for the sake of keeping the 
+             %  text inside the page-margins
 
     \begin{absolutelynopagebreak}
         % Declaration of Honesty:

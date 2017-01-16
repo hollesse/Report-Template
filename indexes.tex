@@ -2,10 +2,16 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   CONFIGURES AND ORDERS THE INDICIES  (LoA, LoF, LoT, LoL)
+%% -------------------------------------------------------------------------------------------------
+
+% reset counters:
 \setcounter{table}{0}
 \setcounter{figure}{0}
 \setcounter{lstlisting}{0}
 
+% LoA:
 \begin{absolutelynopagebreak}
     \vspace{0.07cm}
     \addchap{\iflanguage{english}{List of Abbreviations}{Abk{\"u}rzungsverzeichnis}}
@@ -15,12 +21,15 @@
 \end{acronym}
 \clearpage
 
+% LoF:
 \listoffigures
 \pagebreak
 
+% LoT:
 \listoftables
 \pagebreak
 
+% LoL:
 \renewcommand\lstlistlistingname{\iflanguage{english}{List of Code Listings}{Quellcodeverzeichnis}}
 \begin{absolutelynopagebreak}
     \vspace{0.05cm}
