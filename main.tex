@@ -1,9 +1,12 @@
-% !TeX program = xelatex
+%!TEX program = xelatex
+%!BIB program = biber
 
 \documentclass[
     a4paper,
     fontsize=12pt,
     headinclude=on,
+    headings=twolinechapter,
+    headings=onelineappendix,
     parskip=half,
     bibliography=totocnumbered,
     abstract=on,
@@ -92,19 +95,16 @@
     % main content:
     \pagenumbering{arabic}
 
-    \setcounter{table}{0}
-    \setcounter{figure}{0}
-
     \begin{spacing}{1.5}
     	\input{content/content}
     \end{spacing}
 
     % Bibliography and Appendix:
+    \clearpage
     \pagenumbering{roman}
 
-    \printbibliography
-
-    \appendix
-    \input{content/appendix}
+	\appendix
+	\include{content/appendix}
+	\printbibliography
 
 \end{document}
