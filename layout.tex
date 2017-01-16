@@ -127,10 +127,6 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 
-% footnotes:
-\setlength{\footnotesep}{0.42cm}
-
-
 % item-lists:
 \usepackage{enumitem}
 \setlist{nosep}
@@ -140,7 +136,7 @@
 \renewcommand{\labelitemiii}{\color{black!70}{\faAngleRight}}
 
 
-% figures and captions
+% figures and captions:
 \usepackage{chngcntr}
 \captionsetup{justification=centering}%sets captions centered
 \usepackage[font=small,skip=7pt]{caption}
@@ -148,11 +144,22 @@
 \renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
                                              %  chapter when they are listed in the List of Figures
 
+% footnotes:
+\setlength{\footnotesep}{0.42cm}
+
+
+% numbering schemes:
+\usepackage{chngcntr}
+
 \ifcsname absolutecaptionnumbers \endcsname
-    \usepackage{chngcntr}
     \counterwithout{figure}{chapter}
     \counterwithout{table}{chapter}
     \lstset{numberbychapter=false}
+\fi
+
+\ifcsname absolutefootnotenumbers \endcsname
+    \usepac
+    \counterwithout{footnote}{chapter}
 \fi
 
 
