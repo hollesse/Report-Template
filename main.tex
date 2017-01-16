@@ -14,12 +14,11 @@
 ]{scrreprt}
 
 
-
-\input{packages}
-\input{setup}
-\input{layout}
-\input{elements}
-\input{content/macros}
+\input{template/packages}
+\input{userdata/setup}
+\input{template/layout}
+\input{template/elements}
+\input{userdata/macros}
 
 
 % set document properties:
@@ -61,24 +60,24 @@
     % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
     \begin{titlepage} 
-    \input{titlepage}
+    \input{template/titlepage}
     \end{titlepage} 
 
     \begin{absolutelynopagebreak}
         % Declaration of Honesty:
-        \input{declaration}
+        \input{template/declaration}
 
         % opt.: confidentiality clause
         \ifcsname activateconfidentialityclause\endcsname
             \vspace{7cm}
-            \input{confidentiality}
+            \input{template/confidentiality}
         \fi
     \end{absolutelynopagebreak}
     \pagebreak
 
     % abstracts:
     \begin{absolutelynopagebreak}
-        \input{abstracts}
+        \input{template/abstracts}
     \end{absolutelynopagebreak}
     \pagebreak
 
@@ -87,14 +86,14 @@
         \setcounter{tocdepth}{2}%define sthe deoth below chapters
         \tableofcontents
         \clearpage
-        \input{indexes}
+        \input{template/indexes}
     \end{spacing}
 
     % main content:
     \pagenumbering{arabic}
 
     \begin{spacing}{1.5}
-    	\input{content/content}
+    	\input{userdata/\contentFolderName/content/content}
     \end{spacing}
 
     % Bibliography and Appendix:
@@ -102,7 +101,7 @@
     \pagenumbering{roman}
 
 	\appendix
-	\include{content/appendix}
+	\include{userdata/\contentFolderName/content/appendix}
 	\printbibliography
 
 \end{document}
