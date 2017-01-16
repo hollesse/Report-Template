@@ -105,7 +105,6 @@ Please use XeLaTeX or LuaLaTex for building.
 ```
 
 > *Example:*
-
 > ```Latex
 \begin{lstlisting}[
     caption={The Classic, realized in Python},
@@ -124,8 +123,14 @@ print(hi)
 
 
 #### Fancy Symbols
-http://mirrors.ctan.org/fonts/fontawesome/doc/fontawesome.pdf
+The FontAwesome Package is bundeled into this repository, so you can use [all the nice symbols.](http://mirrors.ctan.org/fonts/fontawesome/doc/fontawesome.pdf).
 
+> *Example:*
+> ````Latex
+> \faFileTextO{} \faStar{}\faStar{}\faStar{}\faStar{}\faStar{} $=$ \faGraduationCap{}
+> ````
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/wZAVaom.png" width="14%">
 
 #### Citations in the Footnotes
 ````Latex
