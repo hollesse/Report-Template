@@ -2,12 +2,12 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% SETUP OF CUSTOM DOCUMENT-PROPERTIES
+%% -------------------------------------------------------------------------------------------------
+%%   SETUP OF CUSTOM DOCUMENT-PROPERTIES
+%%     refer to the readme for further information about how to use this file
+%% -------------------------------------------------------------------------------------------------
 
-%% refer to the readme for further information about the content of this file
-
-
-% choose which type of report you want to write
+% Choose which type of report you want to write:
 \usepackage[
     Internship,			% Internship template
     % Study,				% Study template
@@ -20,13 +20,13 @@
 
  
 
-% uncomment if you need a Confidentiality Clause
+% Uncomment if you need a Confidentiality Clause:
 \newcommand{\activateconfidentialityclause}{def}
 
 % uncomment if you need a second line for the departmentname
 %\newcommand{\activatelongdepartment}{def}
 
-% choose your language by uncommenting the variant you like:
+% Choose your language by uncommenting the variant you like:
     % english with german parts
     %\setdefaultlanguage{english}
     %\setotherlanguage[variant=german, latesthyphen=true]{german}
@@ -35,7 +35,7 @@
     \setdefaultlanguage[variant=german, latesthyphen=true]{german}
 
 
-% place your information into the following fields:
+% Place your information into the following fields:
 \newcommand{\studentname}{Max Mustermann}
 \newcommand{\matrikelno}{123456}
 \newcommand{\kurs}{MA-TINF...}
@@ -54,7 +54,7 @@
 \newcommand{\city}{...}
 
 
-% place your information into the block which corresponds to the type you have choosen at the beginning
+% Place your information into the block which corresponds to the type you choose at the beginning:
 \opt{Internship}{
     \newcommand{\reportmodule}{T...000}
     \newcommand{\reportstart}{01.01.1970}
@@ -76,6 +76,19 @@
 % PrimaryAccentColor DB Systel Gelbgruen or Deutsche Bahn Rot
 \opt{DbSystelTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{120, 190, 20}}
 \opt{DefaultTheme}{\definecolor{PrimaryAccentColor}  	{RGB}{240, 20, 20}}
+
+% Uncomment if you want to have labels like "Table 1.1"/"Tabelle 1.1" in front of your Entries inside
+%  the LoF / LoT / LoL (instead of just the numbers):
+%\newcommand{\nolabelsinsideIndicies}{def}
+
+% Uncomment if you want to have your figures, tables and code listings numbered with "absolute"
+%  numbers, i.e. without the chapter number:
+%\newcommand{\absolutecaptionnumbers}{def}
+
+% Uncomment if you want to have the numbering of your footnotes continue through your whole document,
+%  i.e. they should not be resetted at the start of a new chapter:
+%\newcommand{\absolutecaptionnumbers}{def}
+
 
 % Deutsche Bahn Dunkelgrau & Grau
 \definecolor{SecondaryAccentColor}	{RGB}{100, 105, 115}
@@ -105,7 +118,7 @@
 \definecolor{DbTuerkisgruen}  	{RGB}{0, 120, 65}
 \definecolor{DbFarngruen}     	{RGB}{90, 110, 0}
 
-% if you want to, you can also change the value of the supporting colors:
+% If you want to, you can also change the value of the supporting colors:
 \definecolor{SupportingGreen}     {rgb}{0.00, 0.55, 0.14}
 \definecolor{SupportingOrange}    {rgb}{0.97, 0.66, 0.15}
 \definecolor{SupportingDeepOrange}{rgb}{0.93, 0.30, 0.18}

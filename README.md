@@ -111,8 +111,8 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 #### Code Listings
 ```Latex
 \begin{lstlisting}[
-    caption={<description of your program>}
-    \label{lst:<label>},
+    caption={<description of your program>},
+    label={lst:<label>},
     captionpos=b,
     language=<language-name>
 ]
@@ -121,11 +121,10 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 ```
 
 > *Example:*
-
 > ```Latex
 \begin{lstlisting}[
-    caption={The Classic, realized in Python}
-    \label{lst:python1},
+    caption={The Classic, realized in Python},
+    label={lst:python1},
     captionpos=b,
     language=Python
 ]
@@ -137,6 +136,26 @@ print(hi)
 ```
 
 > <img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
+
+
+#### Fancy Symbols
+The FontAwesome Package is bundeled into this repository, so you can use [all the nice symbols.](http://mirrors.ctan.org/fonts/fontawesome/doc/fontawesome.pdf).
+
+> *Example:*
+> ````Latex
+> \faFileTextO{} \faStar{}\faStar{}\faStar{}\faStar{}\faStar{} $=$ \faGraduationCap{}
+> ````
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/wZAVaom.png" width="14%">
+
+The MarVoSym-Package is also loaded to provide [additional symbols](http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf).
+
+> *Example:*
+> ````Latex
+> \Estatically{} \Forward{} \Printer{} \ \ \MVRightArrow{} \ \ \EyesDollar\EyesDollar\EyesDollar
+> ````
+
+> <img alt="Code Lisitng" src="http://i.imgur.com/lZ64aQA.png" width="14%">
 
 
 #### Citations in the Footnotes
@@ -168,3 +187,7 @@ print(hi)
 
 ## Contributing
 I'm open for all forks, feedback and Pull Requests ;)
+
+
+## License
+This project is licensed under the terms of the *GNU General Public License v3.0*. For further information, please look [here](http://choosealicense.com/licenses/gpl-3.0/) or [here<sup>(DE)</sup>](http://www.gnu.org/licenses/gpl-3.0.de.html).
