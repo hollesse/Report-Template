@@ -1,4 +1,4 @@
-%!TEX root = main.tex
+%!TEX root = ../main.tex
 %!TEX program = xelatex
 %!BIB program = biber
 
@@ -17,8 +17,11 @@
     %DbFont
 ]{optional}
 
+\newcommand{\contentFolderName}{ExampleContent}
 
- 
+\graphicspath{{./userdata/\contentFolderName/resources/images/}}
+
+\addbibresource{userdata/{\contentFolderName}/resources/references.bib} 
 
 % Uncomment if you need a Confidentiality Clause:
 \newcommand{\activateconfidentialityclause}{def}
