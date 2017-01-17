@@ -2,63 +2,64 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% GENERAL PACKAGES
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   LOAD GENERALY NEEDED / USEFULL PACKAGES
+%%     specific Packages only needed for the Layout are loaded inside layout.tex
+%% -------------------------------------------------------------------------------------------------
 
-%%   specific Packages only needed for the Layout are loaded inside layout.tex
+%% SOME FINE HELPERS:
+\usepackage{polyglossia}  % i18n
 
-% german Umlaute
-\usepackage[utf8]{inputenc}
+\usepackage{lipsum}  % placeholder text
 
-% general typesetting:
-\usepackage{polyglossia}
+\usepackage{calc}  % provides arithmetics on \set­counter, \ad­dto­counter, \setlength, and \ad­dtolength
 
-
-% some fine helpers:
-\usepackage{amsmath,amssymb,amsfonts}
-
-\usepackage{lipsum}
-
-\usepackage{gensymb}%ensures the display of some unit-symbols
-                    %   provides \degree, \celsius, \perthousand, \micro and \ohm
-
-\usepackage{calc}%provides arithmetics on \set­counter, \ad­dto­counter, \setlength, and \ad­dtolength
-
-\usepackage{enumerate}
+\usepackage[utf8]{inputenc}  % german umlaute
 
 
-% generally used layout:
+%% EYE CANDY:
+\usepackage{marvosym}  % symbols
+
+\usepackage[usenames,dvipsnames,table]{xcolor}
+
+
+%% LAYOUTING:
 \usepackage{scrlayer-scrpage}
 
-\usepackage{setspace}%set spacing after paragraphs
-                     %   providees \doublespacing, \onehalfspacing, \singlespacing and
-                     %   \setstretch{baselinestretch}
+\usepackage{setspace}  % set spacing after paragraphs
+                       %   providees \doublespacing, \onehalfspacing, \singlespacing and
+                       %    \setstretch{baselinestretch}
 
-\usepackage{tabto}%add tabs to a specific length
+\usepackage{tabto} % add tabs to a specific length
+\usepackage{xhfill}
 
 \usepackage{changepage}
 
-\usepackage{float}%eases work with floating objects (e.g. figures and tables)
-\usepackage{caption}%customize captions for floating environments
+\usepackage{enumerate}  % numbered lists
 
 
-% generally used eye-candy styling:
-\usepackage{marvosym}
-\usepackage{adforn}
+%% MATHEMATICS AND ENIGNEERING:
+\usepackage{amsmath,amssymb,amsfonts}  % nicer mathematic environments and symbols
 
-\usepackage{color}
-\usepackage[usenames,dvipsnames,table]{xcolor}
-
-\usepackage{xhfill}
+\usepackage{gensymb}  % ensures the display of some unit-symbols
+                      %   provides \degree, \celsius, \perthousand, \micro and \ohm
 
 
-% tables:
-\usepackage{longtable,tabu}
-\usepackage{booktabs}
+%% TABLES:
+\usepackage{longtable,tabu,supertabular}  % makes tables stretching over multiple pages possible
 
-\usepackage[newcommand]{ragged2e}
+\usepackage{colortbl}  % use colors in tables
+
+\usepackage{booktabs}  % better horizontal lines in tables 
+                       %    provides \toprule[<breite>], \midrule[<breite>], 
+                       %     \cmidrule[<breite>](trim){a-b} and \bottomrule 
+\usepackage[newcommand]{ragged2e}  % align and hypenate text in ragging environments nicer
+\usepackage{multirow}  % merge several cells over rows or columns
+                       %    provides \multirow{Zeilen}{Breite}{Inhalt} and  
+                       %     \multicolumn{Spalten}{Ausrichtung}{Inhalt}
 
 
-% citations and references:
+%% CITATIONS AND REFERENCES:
 \usepackage[autostyle]{csquotes}
 
 \usepackage[babel=true]{microtype}
@@ -67,41 +68,34 @@
 
 \usepackage[footnote]{acronym}
 
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks]{hyperref}  % removes colored boxes around hyperlinks
 
 
-% graphics:
+%% GRAPHICS:
 \usepackage{graphicx}
 \usepackage{wrapfig}
 
-\usepackage{tikz}
+\graphicspath{{./resources/images/}}
+
+\usepackage{tikz}  % graph drawing inside LaTeX
 \usetikzlibrary{matrix}
-
-\usepackage{pdfpages}%include external PDF pages
-
-\usepackage{pgfplots}%utilities to draw 2D and 3D plots
+\usepackage{pgfplots}  % draw 2D and 3D plots inisde LaTeX
 \pgfplotsset{compat=newest}
 
+\usepackage{pdfpages}  % include pages which are stored in external pdf Files
+                       %  provides \includepdf[pages=<range or ->]{<filename>}
 
-% listings
+\usepackage{float}  % eases work with floating objects (e.g. figures and tables)
+\usepackage{caption}  % customize captions for floating environments
+
+
+%% SOURCE CODE LISTINGS:
 \usepackage{listings} 
 
 \input{userdata/lib/listing/html5_language}
 \input{userdata/lib/listing/javascript_language}
 
 
-% tables:
-\usepackage{colortbl}%use colors in tables
-\usepackage{booktabs}%better horizontal lines in tables 
-                     %   provides \toprule[<breite>], \midrule[<breite>], 
-                     %   \cmidrule[<breite>](trim){a-b} and \bottomrule 
-\usepackage{multirow}%merge several cells over rows or columns
-                     %   provides \multirow{Zeilen}{Breite}{Inhalt} and  
-                     %   \multicolumn{Spalten}{Ausrichtung}{Inhalt}
-\usepackage{supertabular,longtable}%makes tables stretching over multiple pages possible
-
-
 
 % Keep this as the very last item!
-\usepackage{scrhack}%smooths edges at playing along with KOMA-Script
-
+\usepackage{scrhack}  % smooths edges at playing along with KOMA-Script

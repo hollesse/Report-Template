@@ -1,6 +1,10 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   MAIN FILE, GLUES EVERYTHING TOGETHER
+%% -------------------------------------------------------------------------------------------------
+
 \documentclass[
     a4paper,
     fontsize=12pt,
@@ -10,18 +14,18 @@
     parskip=half,
     bibliography=totocnumbered,
     abstract=on,
-    toc=listof
+    toc=listof,
 ]{scrreprt}
 
-
+%% LOAD THE PARTS:
 \input{template/packages}
-\input{userdata/setup}
-\input{template/layout}
+\input{userdata/usersetup}
+\input{template/style}
 \input{template/elements}
 \input{userdata/macros}
 
 
-% set document properties:
+%% SET DOCUMENT PROPERTIES:
 \title{\reporttitle}
 \author{\studentname}
 \date{\handoverdate}
@@ -51,17 +55,18 @@
 
 \overfullrule=1mm
 
+%% GLUE THE PARTS TOGETHER:
 \begin{document}
-    \sloppy%encourages LaTeX to be more flexible about word spacing
-           % helps to keep text better inside the page margins
-    
-    \pagenumbering{Roman}
-
     % title page:
     \pdfbookmark[1]{Titlepage}{titlepage}
     \begin{titlepage} 
     \input{template/titlepage}
     \end{titlepage} 
+
+    \pagenumbering{Roman}
+
+    \sloppy  % encourages LaTeX to condone lager gaps between words for the sake of keeping the 
+             %  text inside the page-margins
 
     \begin{absolutelynopagebreak}
         % Declaration of Honesty:
@@ -83,11 +88,10 @@
 
     % Table of ...:
     \begin{spacing}{1.1}
-        \setcounter{tocdepth}{2}%define sthe deoth below chapters
+        \setcounter{tocdepth}{2}%defines the depth below chapters
         \tableofcontents
         \clearpage
-        \input{template/indexes}
-    \end{spacing}
+        \input{template/indexes}    \end{spacing}
 
     % main content:
     \pagenumbering{arabic}

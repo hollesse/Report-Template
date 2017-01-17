@@ -2,20 +2,19 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% DEFINES A NEAT DOCUMENT DESIGN
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   DEFINES A FANCY DOCUMENT DESIGN
+%%     in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
+%% -------------------------------------------------------------------------------------------------
 
-%% in accordance to http://www.dhbw-mannheim.de/fileadmin/user_upload/Leitlinien_fuer_die_Bearbeitung_und_Dokumentation_Fakultaet_Technik_Mai_2016.pdf
-%% losely orianted to https://brandcentre.amadeus.com/Styleguide/guidelines/#page/785EE333-09BD-4469-A2102F5A25BBC894
-
-
-% page setup:
-%\usepackage[a4paper,showframe]{geometry}%for "debugging" overfull pages
+%% PAGE SETUP:
+%\usepackage[a4paper,showframe]{geometry}  % for "debugging" overfull pages
 \usepackage[a4paper]{geometry}
 \geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=3.0cm}
 
 \setlength{\footskip}{1.0cm}
 
-% fonts:
+%% FONTS:
 \usepackage{fontspec}
 \setmainfont{Karma-Regular}[
     Path = userdata/lib/fonts/,
@@ -28,53 +27,43 @@
     Extension = .otf
 ]
 
+\RequirePackage{fontawesome}
+\newfontfamily\FA[Path=lib/fonts/]{FontAwesome}
 
 % set \emph to be bold text:
 \let\emph\relax
 \DeclareTextFontCommand{\emph}{\bfseries}
 
 
-% paragraph layout:
-\setlength{\parindent}{0pt}%removes initial indent
-
-
-% hyphenation:
-\hyphenpenalty=1000
-\exhyphenpenalty=1000%penalty for breaking the line at an explictly hyphenated word
-
-
-% avoid clubs and widows:
-\clubpenalty = 10000
-\widowpenalty = 10000
-\displaywidowpenalty = 10000
-
-
-% headings:
+%% HEADINGS:
+% for chapters:
 \KOMAoption{chapterprefix}{true}
-\addtokomafont{disposition}{\normalfont}%removes the bold face
+\addtokomafont{disposition}{\normalfont} % removes the bold face
 \renewcommand{\chapterheadstartvskip}{\vspace{0em}}
 \addtokomafont{chapterprefix}{\normalfont\normalsize\color{PrimaryAccentColor}}
 \renewcommand{\chapterheadmidvskip}{\par\nobreak\vspace{0em}}
 \setkomafont{chapter}{\normalfont\huge\color{PrimaryAccentColor}}
 \renewcommand{\chapterheadendvskip}{\vspace{1.2em}}
 
+% for sections:
 \addtokomafont{section}{\normalfont\Large\color{SecondaryAccentColor}}
 \RedeclareSectionCommand[beforeskip=2em]{section}
 \RedeclareSectionCommand[afterskip=0.7em]{section}
 
+% for subsections:
 \addtokomafont{subsection}{\normalfont\large\color{SecondaryAccentColor}}
 \RedeclareSectionCommand[beforeskip=1em]{subsection}
 \RedeclareSectionCommand[afterskip=0.1em]{subsection}
 
 
-% headers and footers:
+%% HEADERS AND FOOTERS:
 \pagestyle{scrheadings}
 \clearscrheadfoot
 
 \automark{chapter}
 \ihead{\footnotesize{\leftmark}}
 
-%remove line under header:
+% remove line under header:
 \ModifyLayer[
   addvoffset=0pt,
   contents={%
@@ -86,11 +75,11 @@
 \rofoot[\pagemark]{\pagemark}
 
 
-% Table of Contents:
+%% TABLE OF CONTENTS / INDEXES:
 \usepackage{tocloft}
 
-\usepackage[nottoc]{tocbibind}% adds entries for the LoF, LoT and Bibliography to the ToC
-                              % (but not for the ToC itself)
+\usepackage[nottoc]{tocbibind}  % adds entries for the LoF, LoT and Bibliography to the ToC
+                                % (but not for the ToC itself)
 
 % formating the titles of the...
 %...ToC:
@@ -117,59 +106,95 @@
 % fonts inside the ToC:
 \renewcommand{\cftchapfont}{\scshape}
 \renewcommand{\cftsecfont}{\scshape}
-%dotting between name and page number at every level in the ToC
+% dotting between name and page number at every level in the ToC
 \renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
 
-% footnotes:
+%% PARAGRAPH LAYOUT:
+\setlength{\parindent}{0pt}%removes initial indent
+
+\hyphenpenalty=1000
+\exhyphenpenalty=1000
+
+% avoid clubs and widows:
+\clubpenalty = 10000
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+
+%% ITEM LISTS:
+\usepackage{enumitem}
+\setlist{nosep}
+
+\renewcommand{\labelitemi}  {\color{black!70}{\faAngleRight}}
+\renewcommand{\labelitemii} {\color{black!70}{\faAngleRight}}
+\renewcommand{\labelitemiii}{\color{black!70}{\faAngleRight}}
+
+
+%% FIGURES AND CAPTIONS:
+\usepackage{chngcntr}
+\captionsetup{justification=centering}  % set captions centered
+\usepackage[font=small,skip=7pt]{caption}
+
+\renewcommand\cftfigafterpnum{\vskip12pt\par}  % modifies the space between entries taken from the
+                                               %  same chapter when they are listed in the List of FiguresLoF
+
 \setlength{\footnotesep}{0.42cm}
 
 
-% item-lists:
-\renewcommand{\labelitemi}  {\color{black!70}{\adfrightarrowhead}}
-\renewcommand{\labelitemii} {\color{black!70}{\adfrightarrowhead}}
-\renewcommand{\labelitemiii}{\color{black!70}{\adfrightarrowhead}}
-
-
-% figures and captions
+%% NUMBERING SCHEMES:
 \usepackage{chngcntr}
-\captionsetup{justification=centering}%sets captions centered
-\usepackage[font=small,skip=7pt]{caption}
 
-\renewcommand\cftfigafterpnum{\vskip12pt\par}%modifies the space between entries taken from the same
-                                             %  chapter when they are listed in the List of Figures
+\ifcsname absolutecaptionnumbers \endcsname
+    \counterwithout{figure}{chapter}
+    \counterwithout{table}{chapter}
+    \lstset{numberbychapter=false}
+\fi
+
+\ifcsname absolutefootnotenumbers \endcsname
+    \usepac
+    \counterwithout{footnote}{chapter}
+\fi
+
+% all numbers are relative to the cahpter by default
 
 
-% code listings
+%% SOURCE CODE LISTINGS:
 \lstdefinestyle{Xcode} {
     basicstyle       = \ttfamily\scriptsize,
+    % colors:
     identifierstyle  = \color{black},
     commentstyle     = \color{Gray},
     keywordstyle     = \color{SupportingCherry},
     stringstyle      = \color{SupportingDeepOrange},
-    extendedchars    = true,
+    % layout:
     tabsize          = 4,
     showspaces       = false,
     showstringspaces = false,
+    keepspaces       = true,
     breakautoindent  = true,
     flexiblecolumns  = true,
-    keepspaces       = true,
+    extendedchars    = true,
     xleftmargin      = 0pt
 }
 \lstset{
     style = Xcode,
     backgroundcolor  = \color{TertiaryAccentColor!10!Gray!7!White},
     caption = \lstname,
-    breaklines = false,
+    % word wrap:
+    breaklines = true,
+    postbreak = \space,
+    breakindent = 5pt,
+    % line numbers on the left:
     numbers = left,
     numberstyle = \normalfont\tiny\color{Black},
     stepnumber = 1,
     frame = l,
-    framesep = 3.5mm,
-    framexleftmargin = 1em,
-    xleftmargin = 2.7em,
+    framesep = 4.5mm,
+    framexleftmargin = 0.9em,
+    xleftmargin = 3em,
     fillcolor = \color{TertiaryAccentColor!10!Gray!20!White},
     rulecolor = \color{TertiaryAccentColor}
 }

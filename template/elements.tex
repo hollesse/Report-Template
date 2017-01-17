@@ -2,7 +2,9 @@
 %!TEX program = xelatex
 %!BIB program = biber
 
-%% CUSTOM ELEMENTS
+%% --- Internal Template File ----------------------------------------------------------------------
+%%   DEFINE CUSTOM, HELPFUL ELEMENTS
+%% -------------------------------------------------------------------------------------------------
 
 % totally preventing pagebreaks inside this environement
 \newenvironment{absolutelynopagebreak}
@@ -17,12 +19,6 @@
     \begin{quote}
         \colorbox{SupportingDeepOrange}{ \textcolor{white}{\MineSign \vspace{0.01cm} INCOMPLETE {\scriptsize ToDo: #1}} }
     \end{quote} 
-}
-
-
-% pack entries in a list more tightly together
-\providecommand{\tightlist}{
-    \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}
 }
 
 
@@ -43,7 +39,7 @@
 
         \begin{table}[htbp]
             \begin{center}
-                \rowcolors{2}{#3!7}{white}
+                \rowcolors{2}{#3!15}{white}
                 \begin{tabular}{$#4}
                     \arrayrulecolor{#3}
                     \toprule
@@ -62,7 +58,7 @@
 
 \newenvironment{stripedacenttable}[4]
     {
-        \begin{stripedtable}{#1}{#2}{TertiaryAccentColor!15!Gray!70!White}{#3}{#4}
+        \begin{stripedtable}{#1}{#2}{TertiaryAccentColor!15!Gray!75!White}{#3}{#4}
     }
     {
         \end{stripedtable}

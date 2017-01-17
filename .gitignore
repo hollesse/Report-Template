@@ -12,3 +12,4 @@
 *.gz
 *.zip
 /*.sublime-workspace
+/main.pdf
