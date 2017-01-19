@@ -11,7 +11,7 @@
     "sudo mv biber /usr/bin/"
   ],
   "script": [
-    "pdflatex --version",
+    "xelatex --version",
     "biber --version",
     "./compile.sh"
   ],
