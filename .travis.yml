@@ -15,4 +15,3 @@ script:
 language: ruby
 group: stable
 os: linux
-}
