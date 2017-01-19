@@ -1,15 +1,28 @@
 sudo: required
 before_install:
-  - sudo add-apt-repository ppa:texlive-backports/ppa -y
-  - sudo apt-get update
-
+- sudo add-apt-repository ppa:texlive-backports/ppa -y
+- sudo apt-get update
 install:
-  - sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended biblatex texlive-lang-german
-  - wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.4/binaries/Linux/biber-linux_x86_64.tar.gz/download --output-document biber-linux_x86_64.tar.gz
-  - tar -xvzf biber-linux_x86_64.tar.gz
-  - sudo mv biber /usr/bin/
-
+- sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
+  biblatex texlive-lang-german
+- wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.4/binaries/Linux/biber-linux_x86_64.tar.gz/download
+  --output-document biber-linux_x86_64.tar.gz
+- tar -xvzf biber-linux_x86_64.tar.gz
+- sudo mv biber /usr/bin/
 script:
-  - pdflatex --version
-  - biber --version
-  - ./compile.sh
+- pdflatex --version
+- biber --version
+- mkdir _build
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
+- biber main
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
+- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
+deploy:
+  provider: releases
+  api_key:
+    secure: fVygwJ4d9AiJvGMoE5M4w0maloEaEXJ7qUf6668ndVQxbUD4VIfI+SGfDj6azF0bic0oKVjkXW98kdvfbeod1bgPsALQsV3nJZyZndYVt0CV+HLv1F5hBAEvq9kWPvFzaSOWtA2IcqEeAINIV5Aht0c5S6Imnwo0gbtEKfYCzghJoPfnuq+VuJzDvIFG77HXNpk947SdBP8aa1KCYkzw8A4+WfZobWBaMOFb2JS3Iq+eP7w2af/etV1H6isygTSlzLqmnNPkeeld+ONFwy3RopMGry/o3+ADMTuCJgUlFLrTGk+iPM5epeEwGOnp8nc5HcVOJ8jggUo+Dz72TvHE67uCmt608T4p2IPyKkzX4qg91ogOm8JwWLd8QJrG8WckOWq/pqJUD4UAncxOqBoXDJkLJZ7rWX5Epn2XRXHk7odRvLy0rzDJMRiE3QLY4+BAxfCabKB2GgQ7ftfWXArfCJkg258Hg/W39Su8weT57FENnpISiRwxSkvtvwa4YmWkJZT4dKhXQ5nF7Nybnxuq/NcBlLtVFLdWNhLsrjeo4AnUxsT4qXvHaOzc5hEaBIKNPN70jun2ikTt1r/SRLOan8oTL9AUsDNXdv4Tx3+SfqJBpbRS3r8C6tXmZPob4xwf/kMdT/KXfgTkmUfMSNgxZ3sIZkJFI2V+T3NvOr0yohA=
+  file: _build/main.pdf
+  skip_cleanup: true
+  on:
+    repo: hollesse/Report-Template
