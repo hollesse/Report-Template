@@ -18,22 +18,24 @@ Please use XeLaTeX or LuaLaTex for building.
 
 
 ## How to Setup and Use
-1. inside `./setup.tex`:
+1. Copy the directory `./userdata/ExampleContent` to `./userdata/ and rename it. For example you can call it `PraxisT1000` if its your first internship report.
+2. inside `./userdata/usersetup.tex`:
     - choose the type of your Report
 	- choose your prefered Theme (DB Systel or DB default)
     - choose if you want to use the DB Font (have to be added by yourself - you can find instructions for that below)	
+    - add the name of your content directory which we copied in step 1
     - choose if you want to write your report in english or german
     - fill out the fields for your informations
-2. places the entries for your bibliography into `./resources/references.bib`
-3. place the `.tex`-files containing your content into `./content` and define the structure of your content inside `./content/structure.tex`
-4. fill your acronyms and custom macros as needed into `./content/acronyms.tex` and `./content/macros.tex`
-5. save your image files into `./resources`
-    - you can then use them easily by just referencing `\includegraphics{asdf}` if you saved your file at `./resources/asdf.png`
+3. places the entries for your bibliography into `./userdata/ <YOUR CONTENT DIRECTORY> /resources/references.bib`
+4. place the `.tex`-files containing your content into `./userdata/ <YOUR CONTENT DIRECTORY> /content` and define the structure of your content inside `./userdata/ <YOUR CONTENT DIRECTORY> /content/content.tex`
+5. fill your acronyms and custom macros as needed into `./userdata/ <YOUR CONTENT DIRECTORY> /content/acronyms.tex` and `./userdata/macros.tex`
+6. save your image files into `./userdata/ <YOUR CONTENT DIRECTORY> /resources/images`
+    - you can then use them easily by just referencing `\includegraphics{asdf}` if you saved your file at `./resources/images/asdf.png`
 
 ## How to use DB Fonts
 The DB Fonts aren't included in this Repository, so you have to add them by yourself.
 
-1. Create a new directory `./lib/fonts/db/`
+1. Create a new directory `./userdata/lib/fonts/db/`
 2. Add the font DB Sans as Truetypefont in the Styles:
     - regular: `DB_Sans.ttf`
     - bold: `DB_Sans_Bold.tff`
@@ -44,7 +46,7 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
     - black: `DB_Head_Black.tff`
     - italic: `DB_Head_Italic.tff`
 	- black italic: `DB_Head_Black_Italic.tff`
-4. Activate DbFont in `./setup.tex` by removing the `%` Symbol in front of `DbFont` in the `usepackage` section
+4. Activate DbFont in `./userdata/usersetup.tex` by removing the `%` Symbol in front of `DbFont` in the `usepackage` section
 
 
 ## Included Custom Elements for Ease of Use
