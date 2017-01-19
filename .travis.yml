@@ -5,7 +5,7 @@
     "sudo apt-get update"
   ],
   "install": [
-    "sudo apt-get install -y texlive texlive-bibtex-extra texlive-lang-german",
+    "sudo apt-get install -y texlive-full",
     "wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.4/binaries/Linux/biber-linux_x86_64.tar.gz/download --output-document biber-linux_x86_64.tar.gz",
     "tar -xvzf biber-linux_x86_64.tar.gz",
     "sudo mv biber /usr/bin/"
