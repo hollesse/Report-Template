@@ -18,7 +18,7 @@ Please use XeLaTeX or LuaLaTex for building.
 
 
 ## How to Setup and Use
-1. Copy the directory `./userdata/ExampleContent` to `./userdata/ and rename it. For example you can call it `PraxisT1000` if its your first internship report.
+1. Copy the directory `./userdata/ExampleContent` to `./userdata/` and rename it. For example you can call it `PraxisT1000` if its your first internship report.
 2. inside `./userdata/usersetup.tex`:
     - choose the type of your Report
 	- choose your prefered Theme (DB Systel or DB default)
