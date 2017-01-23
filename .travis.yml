@@ -5,23 +5,7 @@ sudo: required
 addons:
  apt:
   packages:
-   - latex-beamer
-   - latex-xcolor
-   - texlive
-   - texlive-base
-   - texlive-binaries
-   - texlive-common
-   - texlive-doc-base
-   - texlive-extra-utils
-   - texlive-font-utils
-   - texlive-fonts-recommended
-   - texlive-generic-recommended
-   - texlive-lang-german
-   - texlive-latex-base
-   - texlive-latex-extra
-   - texlive-latex-recommended
-   - texlive-xetex
-   - lmodern   
+   - texlive-full
 install:
 #- sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra texlive-lang-german texlive-generic-extra biblatex
 - wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.4/binaries/Linux/biber-linux_x86_64.tar.gz/download
