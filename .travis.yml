@@ -7,6 +7,8 @@ cache:
  - packages
  - "/tmp/texlive"
  - "/$HOME/.texlive"
+r_github_packages:
+  - cran/survival
 warnings_are_errors: false
 before_install:
  - bash ./ci/setlocale.sh
