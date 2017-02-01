@@ -1,4 +1,4 @@
-language: r
+#language: r
 sudo: true
 cache:
  - packages
@@ -6,6 +6,7 @@ cache:
  - "/$HOME/.texlive"
 warnings_are_errors: false
 before_install:
+ - echo "options(repos = c(CRAN = "https://cran.rstudio.com"))" >.Rprofile
  - bash ./ci/setlocale.sh
  - source ./ci/installtexlive.sh
  - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch
