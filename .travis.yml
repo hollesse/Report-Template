@@ -1,28 +1,52 @@
 language: r
-sudo: required
+sudo: true
+cache:
+ - packages
+ - "/tmp/texlive"
+ - "/$HOME/.texlive"
+warnings_are_errors: false
 before_install:
-- tlmgr install index
-- sudo add-apt-repository ppa:texlive-backports/ppa -y
-- sudo apt-get update
-install:
-- sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-bibtex-extra texlive-lang-german texlive-generic-extra biblatex texlive-xetex
-- wget https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/2.4/binaries/Linux/biber-linux_x86_64.tar.gz/download
-  --output-document biber-linux_x86_64.tar.gz
-- tar -xvzf biber-linux_x86_64.tar.gz
-- sudo mv biber /usr/bin/
-- sudo -s tlmgr update --self --all --reinstall-forcibly-removed
+ - bash ./ci/setlocale.sh
+ - source ./ci/installtexlive.sh
+ - tlmgr install acronym bigfoot blindtext chngcntr cmap nowidow mdframed navigator needspace tablefootnote tocloft xpatch
+ - tlmgr update --all
+ - sudo apt-get update
+ - sudo apt-get install texlive-bibtex-extra
+install: echo Installation step
+before_script:
+ - wget "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/Linux/biber-linux_x86_64.tar.gz"
+ - tar xzf biber-linux_x86_64.tar.gz
+ - export PATH=$PATH:$PWD
+ - tlmgr update biber
+ - bash ./ci/replaceumlaute.sh
 script:
-- mkdir _build
-- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
-- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
-- biber main
-- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
-- xelatex -interaction=nonstopmode -halt-on-error -output-directory _build main.tex
+ - xelatex Example.tex
+ - xelatex Example.tex
+ - biber Example
+ - xelatex Example.tex
+ - xelatex Example.tex
+#after_success:
+# - bash ./ci/push.sh
 deploy:
   provider: releases
+  overwrite: true
   api_key:
-    secure: fVygwJ4d9AiJvGMoE5M4w0maloEaEXJ7qUf6668ndVQxbUD4VIfI+SGfDj6azF0bic0oKVjkXW98kdvfbeod1bgPsALQsV3nJZyZndYVt0CV+HLv1F5hBAEvq9kWPvFzaSOWtA2IcqEeAINIV5Aht0c5S6Imnwo0gbtEKfYCzghJoPfnuq+VuJzDvIFG77HXNpk947SdBP8aa1KCYkzw8A4+WfZobWBaMOFb2JS3Iq+eP7w2af/etV1H6isygTSlzLqmnNPkeeld+ONFwy3RopMGry/o3+ADMTuCJgUlFLrTGk+iPM5epeEwGOnp8nc5HcVOJ8jggUo+Dz72TvHE67uCmt608T4p2IPyKkzX4qg91ogOm8JwWLd8QJrG8WckOWq/pqJUD4UAncxOqBoXDJkLJZ7rWX5Epn2XRXHk7odRvLy0rzDJMRiE3QLY4+BAxfCabKB2GgQ7ftfWXArfCJkg258Hg/W39Su8weT57FENnpISiRwxSkvtvwa4YmWkJZT4dKhXQ5nF7Nybnxuq/NcBlLtVFLdWNhLsrjeo4AnUxsT4qXvHaOzc5hEaBIKNPN70jun2ikTt1r/SRLOan8oTL9AUsDNXdv4Tx3+SfqJBpbRS3r8C6tXmZPob4xwf/kMdT/KXfgTkmUfMSNgxZ3sIZkJFI2V+T3NvOr0yohA=
-  file: _build/main.pdf
+    secure: Ph4ZHMQr4QpU0D6QhEmRdV8a1axmzzwovzPsTt44gF97Hyb5Zuvx5eFre/U0fjFI4iB4c33sSXwzWjsm4OUYw4yIpTj4FLk2Ix1RC14FoqS6nLWrJoQzFBczz78PJbpyF8rR4A7QQoBFcOD6IMd2Je7uTW/5IOP6U1WaOMHNqI1hbdZedgWUoxXjqWU/2Mv4M72dLlImCy5oJnoOYstTTaPrMOwIZTaOYEC97M/gXRpnPr5mr89f9VOmwc/AGYP3SeZmEfv1w9P7t8ys/kxVh4Cvgyw3oQDgW823/aJV0clCKqAXF4+kFddSu5Uoru2/T2xaYAfE3jrDb82mv7b8M29yhhixXl2T/gpXd0fWgoBT5lsYivyiIWNYsz7sQHHCIGj9NeZAGKqS+VY9EmwVS3Is7c39ws5MzWSJ8V0GYuYbhi0M0nnARyU/Z1EMNlxjperYP11xpwXCUCfKoI7h+7Dht/3UfHX3i2oPJGOIOFj51XKI8pbvkUR/c5TmdssDwlS8tN2CAq4VltcB4g635XbSLBg9kcWKuLuuLyIxXCleBSMDi+PqKqVvhKYoc0pyFrwYyxWQvkN5WaoVRIkp+xp/OVkNZz/Zn/s9xjoV4WGDAmQ5ofr1w8VCqqOAy6HXEaozLE0wzdBiQn0FpM6+7LowTVVRKqC7ffaAb1owGYY=
+  file:
+  - Example.pdf
+  - userdata/usersetup.tex
+  - userdata/macros.tex
+  - userdata/ExampleContent/content/abstractDE.tex
+  - userdata/ExampleContent/content/abstractEN.tex
+  - userdata/ExampleContent/content/acronyms.tex
+  - userdata/ExampleContent/content/appendix.tex
+  - userdata/ExampleContent/content/content.tex
+  - userdata/ExampleContent/content/chapters/template.tex
   skip_cleanup: true
   on:
-    repo: hollesse/Report-Template
+    repo: hollesse/travis-latex-ci
+notifications:
+  email: false
+env:
+  global:
+    secure: gwpd/w4knmUqF8Si/qwtSvlAVDzQc0nAA4Eq3/kVKTkj6r6Xqcj0N7RmpvuxRY2gG7QuAm+GjsaaXJER3i4+sE2aEEEJ+1h5lCFE1UjCWO2U5TL1dVQrrq/Rr25Pw3hm9zQ7fQckw5HlhbcJheJYNJmxBP5DtEIQ2Os9nXz8lR1Tp/Maej1wbglLQxkMhIOpeQKLfN7e0lxK+MawIqPpwk+Dt7zOL+isd1450Ij7JHUg69pzsa5p/oQl47ym1yhUQSY+N6tAiZ0okzexRnghPKoq5a9c5KjzKoGU4dTao5cuURSJmBz0/S7xP58DScswOWxlMS0hrJzH4o4ptWnFsYn7oRgRNY5ZFThKHJWY2Jc3RvH0iHFZdk4ldhOv0HkQNQpSdBtiuIibOMl5sN/mvdvcDWrmfQwA54kqxWW4LDcFS2TnUeZlpcU5N7ifMw0MY7XsOUW6Rvg3rHHBpsGOa3uL5wXTXUdGLw9fHxPmkzjmDVcjXg0RW3aAOpeYIVAu6fgeolKlX6wgCeHZ7QjM2QU0soeJe09rw7IdNbMBZ1bPQSj0tXeQdwLO5lC4L67qJ3a2ZM8bekC+JfSpLp9KhUyTwU8GyW1vnkFKSDsMKvJ6s7QWgvhBWEStLLiFHULAn4nmm9tz+H+gAwTToQC6Jqn+RbEeKv99ii6jI76XBDY=
