@@ -20,11 +20,11 @@ before_script:
  - tlmgr update biber
  - bash ./ci/replaceumlaute.sh
 script:
- - xelatex Example.tex
- - xelatex Example.tex
- - biber Example
- - xelatex Example.tex
- - xelatex Example.tex
+ - xelatex main.tex
+ - xelatex main.tex
+ - biber main
+ - xelatex main.tex
+ - xelatex main.tex
 #after_success:
 # - bash ./ci/push.sh
 deploy:
@@ -33,15 +33,7 @@ deploy:
   api_key:
     secure: Ph4ZHMQr4QpU0D6QhEmRdV8a1axmzzwovzPsTt44gF97Hyb5Zuvx5eFre/U0fjFI4iB4c33sSXwzWjsm4OUYw4yIpTj4FLk2Ix1RC14FoqS6nLWrJoQzFBczz78PJbpyF8rR4A7QQoBFcOD6IMd2Je7uTW/5IOP6U1WaOMHNqI1hbdZedgWUoxXjqWU/2Mv4M72dLlImCy5oJnoOYstTTaPrMOwIZTaOYEC97M/gXRpnPr5mr89f9VOmwc/AGYP3SeZmEfv1w9P7t8ys/kxVh4Cvgyw3oQDgW823/aJV0clCKqAXF4+kFddSu5Uoru2/T2xaYAfE3jrDb82mv7b8M29yhhixXl2T/gpXd0fWgoBT5lsYivyiIWNYsz7sQHHCIGj9NeZAGKqS+VY9EmwVS3Is7c39ws5MzWSJ8V0GYuYbhi0M0nnARyU/Z1EMNlxjperYP11xpwXCUCfKoI7h+7Dht/3UfHX3i2oPJGOIOFj51XKI8pbvkUR/c5TmdssDwlS8tN2CAq4VltcB4g635XbSLBg9kcWKuLuuLyIxXCleBSMDi+PqKqVvhKYoc0pyFrwYyxWQvkN5WaoVRIkp+xp/OVkNZz/Zn/s9xjoV4WGDAmQ5ofr1w8VCqqOAy6HXEaozLE0wzdBiQn0FpM6+7LowTVVRKqC7ffaAb1owGYY=
   file:
-  - Example.pdf
-  - userdata/usersetup.tex
-  - userdata/macros.tex
-  - userdata/ExampleContent/content/abstractDE.tex
-  - userdata/ExampleContent/content/abstractEN.tex
-  - userdata/ExampleContent/content/acronyms.tex
-  - userdata/ExampleContent/content/appendix.tex
-  - userdata/ExampleContent/content/content.tex
-  - userdata/ExampleContent/content/chapters/template.tex
+  - main.pdf
   skip_cleanup: true
   on:
     repo: hollesse/travis-latex-ci
