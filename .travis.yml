@@ -1,4 +1,4 @@
-language: r
+language: R
 repos:
   CRAN: http://cran.rstudio.com
   ropensci: http://packages.ropensci.com
