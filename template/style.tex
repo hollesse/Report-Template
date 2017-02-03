@@ -27,8 +27,8 @@
     Extension = .otf
 ]
 
-\RequirePackage{fontawesome}
-\newfontfamily\FA[Path=userdata/lib/fonts/]{FontAwesome}
+%\RequirePackage{fontawesome}
+%\newfontfamily\FA[Path=userdata/lib/fonts/]{FontAwesome}
 
 % set \emph to be bold text:
 \let\emph\relax
@@ -128,10 +128,13 @@
 \usepackage{enumitem}
 \setlist{nosep}
 
-\renewcommand{\labelitemi}  {\color{black!70}{\faAngleRight}}
-\renewcommand{\labelitemii} {\color{black!70}{\faAngleRight}}
-\renewcommand{\labelitemiii}{\color{black!70}{\faAngleRight}}
+%\renewcommand{\labelitemi}  {\color{black!70}{\faAngleRight}}
+%\renewcommand{\labelitemii} {\color{black!70}{\faAngleRight}}
+%\renewcommand{\labelitemiii}{\color{black!70}{\faAngleRight}}
 
+\renewcommand{\labelitemi}  {\color{black!70}{\adfrightarrowhead}}
+\renewcommand{\labelitemii} {\color{black!70}{\adfrightarrowhead}}
+\renewcommand{\labelitemiii}{\color{black!70}{\adfrightarrowhead}}
 
 %% FIGURES AND CAPTIONS:
 \usepackage{chngcntr}
