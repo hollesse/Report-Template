@@ -1,14 +1,9 @@
-language: R
-repos:
-  CRAN: http://cran.rstudio.com
-  ropensci: http://packages.ropensci.com
+language: r
 sudo: true
 cache:
  - packages
  - "/tmp/texlive"
  - "/$HOME/.texlive"
-r_github_packages:
-  - cran/survival
 warnings_are_errors: false
 before_install:
  - bash ./ci/setlocale.sh
@@ -19,31 +14,27 @@ before_install:
  - sudo apt-get install texlive-bibtex-extra
 install: echo Installation step
 before_script:
+ # as somehow no biber package is available for ubuntu 12.04 via apt, let's just download it directly
  - wget "https://sourceforge.net/projects/biblatex-biber/files/biblatex-biber/current/binaries/Linux/biber-linux_x86_64.tar.gz"
  - tar xzf biber-linux_x86_64.tar.gz
  - export PATH=$PATH:$PWD
  - tlmgr update biber
  - bash ./ci/replaceumlaute.sh
-script:
+script: 
  - xelatex main.tex
  - xelatex main.tex
  - biber main
  - xelatex main.tex
  - xelatex main.tex
-#after_success:
-# - bash ./ci/push.sh
 deploy:
-  provider: releases
-  overwrite: true
-  api_key:
-    secure: Ph4ZHMQr4QpU0D6QhEmRdV8a1axmzzwovzPsTt44gF97Hyb5Zuvx5eFre/U0fjFI4iB4c33sSXwzWjsm4OUYw4yIpTj4FLk2Ix1RC14FoqS6nLWrJoQzFBczz78PJbpyF8rR4A7QQoBFcOD6IMd2Je7uTW/5IOP6U1WaOMHNqI1hbdZedgWUoxXjqWU/2Mv4M72dLlImCy5oJnoOYstTTaPrMOwIZTaOYEC97M/gXRpnPr5mr89f9VOmwc/AGYP3SeZmEfv1w9P7t8ys/kxVh4Cvgyw3oQDgW823/aJV0clCKqAXF4+kFddSu5Uoru2/T2xaYAfE3jrDb82mv7b8M29yhhixXl2T/gpXd0fWgoBT5lsYivyiIWNYsz7sQHHCIGj9NeZAGKqS+VY9EmwVS3Is7c39ws5MzWSJ8V0GYuYbhi0M0nnARyU/Z1EMNlxjperYP11xpwXCUCfKoI7h+7Dht/3UfHX3i2oPJGOIOFj51XKI8pbvkUR/c5TmdssDwlS8tN2CAq4VltcB4g635XbSLBg9kcWKuLuuLyIxXCleBSMDi+PqKqVvhKYoc0pyFrwYyxWQvkN5WaoVRIkp+xp/OVkNZz/Zn/s9xjoV4WGDAmQ5ofr1w8VCqqOAy6HXEaozLE0wzdBiQn0FpM6+7LowTVVRKqC7ffaAb1owGYY=
-  file:
+ provider: releases
+ overwrite: true
+ api_key:
+  secure: Ph4ZHMQr4QpU0D6QhEmRdV8a1axmzzwovzPsTt44gF97Hyb5Zuvx5eFre/U0fjFI4iB4c33sSXwzWjsm4OUYw4yIpTj4FLk2Ix1RC14FoqS6nLWrJoQzFBczz78PJbpyF8rR4A7QQoBFcOD6IMd2Je7uTW/5IOP6U1WaOMHNqI1hbdZedgWUoxXjqWU/2Mv4M72dLlImCy5oJnoOYstTTaPrMOwIZTaOYEC97M/gXRpnPr5mr89f9VOmwc/AGYP3SeZmEfv1w9P7t8ys/kxVh4Cvgyw3oQDgW823/aJV0clCKqAXF4+kFddSu5Uoru2/T2xaYAfE3jrDb82mv7b8M29yhhixXl2T/gpXd0fWgoBT5lsYivyiIWNYsz7sQHHCIGj9NeZAGKqS+VY9EmwVS3Is7c39ws5MzWSJ8V0GYuYbhi0M0nnARyU/Z1EMNlxjperYP11xpwXCUCfKoI7h+7Dht/3UfHX3i2oPJGOIOFj51XKI8pbvkUR/c5TmdssDwlS8tN2CAq4VltcB4g635XbSLBg9kcWKuLuuLyIxXCleBSMDi+PqKqVvhKYoc0pyFrwYyxWQvkN5WaoVRIkp+xp/OVkNZz/Zn/s9xjoV4WGDAmQ5ofr1w8VCqqOAy6HXEaozLE0wzdBiQn0FpM6+7LowTVVRKqC7ffaAb1owGYY=
+ file: 
   - main.pdf
-  skip_cleanup: true
-  on:
-    repo: hollesse/travis-latex-ci
+ skip_cleanup: true
+ on:
+  repo: hollesse/Report-Template
 notifications:
   email: false
-env:
-  global:
-    secure: gwpd/w4knmUqF8Si/qwtSvlAVDzQc0nAA4Eq3/kVKTkj6r6Xqcj0N7RmpvuxRY2gG7QuAm+GjsaaXJER3i4+sE2aEEEJ+1h5lCFE1UjCWO2U5TL1dVQrrq/Rr25Pw3hm9zQ7fQckw5HlhbcJheJYNJmxBP5DtEIQ2Os9nXz8lR1Tp/Maej1wbglLQxkMhIOpeQKLfN7e0lxK+MawIqPpwk+Dt7zOL+isd1450Ij7JHUg69pzsa5p/oQl47ym1yhUQSY+N6tAiZ0okzexRnghPKoq5a9c5KjzKoGU4dTao5cuURSJmBz0/S7xP58DScswOWxlMS0hrJzH4o4ptWnFsYn7oRgRNY5ZFThKHJWY2Jc3RvH0iHFZdk4ldhOv0HkQNQpSdBtiuIibOMl5sN/mvdvcDWrmfQwA54kqxWW4LDcFS2TnUeZlpcU5N7ifMw0MY7XsOUW6Rvg3rHHBpsGOa3uL5wXTXUdGLw9fHxPmkzjmDVcjXg0RW3aAOpeYIVAu6fgeolKlX6wgCeHZ7QjM2QU0soeJe09rw7IdNbMBZ1bPQSj0tXeQdwLO5lC4L67qJ3a2ZM8bekC+JfSpLp9KhUyTwU8GyW1vnkFKSDsMKvJ6s7QWgvhBWEStLLiFHULAn4nmm9tz+H+gAwTToQC6Jqn+RbEeKv99ii6jI76XBDY=
