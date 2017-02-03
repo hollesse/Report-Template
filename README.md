@@ -2,6 +2,8 @@
 This template is in development. It's based on [Luca Vazzano's template](https://github.com/LucaVazz/Report-Template) and it's customized for use at DB Systel (it does not correspond to the DB Cooperate Design).  
 
 Please use XeLaTeX or LuaLaTex for building.
+## Buildstatus
+[![Build Status](https://travis-ci.org/hollesse/Report-Template.svg?branch=master)](https://travis-ci.org/hollesse/Report-Template)
 
 ## Features
 - all formal layout-properties of the document are in accordance to the requirements given by the Technical Faculty of DHBW Mannheim.
