@@ -20,7 +20,16 @@ Please use XeLaTeX or LuaLaTex for building.
 
 
 ## How to Setup and Use
-1. Copy the directory `./userdata/ExampleContent` to `./userdata/` and rename it. For example you can call it `PraxisT1000` if its your first internship report.
+### Create New project
+#### Either Run the project creation script (requires python 3.6 or higher)
+`cd userdata`<br>
+`python3 create_project.py`
+
+Follow the instructions
+
+#### Or do it the traditional way
+1. Copy directory `./userdata/ExampleContent` to `./userdata/` and rename it. For example you can call it `PraxisT1000` if its your first internship report.<br>
+`cp userdata/ExampleContent/* userdata/<project name>`
 2. inside `./userdata/usersetup.tex`:
     - choose the type of your Report
 	- choose your prefered Theme (DB Systel or DB default)
@@ -28,7 +37,10 @@ Please use XeLaTeX or LuaLaTex for building.
     - add the name of your content directory which we copied in step 1
     - choose if you want to write your report in english or german
     - fill out the fields for your informations
-3. places the entries for your bibliography into `./userdata/ <YOUR CONTENT DIRECTORY> /resources/references.bib`
+
+### Additional steps
+
+3. place the entries for your bibliography into `./userdata/ <YOUR CONTENT DIRECTORY> /resources/references.bib`
 4. place the `.tex`-files containing your content into `./userdata/ <YOUR CONTENT DIRECTORY> /content` and define the structure of your content inside `./userdata/ <YOUR CONTENT DIRECTORY> /content/content.tex`
 5. fill your acronyms and custom macros as needed into `./userdata/ <YOUR CONTENT DIRECTORY> /content/acronyms.tex` and `./userdata/macros.tex`
 6. save your image files into `./userdata/ <YOUR CONTENT DIRECTORY> /resources/images`
@@ -36,7 +48,13 @@ Please use XeLaTeX or LuaLaTex for building.
 
 ## How to use DB Fonts
 The DB Fonts aren't included in this Repository, so you have to add them by yourself.
+### Either run the installation script (automatically done by project creation script)
+`cd userdata`
+`python3 add_db_fonts.py`
 
+Step 4 is omitted by the `add_db_fonts.py` script.
+
+### Or add the fonts manually
 1. Create a new directory `./userdata/lib/fonts/db/`
 2. Add the font DB Sans as Truetypefont in the Styles:
     - regular: `DB_Sans.ttf`
