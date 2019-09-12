@@ -67,7 +67,7 @@ if document_type == 'Internship':
                 "\\newcommand{\\companymanager}{",
             ]):
         input_field_value = input(field_name + '\n')
-        user_setup.replace(old, new + input_field_value + '}')
+        user_setup = user_setup.replace(old, new + input_field_value + '}')
 
 elif document_type == 'Internship':
     for field_name, old, new in zip(
@@ -83,7 +83,7 @@ elif document_type == 'Internship':
                 r"\newcommand{\prof}{",
             ]):
         input_field_value = input(field_name + '\n')
-        user_setup.replace(old, new + input_field_value + '}')
+        user_setup = user_setup.replace(old, new + input_field_value + '}')
 
 elif document_type == 'Internship':
     for field_name, old, new in zip(
@@ -102,7 +102,7 @@ elif document_type == 'Internship':
                 r"\newcommand{\prof}{"
             ]):
         input_field_value = input(field_name + '\n')
-        user_setup.replace(old, new + input_field_value + '}')
+        user_setup = user_setup.replace(old, new + input_field_value + '}')
 
 report_kind = input('Kind of report (e.g. T1000)\n')
 
@@ -131,8 +131,6 @@ for old, new in zip(
 ):
     user_setup = user_setup.replace(old, new)
 
-with open(os.path.join(project_name, 'usersetup.tex'), 'w') as file_user_setup:
-    file_user_setup.write(user_setup)
 
 # change project name in setup file
 with open('setup.tex', 'r') as setup_file:
@@ -143,6 +141,10 @@ with open('setup.tex', 'w') as setup_file:
 
 if input('Would you like to add DB fonts? ("y" if yes)\n') == 'y':
     add_db_fonts()
+    user_setup = user_setup.replace('%DbFont', 'DbFont')
+
+with open(os.path.join(project_name, 'usersetup.tex'), 'w') as file_user_setup:
+    file_user_setup.write(user_setup)
 
 green("Finished! You can now compile the main.tex file in the root of the repository or "
       "make some additional changes to your setup by editing usersetup.tex")

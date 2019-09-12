@@ -52,7 +52,7 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 `cd userdata`
 `python3 add_db_fonts.py`
 
-Step 4 is omitted by the `add_db_fonts.py` script.
+Step 4 is omitted by the `add_db_fonts.py` script, but done by the `create_project.py`script.
 
 ### Or add the fonts manually
 1. Create a new directory `./userdata/lib/fonts/db/`
