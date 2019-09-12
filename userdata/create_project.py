@@ -36,8 +36,74 @@ company = input('Company (e.g. DB Systel GmbH)\n')
 company_location = input('Company Location (e.g. Frankfurt am Main)\n')
 title = input('Report title\n')
 time_range = input('Time range in weeks\n')
-handoverdate = input('Hand over date (e.g. yyyy-mm-dd)\n')
+handoverdate = input('Hand over date (date)\n')
 city = input('City\n')
+
+document_type = ['Internship', 'Study', 'Bachelor'][
+    int(input('Document Type: Internship (0), Study (1), Bachelor (2)\n'))]
+
+if document_type == 'Internship':
+    for field_name, old, new in zip(
+            [
+                'Report Module (e.g. T1_1000)',
+                'Report start (date)',
+                'Report end (date)',
+                'Department',
+                'Department (long)',
+                'Company Manager',
+            ], [
+                r"\newcommand{\reportmodule}{T...000}",
+                r"\newcommand{\reportstart}{01.01.1970}",
+                r"\newcommand{\reportend}{01.01.1970}",
+                r"\newcommand{\department}{F.I...}",
+                r"\newcommand{\longdepartment}{...}",
+                r"\newcommand{\companymanager}{...}",
+            ], [
+                "\\newcommand{\\reportmodule}{T..",
+                "\\newcommand{\\reportstart}{01.01",
+                "\\newcommand{\\reportend}{01.01",
+                "\\newcommand{\\department}{F.I",
+                "\\newcommand{\\longdepartment}{",
+                "\\newcommand{\\companymanager}{",
+            ]):
+        input_field_value = input(field_name + '\n')
+        user_setup.replace(old, new + input_field_value + '}')
+
+elif document_type == 'Internship':
+    for field_name, old, new in zip(
+            [
+                'Report semester',
+                'Professor',
+            ], [
+                r"\newcommand{\reportsemester}{...th}",
+                r"\newcommand{\prof}{Prof.Dr....}",
+            ], [
+
+                r"\newcommand{\reportsemester}{",
+                r"\newcommand{\prof}{",
+            ]):
+        input_field_value = input(field_name + '\n')
+        user_setup.replace(old, new + input_field_value + '}')
+
+elif document_type == 'Internship':
+    for field_name, old, new in zip(
+            [
+                'Academic degreee',
+                'Company Manager',
+                'Professor',
+            ], [
+                r"\newcommand{\academicdegree}{Bachelor of Science}",
+                r"\newcommand{\companymanager}{M. Sc. ...}",
+                r"\newcommand{\prof}{Prof. Dr. ...}",
+            ], [
+
+                r"\newcommand{\academicdegree}{"
+                r"\newcommand{\companymanager}{"
+                r"\newcommand{\prof}{"
+            ]):
+        input_field_value = input(field_name + '\n')
+        user_setup.replace(old, new + input_field_value + '}')
+
 report_kind = input('Kind of report (e.g. T1000)\n')
 
 for old, new in zip(
@@ -51,7 +117,6 @@ for old, new in zip(
             r"\newcommand{\timerange}{... Wochen}",
             r"\newcommand{\handoverdate}{01.01.1970}",
             r"\newcommand{\city}{...}",
-            r"\newcommand{\reportmodule}{T...000}"
         ], [
             f"\\newcommand{{\\studentname}}{{{student_name}}}",
             f"\\newcommand{{\\matrikelno}}{{{matr_num}}}",
@@ -62,7 +127,6 @@ for old, new in zip(
             f"\\newcommand{{\\timerange}}{{{time_range} Wochen}}",
             f"\\newcommand{{\\handoverdate}}{{{handoverdate}}}",
             f"\\newcommand{{\\city}}{{{city}}}",
-            f"\\newcommand{{\\reportmodule}}{{{report_kind}}}"
         ]
 ):
     user_setup = user_setup.replace(old, new)
