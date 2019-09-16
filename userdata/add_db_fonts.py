@@ -23,7 +23,7 @@ def add_db_fonts():
     fonts = {
         'dbhea': {
             '07': 'Head_Black',
-            '37': 'Head_Italic_Black',
+            '37': 'Head_Black_Italic',
             '03': 'Head',
             '33': 'Head_Italic',
         },
