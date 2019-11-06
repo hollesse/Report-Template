@@ -33,6 +33,6 @@ deploy:
  file: main.pdf
  skip_cleanup: true
  on:
-  repo: hollesse/Report-Template
+  repo: stefreschke/Report-Template
 notifications:
   email: false
