@@ -79,8 +79,8 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 - formating should have the form `x^x^x^...` where `x` specifies the alignment for the column
     + possible aligments: `l`: left-aligned , `c`: centered , `r`: right-aligned
 
-> *Example (with captions):*
-> ```Latex
+*Example (with captions):*
+```Latex
 \begin{stripedacenttable}
     {A plain but nice looking table}
     {\label{tab:ex1}}
@@ -93,9 +93,9 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
     Q4 & +2 & +2 \\
 \end{stripedacenttable}
 
->Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
 
->\begin{stripedtable}
+\begin{stripedtable}
     {A colorful, nice looking table}
     {\label{tab:ex1}}
     {Green}
@@ -109,7 +109,7 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 \end{stripedtable}
 ```
 
-> <img alt="Tables" src="http://i.imgur.com/8FzhRYr.png" width="65%">
+<img alt="Tables" src="http://i.imgur.com/8FzhRYr.png" width="65%">
 
 
 #### Code Listings
@@ -124,8 +124,8 @@ The DB Fonts aren't included in this Repository, so you have to add them by your
 \end{lstlisting}
 ```
 
-> *Example:*
-> ```Latex
+*Example:*
+```Latex
 \begin{lstlisting}[
     caption={The Classic, realized in Python},
     label={lst:python1},
@@ -139,41 +139,41 @@ print(hi)
 \end{lstlisting}
 ```
 
-> <img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
+<img alt="Code Lisitng" src="http://i.imgur.com/8zXqzOZ.png" width="70%">
 
 
 #### Fancy Symbols
 The FontAwesome Package is bundeled into this repository, so you can use [all the nice symbols.](http://mirrors.ctan.org/fonts/fontawesome/doc/fontawesome.pdf).
 
-> *Example:*
-> ````Latex
-> \faFileTextO{} \faStar{}\faStar{}\faStar{}\faStar{}\faStar{} $=$ \faGraduationCap{}
-> ````
+*Example:*
+````Latex
+\faFileTextO{} \faStar{}\faStar{}\faStar{}\faStar{}\faStar{} $=$ \faGraduationCap{}
+````
 
-> <img alt="Code Lisitng" src="http://i.imgur.com/wZAVaom.png" width="14%">
+<img alt="Code Lisitng" src="http://i.imgur.com/wZAVaom.png" width="14%">
 
 The MarVoSym-Package is also loaded to provide [additional symbols](http://texdoc.net/texmf-dist/doc/fonts/marvosym/marvodoc.pdf).
 
-> *Example:*
-> ````Latex
-> \Estatically{} \Forward{} \Printer{} \ \ \MVRightArrow{} \ \ \EyesDollar\EyesDollar\EyesDollar
-> ````
+*Example:*
+````Latex
+\Estatically{} \Forward{} \Printer{} \ \ \MVRightArrow{} \ \ \EyesDollar\EyesDollar\EyesDollar
+````
 
-> <img alt="Code Lisitng" src="http://i.imgur.com/lZ64aQA.png" width="14%">
+<img alt="Code Lisitng" src="http://i.imgur.com/lZ64aQA.png" width="14%">
 
 
 #### Citations in the Footnotes
-````Latex
+```Latex
 \footnotecite{<source-reference>}
 ```
 
 
 #### Mark Incomplete Things You Need To Do
-````Latex
+```Latex
 \incompletemarker{<note>}
 ```
 
-> <img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="40%">
+<img alt="Code Lisitng" src="http://i.imgur.com/eSQSoao.png" width="40%">
 
 
 #### Prevent Pagebreaks absolutely, definitively
